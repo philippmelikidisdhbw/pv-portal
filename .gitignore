@@ -1,0 +1,12 @@
+# WordPress Core-Dateien
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# Betriebssystem-Dateien
+.DS_Store
+Thumbs.db
+
+# Node.js/Build-Dateien (falls verwendet)
+node_modules/
