@@ -58,7 +58,7 @@ Stelle sicher, dass du die folgenden Tools installiert hast:
    - Gehe zu **Neue Datenbank**.
    - Gib den Namen `wordpress_pv` ein und klicke auf **Erstellen**.
 3. Importiere die Datenbank:
-   - Gehe zu **Importieren** und lade die Datei `wordpress_pv.sql` (falls bereitgestellt) hoch.
+   - Gehe zu **Importieren** und lade die Datei `wordpress_pv.sql` hoch.
 
 ---
 
