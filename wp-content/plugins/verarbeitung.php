@@ -1,6 +1,52 @@
 
 <!DOCTYPE html>
 <html lang="de">
+
+<?php
+/*
+Plugin Name: Solarkonfigurator Plugin
+Description: Ein Plugin eines Solarkonfigurators.
+Version: 1.0
+Entwickler: Fabian Koch und Benedikt Schmuker
+*/
+
+// Verhindert direkten Zugriff auf die Datei
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+// Plugin aktivieren: Datenbanktabelle erstellen
+function solarkonfigurator_install() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'solarkonfigurator';
+    $charset_collate = $wpdb->get_charset_collate();
+
+    // Tabelle erstellen, falls sie nicht existiert
+    $sql = "CREATE TABLE $table_name (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        name varchar(255) NOT NULL,
+        created_at datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
+register_activation_hook(__FILE__, 'solarkonfigurator_install');
+
+// Plugin deaktivieren: Datenbanktabelle löschen (optional)
+function solarkonfigurator_uninstall() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'solarkonfigurator';
+    $wpdb->query("DROP TABLE IF EXISTS $table_name");
+}
+register_deactivation_hook(__FILE__, 'solarkonfigurator_uninstall');
+
+// Shortcode für den Konfigurator anzeigen
+function solarkonfigurator_shortcode() {
+ob_start();}
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
