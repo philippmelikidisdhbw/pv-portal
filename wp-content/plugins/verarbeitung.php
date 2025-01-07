@@ -444,6 +444,34 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
 <?php endif; ?>
 
 <?php if ($formularSeite == 7) : ?>
+    <?php
+
+    // Daten in DB speichern speichern
+    global $wpdb; //Datenbank
+
+    //Daten speichern
+    $AssistentenDB = $wpdb->prefix . 'AssistentenDB';
+    $wpdb->insert(
+        $AssistentenDB,
+        array(
+            'KundenName' => $name,
+            'Mail' => $email,
+            'Telefonnummer' => $telefonnummer,
+            'Adresse' => $adresse,
+            'Dachtyp' => $dachtyp,
+            'Dachneigung' => $dachneigung,
+            'Stromverbrauch' => $stromverbrauch,
+            'Personen' => $personen,
+            'SpeicherGroesse' => $speicherGroesse,
+            'WallboxTyp' => $wallboxTyp,
+            'FoerderungHoehe' => $foerderungHoehe,
+            'Modultyp' => $modultyp,
+            'Gesamtpreis' => $gesamtpreis,
+            'Datenschutz' => $datenschutz,
+        )
+    )
+    ?>
+
     <form method="POST" action="">
         <h1>Bestätigung der Daten</h1>
         <h2>Prüfen Sie Ihre Angaben und die berechneten Optionen.</h2>
