@@ -427,7 +427,7 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
         <label for="telefonnummer">Telefonnummer</label>
         <input type="tel" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>" placeholder="012345678910"><br><br><br>
         <label for="datenschutz">Ich stimme der Datenspeicherung und den Datenschutzbestimmungen zu.</label>
-        <input type="checkbox" id="datenschutz" name="datenschutz" value="<?php echo $datenschutz; ?>"><br>
+        <input type="checkbox" id="datenschutz" name="datenschutz" value="1"><br>
         <input type="hidden" name="formularSeite" value="6">
         <input type="submit" name="Weiter" value="Weiter">
         <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
@@ -449,27 +449,32 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
     // Daten in DB speichern speichern
     global $wpdb; //Datenbank
 
-    //Daten speichern
-    $AssistentenDB = $wpdb->prefix . 'AssistentenDB';
-    $wpdb->insert(
-        $AssistentenDB,
-        array(
-            'KundenName' => $name,
-            'Mail' => $email,
-            'Telefonnummer' => $telefonnummer,
-            'Adresse' => $adresse,
-            'Dachtyp' => $dachtyp,
-            'Dachneigung' => $dachneigung,
-            'Stromverbrauch' => $stromverbrauch,
-            'Personen' => $personen,
-            'SpeicherGroesse' => $speicherGroesse,
-            'WallboxTyp' => $wallboxTyp,
-            'FoerderungHoehe' => $foerderungHoehe,
-            'Modultyp' => $modultyp,
-            'Gesamtpreis' => $gesamtpreis,
-            'Datenschutz' => $datenschutz,
-        )
-    )
+    //Überprüfen ob Datenschutz akezptiert
+    $datenschutz = isset($_POST['datenschutz']) && $_POST['datenschutz'] == '1';
+    if ($datenschutz) {
+
+        //Daten speichern
+        $AssistentenDB = $wpdb->prefix . 'AssistentenDB';
+        $wpdb->insert(
+            $AssistentenDB,
+            array(
+                'KundenName' => $name,
+                'Mail' => $email,
+                'Telefonnummer' => $telefonnummer,
+                'Adresse' => $adresse,
+                'Dachtyp' => $dachtyp,
+                'Dachneigung' => $dachneigung,
+                'Stromverbrauch' => $stromverbrauch,
+                'Personen' => $personen,
+                'SpeicherGroesse' => $speicherGroesse,
+                'WallboxTyp' => $wallboxTyp,
+                'FoerderungHoehe' => $foerderungHoehe,
+                'Modultyp' => $modultyp,
+                'Gesamtpreis' => $gesamtpreis,
+                'Datenschutz' => $datenschutz,
+            )
+        );
+    }
     ?>
 
     <form method="POST" action="">
