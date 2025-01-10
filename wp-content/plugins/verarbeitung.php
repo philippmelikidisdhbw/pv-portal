@@ -1,6 +1,52 @@
 
 <!DOCTYPE html>
 <html lang="de">
+
+<?php
+/*
+Plugin Name: Solarkonfigurator Plugin
+Description: Ein Plugin eines Solarkonfigurators.
+Version: 1.0
+Entwickler: Fabian Koch und Benedikt Schmuker
+*/
+
+// Verhindert direkten Zugriff auf die Datei
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+// Plugin aktivieren: Datenbanktabelle erstellen
+function solarkonfigurator_install() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'solarkonfigurator';
+    $charset_collate = $wpdb->get_charset_collate();
+
+    // Tabelle erstellen, falls sie nicht existiert
+    $sql = "CREATE TABLE $table_name (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        name varchar(255) NOT NULL,
+        created_at datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
+register_activation_hook(__FILE__, 'solarkonfigurator_install');
+
+// Plugin deaktivieren: Datenbanktabelle löschen (optional)
+function solarkonfigurator_uninstall() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'solarkonfigurator';
+    $wpdb->query("DROP TABLE IF EXISTS $table_name");
+}
+register_deactivation_hook(__FILE__, 'solarkonfigurator_uninstall');
+
+// Shortcode für den Konfigurator anzeigen
+function solarkonfigurator_shortcode() {
+ob_start();}
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -381,7 +427,7 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
         <label for="telefonnummer">Telefonnummer</label>
         <input type="tel" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>" placeholder="012345678910"><br><br><br>
         <label for="datenschutz">Ich stimme der Datenspeicherung und den Datenschutzbestimmungen zu.</label>
-        <input type="checkbox" id="datenschutz" name="datenschutz" value="<?php echo $datenschutz; ?>"><br>
+        <input type="checkbox" id="datenschutz" name="datenschutz" value="1"><br>
         <input type="hidden" name="formularSeite" value="6">
         <input type="submit" name="Weiter" value="Weiter">
         <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
@@ -398,6 +444,39 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
 <?php endif; ?>
 
 <?php if ($formularSeite == 7) : ?>
+    <?php
+
+    // Daten in DB speichern speichern
+    global $wpdb; //Datenbank
+
+    //Überprüfen ob Datenschutz akezptiert
+    $datenschutz = isset($_POST['datenschutz']) && $_POST['datenschutz'] == '1';
+    if ($datenschutz) {
+
+        //Daten speichern
+        $AssistentenDB = $wpdb->prefix . 'AssistentenDB';
+        $wpdb->insert(
+            $AssistentenDB,
+            array(
+                'KundenName' => $name,
+                'Mail' => $email,
+                'Telefonnummer' => $telefonnummer,
+                'Adresse' => $adresse,
+                'Dachtyp' => $dachtyp,
+                'Dachneigung' => $dachneigung,
+                'Stromverbrauch' => $stromverbrauch,
+                'Personen' => $personen,
+                'SpeicherGroesse' => $speicherGroesse,
+                'WallboxTyp' => $wallboxTyp,
+                'FoerderungHoehe' => $foerderungHoehe,
+                'Modultyp' => $modultyp,
+                'Gesamtpreis' => $gesamtpreis,
+                'Datenschutz' => $datenschutz,
+            )
+        );
+    }
+    ?>
+
     <form method="POST" action="">
         <h1>Bestätigung der Daten</h1>
         <h2>Prüfen Sie Ihre Angaben und die berechneten Optionen.</h2>
