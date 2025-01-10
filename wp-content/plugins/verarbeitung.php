@@ -44,7 +44,7 @@ register_deactivation_hook(__FILE__, 'solarkonfigurator_uninstall');
 
 // Shortcode für den Konfigurator anzeigen
 function solarkonfigurator_shortcode() {
-ob_start();}
+ob_start();
 ?>
 
 <head>
@@ -517,3 +517,10 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
 </body>
 </html>
 
+
+<?php
+return ob_get_clean();
+}
+add_shortcode('solarkonfigurator', 'solarkonfigurator_shortcode');
+
+?>
