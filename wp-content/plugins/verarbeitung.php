@@ -145,7 +145,15 @@ function toggleFoerderungFeld() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (isset($_POST['formularSeite'])) {
-                $formularSeite = $_POST['formularSeite'] + 1;
+                $formularSeite = $_POST['formularSeite'];
+            
+                if (isset($_POST['navigation'])) {
+                    if ($_POST['navigation'] == 'weiter') {
+                        $formularSeite++; // Seite vorwärts
+                    } elseif ($_POST['navigation'] == 'zurueck') {
+                        $formularSeite--; // Seite rückwärts
+                    }
+                }
             }
 
             if (isset($_POST['adresse'])) {
@@ -206,7 +214,7 @@ function toggleFoerderungFeld() {
         <label for="adresse">Adresse:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
         <input type="hidden" name="formularSeite" value="1">
-        <input type="submit" name="Weiter" value="Weiter">
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
        
     </form>
 <?php endif; ?>
@@ -224,7 +232,8 @@ function toggleFoerderungFeld() {
         <label for="dachneigung">Dachneigung (in Grad):</label>
         <input type="number" id="dachneigung" name="dachneigung" value="<?php echo $dachneigung; ?>" required><br><br>
         <input type="hidden" name="formularSeite" value="2">
-        <input type="submit" name="Weiter" value="Weiter">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
         <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
        
     </form>
@@ -239,7 +248,8 @@ function toggleFoerderungFeld() {
         <label for="personen">Anzahl der Personen im Haushalt:</label>
         <input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" onchange="toggleFieldsStromverbrauch()"><br><br>
         <input type="hidden" name="formularSeite" value="3">
-        <input type="submit" name="Weiter" value="Weiter">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
         <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
@@ -267,7 +277,8 @@ function toggleFoerderungFeld() {
         <label for="foerderungHoehe"></label>
         <input type="number" id="foerderungHoehe" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>" placeholder="Förderungsbetrag" step="100"disabled><br><br>
         <input type="hidden" name="formularSeite" value="4">
-        <input type="submit" name="Weiter" value="Weiter">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
@@ -289,7 +300,8 @@ function toggleFoerderungFeld() {
         <label for="all-inclusive-modul">All-Inclusive-Modul</label>
         <input type="radio" id="allInklusive" name="modultyp" value="All-Inclusive-Modul"><br><br>
         <input type="hidden" name="formularSeite" value="5">
-        <input type="submit" name="Weiter" value="Weiter" onclick="berechneGesamtpreis();">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
         <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
@@ -429,7 +441,8 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
         <label for="datenschutz">Ich stimme der Datenspeicherung und den Datenschutzbestimmungen zu.</label>
         <input type="checkbox" id="datenschutz" name="datenschutz" value="1"><br>
         <input type="hidden" name="formularSeite" value="6">
-        <input type="submit" name="Weiter" value="Weiter">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
         <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
@@ -493,8 +506,9 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
 
 
         <input type="hidden" name="formularSeite" value="7">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Abschließen und Bericht generieren</button>
 
-        <input type="submit" name="Abschließen und Bericht generieren" value="Abschließen und Bericht generieren">
     </form>
 <?php endif; ?>
 
