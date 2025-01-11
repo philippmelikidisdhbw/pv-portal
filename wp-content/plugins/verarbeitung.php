@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="de">
-
 <?php
 /*
 Plugin Name: Solarkonfigurator Plugin
@@ -10,10 +9,6 @@ Version: 1.0
 Entwickler: Fabian Koch und Benedikt Schmuker
 */
 
-// Verhindert direkten Zugriff auf die Datei
-if (!defined('ABSPATH')) {
-    exit;
-}
 
 // Plugin aktivieren: Datenbanktabelle erstellen
 function solarkonfigurator_install() {
@@ -58,13 +53,13 @@ ob_start();}
             var personen = document.getElementById('personen');
 
             // Wenn Stromverbrauch eingegeben wird, deaktiviert das Personenfeld und umgekehrt
-            if (verbrauch.value !== '') {
+            if (verbrauch.value !== '' && verbrauch.value !== '0') {
                 personen.disabled = true;
             } else {
                 personen.disabled = false;
             }
 
-            if (personen.value !== '') {
+            if (personen.value !== '' && personen.value !== '0') {
                 verbrauch.disabled = true;
             } else {
                 verbrauch.disabled = false;
@@ -88,6 +83,7 @@ ob_start();}
                 dachflaeche.disabled = false;
             }
         }
+
         function toggleSpeicherFeld() {
     var speicherCheckbox = document.getElementById('speicherCheckbox');
     var speicherGroesse = document.getElementById('speicherGroesse');
@@ -127,15 +123,16 @@ function toggleFoerderungFeld() {
 </head>
 <body>
     <?php
-   
+        //default-Werte setzen
         $formularSeite = 1;
-        $ueberschrift = $beschreibung = '';
         $adresse = '';
-        $dachtyp = $dachneigung = '';
+        $dachtyp = '';
+        $dachneigung = 45;
         $dachflaeche = 50;
         $stromverbrauch = $personen = '';
-        $speicherCheckbox = $speicherGroesse = $wallboxCheckbox = $wallboxTyp = $foerderungCheckbox = $foerderungHoehe = '';
-        $modultyp =  '';
+        $speicherCheckbox = $wallboxCheckbox = $foerderungCheckbox = 0;
+        $speicherGroesse = $wallboxTyp = $foerderungHoehe = '';
+        $modultyp = 'Basismodul';
         $name = $email = $telefonnummer = $datenschutz = '';
         $abschluss = '';
         $gesamtpreis = 0;
@@ -223,14 +220,14 @@ function toggleFoerderungFeld() {
     <form method="POST" action="">
         <h1>Dachtyp und Neigung</h1>
         <h2>Wählen Sie den Dachtyp und die Dachneigung aus.</h2>
-        <label for="dachtyp">Dachtyp:</label>
+        <label for="dachtyp">Dachtyp:</label><br>
         <select id="dachtyp" name="dachtyp" required>
             <option value="Flachdach" <?php if($dachtyp == 'Flachdach') echo 'selected'; ?>>Flachdach</option>
             <option value="Satteldach" <?php if($dachtyp == 'Satteldach') echo 'selected'; ?>>Satteldach</option>
             <option value="Pultdach" <?php if($dachtyp == 'Pultdach') echo 'selected'; ?>>Pultdach</option>
         </select><br><br>
-        <label for="dachneigung">Dachneigung (in Grad):</label>
-        <input type="number" id="dachneigung" name="dachneigung" value="<?php echo $dachneigung; ?>" required><br><br>
+        <label for="dachneigung">Dachneigung: <span id="dachneigungValue"><?php echo isset($dachneigung) ? $dachneigung : 45; ?>°</span></label><br>
+        <input type="range" id="dachneigung" name="dachneigung" min="0" max="90" value="<?php echo isset($dachneigung) ? $dachneigung : 45; ?>" step="1" oninput="document.getElementById('dachneigungValue').innerText = this.value + '°'"><br><br>
         <input type="hidden" name="formularSeite" value="2">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
         <button type="submit" name="navigation" value="weiter">Weiter</button>
@@ -241,19 +238,21 @@ function toggleFoerderungFeld() {
 
 <?php if ($formularSeite == 3) : ?>
     <form method="POST" action="">
-        <h1>Energieverbrauch</h1>
-        <h2>Geben Sie Ihren Jahresverbrauch oder die Haushaltsgröße an.</h2>
-        <label for="stromverbrauch">Jährlicher Stromverbrauch:</label>
-        <input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" onchange="toggleFieldsStromverbrauch()"><br><br>
-        <label for="personen">Anzahl der Personen im Haushalt:</label>
-        <input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" onchange="toggleFieldsStromverbrauch()"><br><br>
-        <input type="hidden" name="formularSeite" value="3">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
-        <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
-        <input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
-        <input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
-        
+    <h1>Energieverbrauch</h1>
+<h2>Geben Sie Ihren Jahresverbrauch oder die Haushaltsgröße an.</h2>
+
+<label for="stromverbrauch">Jahresverbrauch (in kWh):</label><br>
+<input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" min="0" step="100" onchange="toggleFieldsStromverbrauch()" placeholder="0" /><br><br>
+
+<label for="personen">Haushaltsgröße (in Personen):</label><br>
+<input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" min="0" step="1" onchange="toggleFieldsStromverbrauch()" placeholder="0"><br><br>
+
+<input type="hidden" name="formularSeite" value="3">
+<button type="submit" name="navigation" value="zurueck">Zurück</button>
+<button type="submit" name="navigation" value="weiter">Weiter</button>
+<input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
+<input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
+<input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
      </form>
 <?php endif; ?>
 
@@ -261,21 +260,26 @@ function toggleFoerderungFeld() {
     <form method="POST" action="">
         <h1>Extras</h1>
         <h2>Wählen Sie zusätzliche Optionen, um Ihre Solaranlage zu erweitern.</h2>
-        <label for="speicherCheckbox"> Speicher hinzufügen</label>
+        <label for="speicherCheckbox"> Speicher hinzufügen:</label>
         <input type="checkbox" id="speicherCheckbox" name="speicherCheckbox" value="<?php echo $speicherCheckbox; ?>" onchange="toggleSpeicherFeld()"><br>
-        <label for="speicherGroesse"></label>
-        <input type="number" id="speicherGroesse" name="speicherGroesse" value="<?php echo $speicherGroesse; ?>" placeholder="8 kWh" min="2" max="16" step="2" disabled><br><br>
-        <label for="wallboxCheckbox"> Wallbox hinzufügen</label>
+        <select id="speicherGroesse" name="speicherGroesse" disabled>
+            <option value="8" <?php if($speicherGroesse == '8') echo 'selected'; ; ?>>8 kWh</option>
+            <option value="10" <?php if($speicherGroesse == '10') echo 'selected'; ; ?>>10 kWh</option>
+            <option value="12" <?php if($speicherGroesse == '12') echo 'selected'; ; ?>>12 kWh</option>
+            <option value="14" <?php if($speicherGroesse == '14') echo 'selected'; ; ?>>14 kWh</option>
+            <option value="16" <?php if($speicherGroesse == '16') echo 'selected'; ;  ?>>16 kWh</option>
+        </select><br><br>
+
+        <label for="wallboxCheckbox"> Wallbox hinzufügen:</label>
         <input type="checkbox" id="wallboxCheckbox" name="wallboxCheckbox" value="<?php echo $wallboxCheckbox; ?>" onchange="toggleWallboxFeld()"><br>
-        <label for="wallboxTyp"></label>
         <select id="wallboxTyp" name="wallboxTyp" disabled>
             <option value="Standard-Wallbox" <?php if($wallboxTyp == 'Standard-Wallbox') echo 'selected'; ?>>Standard-Wallbox</option>
             <option value="Bidirektionale Wallbox" <?php if($wallboxTyp == 'Bidirektionale Wallbox') echo 'selected'; ?>>Bidirektionale Wallbox</option>
         </select><br><br>
-        <label for="foerderungCheckbox"> Förderung hinzufügen</label>
+
+        <label for="foerderungCheckbox"> Förderung hinzufügen (in Euro):</label>
         <input type="checkbox" id="foerderungCheckbox" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox; ?>" onchange="toggleFoerderungFeld()"><br>
-        <label for="foerderungHoehe"></label>
-        <input type="number" id="foerderungHoehe" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>" placeholder="Förderungsbetrag" step="100"disabled><br><br>
+        <input type="number" id="foerderungHoehe" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>" min="0" placeholder="Förderungsbetrag" step="100" disabled><br><br>
         <input type="hidden" name="formularSeite" value="4">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
         <button type="submit" name="navigation" value="weiter">Weiter</button>
@@ -296,7 +300,7 @@ function toggleFoerderungFeld() {
         <label for="basismodul">Basismodul</label>
         <input type="radio" id="basis" name="modultyp" value="Basismodul"><br><br>
         <label for="premiummodul">Premium-Modul</label>
-        <input type="radio" id="premium" name="modultyp" value="Premium-Modul" required><br><br>
+        <input type="radio" id="premium" name="modultyp" value="Premium-Modul"><br><br>
         <label for="all-inclusive-modul">All-Inclusive-Modul</label>
         <input type="radio" id="allInklusive" name="modultyp" value="All-Inclusive-Modul"><br><br>
         <input type="hidden" name="formularSeite" value="5">
@@ -432,12 +436,12 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
     <form method="POST" action="">
         <h1>Kontaktinformationen</h1>
         <h2>Damit wir Ihnen die Ergebnisse zusenden können, tragen Sie bitte Ihre Kontaktdaten ein.</h2>
-        <label for="name">Vor- und Nachname</label>
-        <input type="text" id="name" name="name" value="<?php echo $name; ?>" placeholder="Max Mustermann" required><br><br>
-        <label for="email">E-Mail</label>
-        <input type="email" id="email" name="email" value="<?php echo $email; ?>" placeholder="maxmustermann@gmail.com" required><br><br>
-        <label for="telefonnummer">Telefonnummer</label>
-        <input type="tel" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>" placeholder="012345678910"><br><br><br>
+        <label for="name">Vor- und Nachname:</label>
+        <input type="text" id="name" name="name" value="<?php echo $name; ?>"><br><br>
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" value="<?php echo $email; ?>"><br><br>
+        <label for="telefonnummer">Telefonnummer:</label>
+        <input type="tel" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>"pattern="[\+][0-9]{1,4}[0-9]{7,10}"><br><br><br>
         <label for="datenschutz">Ich stimme der Datenspeicherung und den Datenschutzbestimmungen zu.</label>
         <input type="checkbox" id="datenschutz" name="datenschutz" value="1"><br>
         <input type="hidden" name="formularSeite" value="6">
