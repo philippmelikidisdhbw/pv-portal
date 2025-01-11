@@ -47,7 +47,6 @@ ob_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistent</title>
-    
 </head>
 <body>
     <?php
@@ -59,7 +58,7 @@ ob_start();
         $dachflaeche = 50;
         $stromverbrauch = $personen = '';
         $speicherCheckbox = $wallboxCheckbox = $foerderungCheckbox = 0;
-        $speicherGroesse = $wallboxTyp = $foerderungHoehe = '';
+        $speicherGroesse = $wallboxTyp = $foerderungHoehe = 0;
         $modultyp = 'Basismodul';
         $name = $email = $telefonnummer = $datenschutz = '';
         $abschluss = '';
@@ -69,6 +68,7 @@ ob_start();
       
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+            //Seitenwechsel
             if (isset($_POST['formularSeite'])) {
                 $formularSeite = $_POST['formularSeite'];
             
@@ -81,70 +81,71 @@ ob_start();
                 }
             }
 
+            //Adresse setzen
             if (isset($_POST['adresse'])) {
                 $adresse = $_POST['adresse'];
             }
 
+            //Dachtyp- und Dachneigung setzen
             if (isset($_POST['dachtyp']) && isset($_POST['dachneigung'])) {
                 $dachtyp = $_POST['dachtyp'];
                 $dachneigung = $_POST['dachneigung'];
             }
-      
+
+            //Stromverbrauch und Personenzahl setzenn
             if (isset($_POST['stromverbrauch']) && $_POST['stromverbrauch'] !== '') {
                 $stromverbrauch = $_POST['stromverbrauch'];
-               
             } elseif (isset($_POST['personen']) && $_POST['personen'] !== '') {
                 $personen = $_POST['personen'];
-               
             }
+
+            //Speichergröße setzen
             if (isset($_POST['speicherGroesse'])) {
-                $speicherGroesse = !empty($_POST['speicherGroesse']) ? $_POST['speicherGroesse'] : '-';
+                $speicherGroesse = !empty($_POST['speicherGroesse']);
             }
             
+            //Wallboxtyp setzen
             if (isset($_POST['wallboxTyp'])) {
-                $wallboxTyp = !empty($_POST['wallboxTyp']) ? $_POST['wallboxTyp'] : '-';
+                $wallboxTyp = !empty($_POST['wallboxTyp']);
             }
             
+            //Förderungshöhe setzen
             if (isset($_POST['foerderungHoehe'])) {
-                $foerderungHoehe = !empty($_POST['foerderungHoehe']) ? $_POST['foerderungHoehe'] : '-';
+                $foerderungHoehe = !empty($_POST['foerderungHoehe']);
             }
             
-            
+            //Modultyp setzen
             if (isset($_POST['modultyp'])) {
                 $modultyp = $_POST['modultyp'];
-                
             }
-            if (isset($_POST['gesamtpreis'])) {
-                $gesamtpreis = $_POST['gesamtpreis'];
-                
-            }
+
+            //Name, Email und Telefonnummer setzen
             if (isset($_POST['name']) && isset($_POST['email'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
-                $telefonnummer = !empty($_POST['telefonnummer']) ? $_POST['telefonnummer'] : '-';
-               
-            }
-            if (isset($_POST['abschluss'])) {
-                $abschluss = $_POST['abschluss'];
+                $telefonnummer = !empty($_POST['telefonnummer']);
                
             }
         }
-    
     ?>
 
-<?php if ($formularSeite == 1) : ?>
+<?php
+//Seite 1
+ if ($formularSeite == 1) : ?>
     <form method="POST" action="">
         <h1>Adresse</h1>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
         <label for="adresse">Adresse:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
         <input type="hidden" name="formularSeite" value="1">
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
-       
+        <button type="submit" name="navigation" value="weiter">Weiter</button> 
     </form>
 <?php endif; ?>
 
-<?php if ($formularSeite == 2) : ?>
+
+<?php 
+//Seite 2
+if ($formularSeite == 2) : ?>
     <form method="POST" action="">
         <h1>Dachtyp und Neigung</h1>
         <h2>Wählen Sie den Dachtyp und die Dachneigung aus.</h2>
@@ -158,33 +159,31 @@ ob_start();
         <input type="range" id="dachneigung" name="dachneigung" min="0" max="90" value="<?php echo isset($dachneigung) ? $dachneigung : 45; ?>" step="1" oninput="document.getElementById('dachneigungValue').innerText = this.value + '°'"><br><br>
         <input type="hidden" name="formularSeite" value="2">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
-        <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
-       
+        <button type="submit" name="navigation" value="weiter">Weiter</button>  
     </form>
 <?php endif; ?>
 
-<?php if ($formularSeite == 3) : ?>
+
+<?php 
+//Seite 3
+if ($formularSeite == 3) : ?>
     <form method="POST" action="">
-    <h1>Energieverbrauch</h1>
-<h2>Geben Sie Ihren Jahresverbrauch oder die Haushaltsgröße an.</h2>
-
-<label for="stromverbrauch">Jahresverbrauch (in kWh):</label><br>
-<input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" min="0" step="100" onchange="toggleFieldsStromverbrauch()" placeholder="0" /><br><br>
-
-<label for="personen">Haushaltsgröße (in Personen):</label><br>
-<input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" min="0" step="1" onchange="toggleFieldsStromverbrauch()" placeholder="0"><br><br>
-
-<input type="hidden" name="formularSeite" value="3">
-<button type="submit" name="navigation" value="zurueck">Zurück</button>
-<button type="submit" name="navigation" value="weiter">Weiter</button>
-<input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
-<input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
-<input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
+        <h1>Energieverbrauch</h1>
+        <h2>Geben Sie Ihren Jahresverbrauch oder die Haushaltsgröße an.</h2>
+        <label for="stromverbrauch">Jahresverbrauch (in kWh):</label><br>
+        <input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" min="0" step="100" onchange="toggleFieldsStromverbrauch()" placeholder="0" /><br><br>
+        <label for="personen">Haushaltsgröße (in Personen):</label><br>
+        <input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" min="0" step="1" onchange="toggleFieldsStromverbrauch()" placeholder="0"><br><br>
+        <input type="hidden" name="formularSeite" value="3">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
      </form>
 <?php endif; ?>
 
-<?php if ($formularSeite == 4) : ?>
+
+<?php
+//Seite 4 
+if ($formularSeite == 4) : ?>
     <form method="POST" action="">
         <h1>Extras</h1>
         <h2>Wählen Sie zusätzliche Optionen, um Ihre Solaranlage zu erweitern.</h2>
@@ -197,30 +196,25 @@ ob_start();
             <option value="14" <?php if($speicherGroesse == '14') echo 'selected'; ; ?>>14 kWh</option>
             <option value="16" <?php if($speicherGroesse == '16') echo 'selected'; ;  ?>>16 kWh</option>
         </select><br><br>
-
         <label for="wallboxCheckbox"> Wallbox hinzufügen:</label>
         <input type="checkbox" id="wallboxCheckbox" name="wallboxCheckbox" value="<?php echo $wallboxCheckbox; ?>" onchange="toggleWallboxFeld()"><br>
         <select id="wallboxTyp" name="wallboxTyp" disabled>
             <option value="Standard-Wallbox" <?php if($wallboxTyp == 'Standard-Wallbox') echo 'selected'; ?>>Standard-Wallbox</option>
             <option value="Bidirektionale Wallbox" <?php if($wallboxTyp == 'Bidirektionale Wallbox') echo 'selected'; ?>>Bidirektionale Wallbox</option>
         </select><br><br>
-
         <label for="foerderungCheckbox"> Förderung hinzufügen (in Euro):</label>
         <input type="checkbox" id="foerderungCheckbox" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox; ?>" onchange="toggleFoerderungFeld()"><br>
         <input type="number" id="foerderungHoehe" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>" min="0" placeholder="Förderungsbetrag" step="100" disabled><br><br>
         <input type="hidden" name="formularSeite" value="4">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
         <button type="submit" name="navigation" value="weiter">Weiter</button>
-
-        <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
-        <input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
-        <input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
-        <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>">
-        <input type="hidden" name="personen" value="<?php echo $personen; ?>">  
-        
     </form>
 <?php endif; ?>
-<?php if ($formularSeite == 5) : ?>
+
+
+<?php 
+//Seite 5
+if ($formularSeite == 5) : ?>
     <form method="POST" action="">
         <h1>Modultyp wählen</h1>
         <h2>Klicken Sie auf eines der drei Module, um dieses auszuwählen.</h2>
@@ -232,49 +226,11 @@ ob_start();
         <input type="radio" id="allInklusive" name="modultyp" value="All-Inclusive-Modul"><br><br>
         <input type="hidden" name="formularSeite" value="5">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
-        <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
-        <input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
-        <input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
-        <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>">
-        <input type="hidden" name="personen" value="<?php echo $personen; ?>">  
-        <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse; ?>">
-        <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp; ?>">
-        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>">  
+        <button type="submit" name="navigation" value="weiter">Weiter</button> 
     </form>
 <?php endif; ?>
+
 <?php if ($formularSeite == 6) : ?>
-
-    
-
-    <form method="POST" action="">
-        <h1>Kontaktinformationen</h1>
-        <h2>Damit wir Ihnen die Ergebnisse zusenden können, tragen Sie bitte Ihre Kontaktdaten ein.</h2>
-        <label for="name">Vor- und Nachname:</label>
-        <input type="text" id="name" name="name" value="<?php echo $name; ?>"><br><br>
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" value="<?php echo $email; ?>"><br><br>
-        <label for="telefonnummer">Telefonnummer:</label>
-        <input type="tel" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>"pattern="[\+][0-9]{1,4}[0-9]{7,10}"><br><br><br>
-        <label for="datenschutz">Ich stimme der Datenspeicherung und den Datenschutzbestimmungen zu.</label>
-        <input type="checkbox" id="datenschutz" name="datenschutz" value="1"><br>
-        <input type="hidden" name="formularSeite" value="6">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
-        <input type="hidden" name="adresse" value="<?php echo $adresse; ?>">
-        <input type="hidden" name="dachtyp" value="<?php echo $dachtyp; ?>">
-        <input type="hidden" name="dachneigung" value="<?php echo $dachneigung; ?>">
-        <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>">
-        <input type="hidden" name="personen" value="<?php echo $personen; ?>"> 
-        <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse; ?>">
-        <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp; ?>">
-        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>">  
-        <input type="hidden" name="modultyp" value="<?php echo $modultyp; ?>">
-        <input type="hidden" name="wallboxCheckbox" value="<?php echo $wallboxCheckbox; ?>">
-        <input type="hidden" name="speicherCheckbox" value="<?php echo $speicherCheckbox; ?>">  
-        <input type="hidden" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox; ?>">
-
-    </form>
     <?php
 
 $wpProModul = 0.0;
@@ -287,23 +243,16 @@ $preisSpeicher = 0.0;
 
 
 if ($modultyp === 'Basismodul') {
-    $wpProModul = 350;
+    $wpProModul = 350.0;
 } elseif ($modultyp === 'Premium-Modul') {
-    $wpProModul = 410;
+    $wpProModul = 410.0;
 } elseif ($modultyp === 'All-Inclusive-Modul') {
-    $wpProModul = 450;
-} else {
-    echo "Unbekannter Modultyp!";
+    $wpProModul = 450.0;
 }
-
-
 
 if ($dachflaeche > 0) {
-    $modulanzahl = ceil($dachflaeche / $modulFlaeche);
-
+    $modulanzahl = (int) ceil($dachflaeche / $modulFlaeche);
 }
-
-
 
 if ($modulanzahl >= 6 && $modulanzahl <= 8) {
     $preisProWp = 1.80;
@@ -321,23 +270,17 @@ if ($modulanzahl >= 6 && $modulanzahl <= 8) {
     $preisProWp = 1.15;
 }
 
-$preisModule = $preisProWp * $modulanzahl * $wpProModul;
-
+$preisModule =  (float) $preisProWp *  (float) $modulanzahl *  (float) $wpProModul;
 
 
 if ($wallboxCheckbox === 1) {
-  
-    if ($wallboxTyp) {
-        
         if ($wallboxTyp === 'Standard-Wallbox') {
             $preisWallbox = 1500;
-        } elseif ($wallboxTyp === 'Bidirektionale Wallbox') {
+        } 
+        elseif ($wallboxTyp === 'Bidirektionale Wallbox') {
             $preisWallbox = 3500;
         }
     }
-}
-
-
 
 // Überprüfen, ob die Speicher-Checkbox aktiviert ist
 if ($speicherCheckbox === 1) {
@@ -349,6 +292,23 @@ if ($speicherCheckbox === 1) {
 
 $gesamtpreis = (float) $preisModule + (float) $preisSpeicher + (float) $preisWallbox - (float) $foerderungHoehe;
 ?>
+    <form method="POST" action="">
+        <h1>Kontaktinformationen</h1>
+        <h2>Damit wir Ihnen die Ergebnisse zusenden können, tragen Sie bitte Ihre Kontaktdaten ein.</h2>
+        <label for="name">Vor- und Nachname:</label>
+        <input type="text" id="name" name="name" value="<?php echo $name; ?>"><br><br>
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" value="<?php echo $email; ?>"><br><br>
+        <label for="telefonnummer">Telefonnummer:</label>
+        <input type="tel" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>"><br><br><br>
+        <label for="datenschutz">Ich stimme der Datenspeicherung und den Datenschutzbestimmungen zu.</label>
+        <input type="checkbox" id="datenschutz" name="datenschutz" value="1"><br>
+        <input type="hidden" name="formularSeite" value="6">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
+    </form>
+
+
 <?php endif; ?>
 <?php if ($formularSeite == 7) : ?>
     
@@ -425,7 +385,9 @@ $gesamtpreis = (float) $preisModule + (float) $preisSpeicher + (float) $preisWal
 
 </body>
 </html>
+
 <?php
 return ob_get_clean();}
-add_shortcode('solarkonfigurator', 'solarkonfigurator_shortcode');?>
+add_shortcode('solarkonfigurator', 'solarkonfigurator_shortcode');
+?>
 
