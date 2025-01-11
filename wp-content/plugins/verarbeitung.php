@@ -5,7 +5,7 @@
 <?php
 /*
 Plugin Name: Solarkonfigurator Plugin
-Description: Ein Plugin eines Solarkonfigurators.
+Description: Ein Plugins eines Solarkonfigurators.
 Version: 1.0
 Entwickler: Fabian Koch und Benedikt Schmuker
 */
