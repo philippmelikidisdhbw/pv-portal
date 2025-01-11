@@ -10,6 +10,7 @@ Entwickler: Fabian Koch und Benedikt Schmuker
 */
 
 
+
 // Plugin aktivieren: Datenbanktabelle erstellen
 function solarkonfigurator_install() {
     global $wpdb;
@@ -39,87 +40,14 @@ register_deactivation_hook(__FILE__, 'solarkonfigurator_uninstall');
 
 // Shortcode für den Konfigurator anzeigen
 function solarkonfigurator_shortcode() {
-ob_start();}
+ob_start();
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistent</title>
-    <script>
-        // JavaScript-Funktion für Entweder-Oder Stromverbrauch
-        function toggleFieldsStromverbrauch() {
-            var verbrauch = document.getElementById('stromverbrauch');
-            var personen = document.getElementById('personen');
-
-            // Wenn Stromverbrauch eingegeben wird, deaktiviert das Personenfeld und umgekehrt
-            if (verbrauch.value !== '' && verbrauch.value !== '0') {
-                personen.disabled = true;
-            } else {
-                personen.disabled = false;
-            }
-
-            if (personen.value !== '' && personen.value !== '0') {
-                verbrauch.disabled = true;
-            } else {
-                verbrauch.disabled = false;
-            }
-        }
-
-        function toggleFieldsModule() {
-            var verbrauch = document.getElementById('dachflaeche');
-            var personen = document.getElementById('anzahlModule');
-
-            // Wenn Dachfläche eingegeben wird, deaktiviert das Modulfeld und umgekehrt
-            if (dachflaeche.value !== '') {
-                anzahlModule.disabled = true;
-            } else {
-                anzahlModule.disabled = false;
-            }
-
-            if (anzahlModule.value !== '') {
-                dachflaeche.disabled = true;
-            } else {
-                dachflaeche.disabled = false;
-            }
-        }
-
-        function toggleSpeicherFeld() {
-    var speicherCheckbox = document.getElementById('speicherCheckbox');
-    var speicherGroesse = document.getElementById('speicherGroesse');
     
-    // Überprüfen, ob die Checkbox aktiviert ist
-    if (speicherCheckbox.checked) {
-        speicherGroesse.disabled = false; // Wenn die Checkbox aktiviert ist, aktiviere das Eingabefeld
-    } else {
-        speicherGroesse.disabled = true; // Wenn die Checkbox deaktiviert ist, deaktiviere das Eingabefeld
-    }
-}
-function toggleWallboxFeld() {
-    var wallboxCheckbox = document.getElementById('wallboxCheckbox');
-    var wallboxTyp = document.getElementById('wallboxTyp');
-    
-    // Überprüfen, ob die Checkbox aktiviert ist
-    if (wallboxCheckbox.checked) {
-        wallboxTyp.disabled = false; // Wenn die Checkbox aktiviert ist, aktiviere das Eingabefeld
-    } else {
-        wallboxTyp.disabled = true; // Wenn die Checkbox deaktiviert ist, deaktiviere das Eingabefeld
-    }
-}
-function toggleFoerderungFeld() {
-    var foerderungCheckbox = document.getElementById('foerderungCheckbox');
-    var foerderungHoehe = document.getElementById('foerderungHoehe');
-    
-    // Überprüfen, ob die Checkbox aktiviert ist
-    if (foerderungCheckbox.checked) {
-        foerderungHoehe.disabled = false; // Wenn die Checkbox aktiviert ist, aktiviere das Eingabefeld
-    } else {
-        foerderungHoehe.disabled = true; // Wenn die Checkbox deaktiviert ist, deaktiviere das Eingabefeld
-    }
-}
-
-        </script>
-
 </head>
 <body>
     <?php
@@ -292,7 +220,6 @@ function toggleFoerderungFeld() {
         
     </form>
 <?php endif; ?>
-
 <?php if ($formularSeite == 5) : ?>
     <form method="POST" action="">
         <h1>Modultyp wählen</h1>
@@ -313,125 +240,12 @@ function toggleFoerderungFeld() {
         <input type="hidden" name="personen" value="<?php echo $personen; ?>">  
         <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse; ?>">
         <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp; ?>">
-        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>"> 
-       
+        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>">  
     </form>
 <?php endif; ?>
-
 <?php if ($formularSeite == 6) : ?>
-    <?php
-// Berechnet Wp pro Modul
-function berechneWpProModul($varModultyp) {
-    $wpProModul = 0;
 
-    // Berechnung des Wp pro Modul basierend auf dem Modultyp
-    if ($varModultyp === 'Basismodul') {
-        $wpProModul = 350;
-    } elseif ($varModultyp === 'Premium-Modul') {
-        $wpProModul = 410;
-    } elseif ($varModultyp === 'All-Inclusive-Modul') {
-        $wpProModul = 450;
-    } else {
-        echo "Unbekannter Modultyp!";
-    }
-    return $wpProModul;
-}
-
-// Berechnet die Anzahl der Module, die aufs Dach passen
-function berechneModulanzahl($varDachflaeche) {
-    $modulFlaeche = 1.925;  // Fläche eines einzelnen Moduls in m²
-    $modulanzahl = 0;
-
-    // Überprüfen, ob eine Dachfläche eingegeben wurde
-    if ($varDachflaeche && $varDachflaeche > 0) {
-        // Berechnung der Modulanzahl
-        $modulanzahl = ceil($varDachflaeche / $modulFlaeche);
-    }
-    echo $modulanzahl;
-
-    return $modulanzahl;
-}
-
-// Berechnet den Preis aller Module
-function berechnePreisModule($varModulanzahl, $varWpProModul) {
-    $preisProWp = 0;
-
-    if ($varModulanzahl >= 6 && $varModulanzahl <= 8) {
-        $preisProWp = 1.80;
-    } elseif ($varModulanzahl >= 9 && $varModulanzahl <= 12) {
-        $preisProWp = 1.60;
-    } elseif ($varModulanzahl >= 13 && $varModulanzahl <= 15) {
-        $preisProWp = 1.50;
-    } elseif ($varModulanzahl >= 16 && $varModulanzahl <= 20) {
-        $preisProWp = 1.35;
-    } elseif ($varModulanzahl >= 21 && $varModulanzahl <= 30) {
-        $preisProWp = 1.25;
-    } elseif ($varModulanzahl >= 31 && $varModulanzahl <= 40) {
-        $preisProWp = 1.20;
-    } elseif ($varModulanzahl >= 41) {
-        $preisProWp = 1.15;
-    }
     
-
-    // Gesamtpreis: Preis pro Wp mal Wp pro Modul mal Anzahl der Module
-    $preis = $preisProWp * $varWpProModul * $varWpProModul;
-    
-    return $preis;
-}
-
-// Berechnet den Wallbox-Preis
-function berechneWallboxPreis($varWallboxCheckbox, $varWallboxTyp) {
-    $preisWallbox = 0; // Standardpreis
-
-    // Überprüfen, ob die Wallbox-Checkbox aktiviert ist
-    if ($varWallboxCheckbox) {
-        // Überprüfen, ob ein Wallbox-Typ ausgewählt wurde
-        if ($varWallboxTyp) {
-            // Berechnung des Preises je nach Wallbox-Typ
-            if ($varWallboxTyp === 'Standard-Wallbox') {
-                $preisWallbox = 1500;
-            } elseif ($varWallboxTyp === 'Bidirektionale Wallbox') {
-                $preisWallbox = 3500;
-            }
-        }
-    }
-    return $preisWallbox;
-}
-
-// Berechnet den Preis vom Speicher
-function berechneSpeicherPreis($varSpeicherCheckbox, $varSpeicherGroesse) {
-    $preisSpeicher = 0; // Standardpreis
-
-    // Überprüfen, ob die Speicher-Checkbox aktiviert ist
-    if ($varSpeicherCheckbox) {
-        // Überprüfen, ob eine Speichergröße eingegeben wurde
-        if ($varSpeicherGroesse && $varSpeicherGroesse > 0) {
-            // Berechnung des Preises pro kWh
-            $preisSpeicher = $varSpeicherGroesse * 475;
-        }
-    }
-    return $preisSpeicher;
-}
-
-// Berechnet den Gesamtpreis
-function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox, $varWallboxTyp, $varSpeicherCheckbox, $varSpeicherGroesse, $varFoerderungHoehe) {
-    // Berechnung der einzelnen Preise
-    $modulanzahl = berechneModulanzahl($varDachflaeche);
-    $wpProModul = berechneWpProModul($varModultyp);  // Berechnet das Wp pro Modul je nach Modultyp
-    $preisModule = berechnePreisModule($modulanzahl, $wpProModul);  // Preis der Module
-    $preisSpeicher = berechneSpeicherPreis($varSpeicherCheckbox, $varSpeicherGroesse);  // Preis für den Speicher
-    $preisWallbox = berechneWallboxPreis($varWallboxCheckbox, $varWallboxTyp);  // Preis für die Wallbox
-
-    // Förderung eingeben
-    $foerderung = $varFoerderungHoehe ?: 0;  // Falls keine Förderung eingegeben wurde, 0 als Standard
-
-    // Berechnung des Gesamtpreises
-    $varGesamtpreis = $preisModule + $preisSpeicher + $preisWallbox - $foerderung;
-
-    return $varGesamtpreis;
-}
-//$gesamtpreis = berechneGesamtpreis($dachflaeche, $modultyp, $wallboxCheckbox, $wallboxTyp, $speicherCheckbox, $speicherGroesse, $foerderungHoehe);
-?>
 
     <form method="POST" action="">
         <h1>Kontaktinformationen</h1>
@@ -456,11 +270,88 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
         <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp; ?>">
         <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>">  
         <input type="hidden" name="modultyp" value="<?php echo $modultyp; ?>">
-        
-    </form>
-<?php endif; ?>
+        <input type="hidden" name="wallboxCheckbox" value="<?php echo $wallboxCheckbox; ?>">
+        <input type="hidden" name="speicherCheckbox" value="<?php echo $speicherCheckbox; ?>">  
+        <input type="hidden" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox; ?>">
 
+    </form>
+    <?php
+
+$wpProModul = 0.0;
+$modulFlaeche = 1.925; 
+$modulanzahl = 0.0;
+$preisProWp = 0.0;
+$preisWallbox = 0.0; 
+$preisModule = 0.0;
+$preisSpeicher = 0.0; 
+
+
+if ($modultyp === 'Basismodul') {
+    $wpProModul = 350;
+} elseif ($modultyp === 'Premium-Modul') {
+    $wpProModul = 410;
+} elseif ($modultyp === 'All-Inclusive-Modul') {
+    $wpProModul = 450;
+} else {
+    echo "Unbekannter Modultyp!";
+}
+
+
+
+if ($dachflaeche > 0) {
+    $modulanzahl = ceil($dachflaeche / $modulFlaeche);
+
+}
+
+
+
+if ($modulanzahl >= 6 && $modulanzahl <= 8) {
+    $preisProWp = 1.80;
+} elseif ($modulanzahl >= 9 && $modulanzahl <= 12) {
+    $preisProWp = 1.60;
+} elseif ($modulanzahl >= 13 && $modulanzahl <= 15) {
+    $preisProWp = 1.50;
+} elseif ($modulanzahl >= 16 && $modulanzahl <= 20) {
+    $preisProWp = 1.35;
+} elseif ($modulanzahl >= 21 && $modulanzahl <= 30) {
+    $preisProWp = 1.25;
+} elseif ($modulanzahl >= 31 && $modulanzahl <= 40) {
+    $preisProWp = 1.20;
+} elseif ($modulanzahl >= 41) {
+    $preisProWp = 1.15;
+}
+
+$preisModule = $preisProWp * $modulanzahl * $wpProModul;
+
+
+
+if ($wallboxCheckbox === 1) {
+  
+    if ($wallboxTyp) {
+        
+        if ($wallboxTyp === 'Standard-Wallbox') {
+            $preisWallbox = 1500;
+        } elseif ($wallboxTyp === 'Bidirektionale Wallbox') {
+            $preisWallbox = 3500;
+        }
+    }
+}
+
+
+
+// Überprüfen, ob die Speicher-Checkbox aktiviert ist
+if ($speicherCheckbox === 1) {
+
+    if ($speicherGroesse > 0) {
+        $preisSpeicher = $speicherGroesse * 475;
+    }
+}
+
+$gesamtpreis = (float) $preisModule + (float) $preisSpeicher + (float) $preisWallbox - (float) $foerderungHoehe;
+?>
+<?php endif; ?>
 <?php if ($formularSeite == 7) : ?>
+    
     <?php
 
     // Daten in DB speichern speichern
@@ -515,8 +406,7 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
 
     </form>
 <?php endif; ?>
-
-    <?php if ($formularSeite == 8) : ?>
+<?php if ($formularSeite == 8) : ?>
         <form method="POST" action="">
         <h1>Ihr persönliches Angebot wurde erstellt!</h1>
         <h2>Ihr individueller Bereich steht jetzt bereit. Sie können ihn direkt herunterladen oder bequem per E-Mail erhalten.</h2>
@@ -528,10 +418,14 @@ function berechneGesamtpreis($varDachflaeche, $varModultyp, $varWallboxCheckbox,
 
             <input type="hidden" name="formularSeite" value="8">
             <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf bald mit Ihnen in Verbindung setzen.</h2><br><br>
+            <button type="submit" name="navigation" value="zurueck">Zurück</button>
     </form>
     
-    <?php endif; ?>
+<?php endif; ?>
 
 </body>
 </html>
+<?php
+return ob_get_clean();}
+add_shortcode('solarkonfigurator', 'solarkonfigurator_shortcode');?>
 
