@@ -38,6 +38,16 @@ function solarkonfigurator_uninstall() {
 }
 register_deactivation_hook(__FILE__, 'solarkonfigurator_uninstall');
 
+// Funktion zum Einbinden des Stylesheets
+function solarkonfigurator_enqueue_styles() {
+    // CSS-Datei im gleichen Verzeichnis wie das PHP-File einbinden
+    wp_enqueue_style('solarkonfigurator-style', plugin_dir_url(__FILE__) . 'design.css');
+}
+
+// Den Hook 'wp_enqueue_scripts' verwenden, um die Styles zu laden
+add_action('wp_enqueue_scripts', 'solarkonfigurator_enqueue_styles');
+
+
 // Shortcode für den Konfigurator anzeigen
 function solarkonfigurator_shortcode() {
 ob_start();
@@ -47,6 +57,7 @@ ob_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistent</title>
+    <link href="design.css" rel="stylesheet">
 </head>
 <body>
     <?php
@@ -187,10 +198,10 @@ ob_start();
 <?php
 //Seite 1
  if ($formularSeite == 1) : ?>
-    <form method="POST" action="">
+    <formmethod="POST" action="">
         <h1>Adresse</h1>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
-        <label for="adresse">Adresse:</label>
+        <label>Adresse:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
         <input type="hidden" name="formularSeite" value="1">
         <button type="submit" name="navigation" value="weiter">Weiter</button> 
