@@ -198,7 +198,7 @@ ob_start();
 <?php
 //Seite 1
  if ($formularSeite == 1) : ?>
-    <formmethod="POST" action="">
+    <form method="POST" action="">
         <h1>Adresse</h1>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
         <label>Adresse:</label>
