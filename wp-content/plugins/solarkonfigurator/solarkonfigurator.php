@@ -544,42 +544,6 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
     }
     ?>
 <?php endif; ?>
-
-<?php if ($formularSeite == 9) : ?>
-        <form method="POST" action="">
-        <h1>Ihr persönliches Angebot wurde erstellt!</h1>
-        <h2>Ihr individueller Bereich steht jetzt bereit. Sie können ihn direkt herunterladen oder bequem per E-Mail erhalten.</h2>
-        
-           
-    
-            <input type="button" value="Bericht herunterladen"><br><br>
-            <input type="button" value="An E-Mail schicken"><br><br>
-
-            <input type="hidden" name="formularSeite" value="9">
-            <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf bald mit Ihnen in Verbindung setzen.</h2><br><br>
-            <button type="submit" name="navigation" value="zurueck">Zurück</button>
-            <button type="submit" name="navigation" value="weiter">Beenden</button>
-
-            <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
-            <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
-            <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
-            <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
-            <input type="hidden" name="personen" value="<?php echo $personen;?>">
-            <input type="hidden" name="speicherCheckbox" value="<?php echo $speicherCheckbox;?>">
-            <input type="hidden" name="wallboxCheckbox" value="<?php echo $wallboxCheckbox;?>">
-            <input type="hidden" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox;?>">
-            <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse;?>">
-            <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp;?>">
-            <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">
-            <input type="hidden" name="modultyp" value="<?php echo $modultyp;?>">
-            <input type="hidden" name="gesamtpreis" value="<?php echo $gesamtpreis;?>">
-            <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
-            <input type="hidden" name="email" value="<?php echo $email;?>">
-            <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
-            <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
-    </form>
-<?php endif; ?>
-
 </body>
 </html>
 
@@ -587,6 +551,5 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
 
 return ob_get_clean();}
 add_shortcode('solarkonfigurator', 'solarkonfigurator_shortcode');
-
 ?>
 
