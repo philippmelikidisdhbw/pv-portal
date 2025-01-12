@@ -66,7 +66,7 @@ ob_start();
         $adresse = "";
         $dachtyp = "";
         $dachneigung = 45;
-        $dachflaeche = 50;
+        $dachflaeche = 0;
         $stromverbrauch = $personen = 0;
         $speicherCheckbox = $wallboxCheckbox = $foerderungCheckbox = $datenschutz = '';
         $foerderungHoehe = 0;
@@ -250,7 +250,7 @@ if ($formularSeite == 1) : ?>
         <label>Adresse:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
         <label>Dachfläche:</label>
-        <input type="text" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" required><br><br>
+        <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" required><br><br>
 
         <input type="hidden" name="formularSeite" value="2">
         <div class="button-container">
@@ -567,8 +567,8 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
         <h1>Ihr persönliches Angebot wurde erstellt!</h1>
         <h2>Ihr individueller Bereich steht jetzt bereit. Sie können ihn direkt herunterladen oder bequem per E-Mail erhalten.</h2>
 
-            <input type="submit" value="Bericht herunterladen"><br><br>
-            <input type="submit" value="An E-Mail schicken"><br><br>
+            <input type="submit" value="Bericht herunterladen" class="btn-small"><br><br>
+            <input type="submit" value="An E-Mail schicken" class="btn-small"><br><br>
 
             <input type="hidden" name="formularSeite" value="8">
             <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf bald mit Ihnen in Verbindung setzen.</h2><br><br>
