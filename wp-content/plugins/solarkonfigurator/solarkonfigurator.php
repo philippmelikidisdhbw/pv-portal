@@ -213,8 +213,10 @@ if ($formularSeite == 1) : ?>
         <label for="datenschutz">Ich stimme den <a href="./agb" target="_blank">AGB</a> und den Datenschutzbestimmungen zu.</label>
         <input type="checkbox" id="datenschutz" name="datenschutz" value="1" <?php echo isset($datenschutz) && $datenschutz == '1' ? 'checked' : ''; ?>><br>
         <input type="hidden" name="formularSeite" value="1">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
+        <div class="button-container">
+            <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
+            <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
+        </div>
     </form>
 <?php endif; ?>
 <?php
@@ -230,7 +232,10 @@ if ($formularSeite == 1) : ?>
         <label>Adresse:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
         <input type="hidden" name="formularSeite" value="2">
-        <button type="submit" name="navigation" value="weiter">Weiter</button> 
+        <div class="button-container">
+            <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
+            <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
+        </div>
 
         <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
         <input type="hidden" name="email" value="<?php echo $email;?>">
@@ -259,8 +264,10 @@ if ($formularSeite == 3) : ?>
         <label for="dachneigung">Dachneigung: <span id="dachneigungValue"><?php echo isset($dachneigung) ? $dachneigung : 45; ?>°</span></label><br>
         <input type="range" id="dachneigung" name="dachneigung" min="0" max="90" value="<?php echo isset($dachneigung) ? $dachneigung : 45; ?>" step="1" oninput="document.getElementById('dachneigungValue').innerText = this.value + '°'" required><br><br>
         <input type="hidden" name="formularSeite" value="3">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>  
+        <div class="button-container">
+            <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
+            <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
+        </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
@@ -286,8 +293,10 @@ if ($formularSeite == 4) : ?>
         <label for="personen">Haushaltsgröße (in Personen):</label><br>
         <input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" min="0" step="1" placeholder="0"><br><br>
         <input type="hidden" name="formularSeite" value="4">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
+        <div class="button-container">
+            <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
+            <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
+        </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
@@ -329,8 +338,10 @@ if ($formularSeite == 5) : ?>
         <input type="checkbox" id="foerderungCheckbox" name="foerderungCheckbox" value="1" <?php echo isset($foerderungCheckbox) && $foerderungCheckbox == '1' ? 'checked' : ''; ?>><br>
         <input type="number" id="foerderungHoehe" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>" min="0" max="5000" placeholder="Förderungsbetrag" step="100"><br><br>
         <input type="hidden" name="formularSeite" value="5">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
+        <div class="button-container">
+            <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
+            <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
+        </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
@@ -362,8 +373,10 @@ if ($formularSeite == 6) : ?>
         <label for="all-inclusive-modul">All-Inclusive-Modul</label>
         <input type="radio" id="allInklusive" name="modultyp" value="All-Inclusive-Modul"  <?php echo isset($modultyp) && $modultyp == 'All-Inclusive-Modul' ? 'checked' : ''; ?>><br><br>
         <input type="hidden" name="formularSeite" value="6">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button> 
+        <div class="button-container">
+            <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
+            <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
+        </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
@@ -487,8 +500,10 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
         <label>Vorraussichtliche Kosten: <?php echo $gesamtpreis?></label><br><br>
 
         <input type="hidden" name="formularSeite" value="7">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Abschließen und Bericht generieren</button>
+    <div class="button-container">
+        <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
+        <button type="submit" name="navigation" value="weiter" class="btn btn-next">Abschließen und Bericht generieren</button>
+    </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
