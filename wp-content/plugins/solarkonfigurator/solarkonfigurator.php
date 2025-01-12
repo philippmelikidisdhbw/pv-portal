@@ -198,6 +198,10 @@ ob_start();
 //Seite 1
 if ($formularSeite == 1) : ?>
 <form method="POST" action="">
+        <div class="progress-container">
+            <div class="progress-bar1"></div>
+            <span class="progress-text">10%</span>
+        </div>
         <h1>Kontaktinformationen</h1>
         <h2>Damit wir Ihnen die Ergebnisse zusenden können, tragen Sie bitte Ihre Kontaktdaten ein.</h2>
         <label for="vornameNachname">Vor- und Nachname:</label>
@@ -217,6 +221,10 @@ if ($formularSeite == 1) : ?>
 //Seite 2
  if ($formularSeite == 2) : ?>
     <form method="POST" action="">
+        <div class="progress-container">
+            <div class="progress-bar2"></div>
+            <span class="progress-text">20%</span>
+        </div>
         <h1>Adresse</h1>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
         <label>Adresse:</label>
@@ -236,6 +244,10 @@ if ($formularSeite == 1) : ?>
 //Seite 3
 if ($formularSeite == 3) : ?>
     <form method="POST" action="">
+        <div class="progress-container">
+            <div class="progress-bar3"></div>
+            <span class="progress-text">40%</span>
+        </div>
         <h1>Dachtyp und Neigung</h1>
         <h2>Wählen Sie den Dachtyp und die Dachneigung aus.</h2>
         <label for="dachtyp">Dachtyp:</label><br>
@@ -263,6 +275,10 @@ if ($formularSeite == 3) : ?>
 //Seite 4
 if ($formularSeite == 4) : ?>
     <form method="POST" action="">
+        <div class="progress-container">
+            <div class="progress-bar4"></div>
+            <span class="progress-text">60%</span>
+        </div>
         <h1>Energieverbrauch</h1>
         <h2>Geben Sie Ihren Jahresverbrauch oder die Haushaltsgröße an.</h2>
         <label for="stromverbrauch">Jahresverbrauch (in kWh):</label><br>
@@ -288,6 +304,10 @@ if ($formularSeite == 4) : ?>
 //Seite 5
 if ($formularSeite == 5) : ?>
     <form method="POST" action="">
+        <div class="progress-container">
+            <div class="progress-bar5"></div>
+            <span class="progress-text">70%</span>
+        </div>
         <h1>Extras</h1>
         <h2>Wählen Sie zusätzliche Optionen, um Ihre Solaranlage zu erweitern.</h2>
         <label for="speicherCheckbox"> Speicher hinzufügen:</label>
@@ -329,6 +349,10 @@ if ($formularSeite == 5) : ?>
 //Seite 6
 if ($formularSeite == 6) : ?>
     <form method="POST" action="">
+        <div class="progress-container">
+            <div class="progress-bar6"></div>
+            <span class="progress-text">80%</span>
+        </div>
         <h1>Modultyp wählen</h1>
         <h2>Klicken Sie auf eines der drei Module, um dieses auszuwählen.</h2>
         <label for="basismodul">Basismodul</label>
@@ -445,6 +469,10 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
 ?>
    
 <form method="POST" action="">
+    <div class="progress-container">
+        <div class="progress-bar7"></div>
+        <span class="progress-text">90%</span>
+    </div>
         <h1>Bestätigung der Daten</h1>
         <h2>Prüfen Sie Ihre Angaben und die berechneten Optionen.</h2>
         <label>Vor- und Nachname: <?php echo $vornameNachname; ?></label><br>
@@ -485,6 +513,10 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
 
 <?php if ($formularSeite == 8) : ?>
         <form method="POST" action="">
+            <div class="progress-container">
+                <div class="progress-bar8"></div>
+                <span class="progress-text">100%</span>
+            </div>
         <h1>Ihr persönliches Angebot wurde erstellt!</h1>
         <h2>Ihr individueller Bereich steht jetzt bereit. Sie können ihn direkt herunterladen oder bequem per E-Mail erhalten.</h2>
         
