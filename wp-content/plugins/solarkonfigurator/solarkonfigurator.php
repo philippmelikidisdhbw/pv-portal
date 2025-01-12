@@ -194,32 +194,48 @@ ob_start();
             }
         }
     ?>
-
 <?php
 //Seite 1
- if ($formularSeite == 1) : ?>
-     <form method="POST" action="">
-         <div class="progress-container">
-             <div class="progress-bar1"></div>
-             <span class="progress-text">10%</span>
-         </div>
+if ($formularSeite == 1) : ?>
+<form method="POST" action="">
+        <h1>Kontaktinformationen</h1>
+        <h2>Damit wir Ihnen die Ergebnisse zusenden können, tragen Sie bitte Ihre Kontaktdaten ein.</h2>
+        <label for="vornameNachname">Vor- und Nachname:</label>
+        <input type="text" id="vornameNachname" name="vornameNachname" value="<?php echo $vornameNachname;?>" required><br><br>
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" value="<?php echo $email; ?>" required><br><br>
+        <label for="telefonnummer">Telefonnummer:</label>
+        <input type="number" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>"><br><br><br>
+        <label for="datenschutz">Ich stimme den <a href="./agb" target="_blank">AGB</a> und den Datenschutzbestimmungen zu.</label>
+        <input type="checkbox" id="datenschutz" name="datenschutz" value="1" <?php echo isset($datenschutz) && $datenschutz == '1' ? 'checked' : ''; ?>><br>
+        <input type="hidden" name="formularSeite" value="1">
+        <button type="submit" name="navigation" value="zurueck">Zurück</button>
+        <button type="submit" name="navigation" value="weiter">Weiter</button>
+    </form>
+<?php endif; ?>
+<?php
+//Seite 2
+ if ($formularSeite == 2) : ?>
+    <form method="POST" action="">
         <h1>Adresse</h1>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
+        <label>Adresse:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
-        <input type="hidden" name="formularSeite" value="1">
+        <input type="hidden" name="formularSeite" value="2">
         <button type="submit" name="navigation" value="weiter">Weiter</button> 
+
+        <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
+        <input type="hidden" name="email" value="<?php echo $email;?>">
+        <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
+        <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
     </form>
 <?php endif; ?>
 
 
 <?php 
-//Seite 2
-if ($formularSeite == 2) : ?>
+//Seite 3
+if ($formularSeite == 3) : ?>
     <form method="POST" action="">
-        <div class="progress-container">
-            <div class="progress-bar2"></div>
-            <span class="progress-text">20%</span>
-        </div>
         <h1>Dachtyp und Neigung</h1>
         <h2>Wählen Sie den Dachtyp und die Dachneigung aus.</h2>
         <label for="dachtyp">Dachtyp:</label><br>
@@ -230,48 +246,48 @@ if ($formularSeite == 2) : ?>
         </select><br><br>
         <label for="dachneigung">Dachneigung: <span id="dachneigungValue"><?php echo isset($dachneigung) ? $dachneigung : 45; ?>°</span></label><br>
         <input type="range" id="dachneigung" name="dachneigung" min="0" max="90" value="<?php echo isset($dachneigung) ? $dachneigung : 45; ?>" step="1" oninput="document.getElementById('dachneigungValue').innerText = this.value + '°'" required><br><br>
-        <input type="hidden" name="formularSeite" value="2">
+        <input type="hidden" name="formularSeite" value="3">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
         <button type="submit" name="navigation" value="weiter">Weiter</button>  
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
+        <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
+        <input type="hidden" name="email" value="<?php echo $email;?>">
+        <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
+        <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
     </form>
 <?php endif; ?>
 
 
 <?php 
-//Seite 3
-if ($formularSeite == 3) : ?>
+//Seite 4
+if ($formularSeite == 4) : ?>
     <form method="POST" action="">
-        <div class="progress-container">
-            <div class="progress-bar3"></div>
-            <span class="progress-text">40%</span>
-        </div>
         <h1>Energieverbrauch</h1>
         <h2>Geben Sie Ihren Jahresverbrauch oder die Haushaltsgröße an.</h2>
         <label for="stromverbrauch">Jahresverbrauch (in kWh):</label><br>
         <input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" min="0" step="100" placeholder="0" /><br><br>
         <label for="personen">Haushaltsgröße (in Personen):</label><br>
         <input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" min="0" step="1" placeholder="0"><br><br>
-        <input type="hidden" name="formularSeite" value="3">
+        <input type="hidden" name="formularSeite" value="4">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
         <button type="submit" name="navigation" value="weiter">Weiter</button>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
+        <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
+        <input type="hidden" name="email" value="<?php echo $email;?>">
+        <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
+        <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
      </form>
 <?php endif; ?>
 
 
 <?php
-//Seite 4 
-if ($formularSeite == 4) : ?>
+//Seite 5
+if ($formularSeite == 5) : ?>
     <form method="POST" action="">
-        <div class="progress-container">
-            <div class="progress-bar4"></div>
-            <span class="progress-text">60%</span>
-        </div>
         <h1>Extras</h1>
         <h2>Wählen Sie zusätzliche Optionen, um Ihre Solaranlage zu erweitern.</h2>
         <label for="speicherCheckbox"> Speicher hinzufügen:</label>
@@ -292,7 +308,7 @@ if ($formularSeite == 4) : ?>
         <label for="foerderungCheckbox"> Förderung hinzufügen (in Euro):</label>
         <input type="checkbox" id="foerderungCheckbox" name="foerderungCheckbox" value="1" <?php echo isset($foerderungCheckbox) && $foerderungCheckbox == '1' ? 'checked' : ''; ?>><br>
         <input type="number" id="foerderungHoehe" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>" min="0" max="5000" placeholder="Förderungsbetrag" step="100"><br><br>
-        <input type="hidden" name="formularSeite" value="4">
+        <input type="hidden" name="formularSeite" value="5">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
         <button type="submit" name="navigation" value="weiter">Weiter</button>
 
@@ -301,18 +317,18 @@ if ($formularSeite == 4) : ?>
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
         <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
         <input type="hidden" name="personen" value="<?php echo $personen;?>">
+        <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
+        <input type="hidden" name="email" value="<?php echo $email;?>">
+        <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
+        <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
     </form>
 <?php endif; ?>
 
 
 <?php 
-//Seite 5
-if ($formularSeite == 5) : ?>
+//Seite 6
+if ($formularSeite == 6) : ?>
     <form method="POST" action="">
-        <div class="progress-container">
-            <div class="progress-bar5"></div>
-            <span class="progress-text">70%</span>
-        </div>
         <h1>Modultyp wählen</h1>
         <h2>Klicken Sie auf eines der drei Module, um dieses auszuwählen.</h2>
         <label for="basismodul">Basismodul</label>
@@ -321,7 +337,7 @@ if ($formularSeite == 5) : ?>
         <input type="radio" id="premium" name="modultyp" value="Premium-Modul"  <?php echo isset($modultyp) && $modultyp == 'Premium-Modul' ? 'checked' : ''; ?>><br><br>
         <label for="all-inclusive-modul">All-Inclusive-Modul</label>
         <input type="radio" id="allInklusive" name="modultyp" value="All-Inclusive-Modul"  <?php echo isset($modultyp) && $modultyp == 'All-Inclusive-Modul' ? 'checked' : ''; ?>><br><br>
-        <input type="hidden" name="formularSeite" value="5">
+        <input type="hidden" name="formularSeite" value="6">
         <button type="submit" name="navigation" value="zurueck">Zurück</button>
         <button type="submit" name="navigation" value="weiter">Weiter</button> 
 
@@ -335,15 +351,18 @@ if ($formularSeite == 5) : ?>
         <input type="hidden" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox;?>">
         <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse;?>">
         <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp;?>">
-        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">
-        
+        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">  
+        <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
+        <input type="hidden" name="email" value="<?php echo $email;?>">
+        <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
+        <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">  
     </form>
 <?php endif; ?>
 
 <?php
-//Seite 6
-if ($formularSeite == 6) : ?>
-<?php
+//Seite 7
+if ($formularSeite == 7) : ?>
+ <?php
 $wpProModul = 0.0;
 $modulFlaeche = 1.925; 
 $modulanzahl = 0.0;
@@ -424,53 +443,8 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
 }
 
 ?>
-
-    <form method="POST" action="">
-        <div class="progress-container">
-            <div class="progress-bar6"></div>
-            <span class="progress-text">80%</span>
-        </div>
-        <h1>Kontaktinformationen</h1>
-        <h2>Damit wir Ihnen die Ergebnisse zusenden können, tragen Sie bitte Ihre Kontaktdaten ein.</h2>
-        <label for="vornameNachname">Vor- und Nachname:</label>
-        <input type="text" id="vornameNachname" name="vornameNachname" value="<?php echo $vornameNachname;?>" required><br><br>
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" value="<?php echo $email; ?>" required><br><br>
-        <label for="telefonnummer">Telefonnummer:</label>
-        <input type="number" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>"><br><br><br>
-        <label for="datenschutz">Ich stimme der Datenspeicherung und den Datenschutzbestimmungen zu.</label>
-        <input type="checkbox" id="datenschutz" name="datenschutz" value="1" <?php echo isset($datenschutz) && $datenschutz == '1' ? 'checked' : ''; ?>><br>
-        <input type="hidden" name="formularSeite" value="6">
-        <button type="submit" name="navigation" value="zurueck">Zurück</button>
-        <button type="submit" name="navigation" value="weiter">Weiter</button>
-
-        
-        <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
-        <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
-        <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
-        <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
-        <input type="hidden" name="personen" value="<?php echo $personen;?>">
-        <input type="hidden" name="speicherCheckbox" value="<?php echo $speicherCheckbox;?>">
-        <input type="hidden" name="wallboxCheckbox" value="<?php echo $wallboxCheckbox;?>">
-        <input type="hidden" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox;?>">
-        <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse;?>">
-        <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp;?>">
-        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">
-        <input type="hidden" name="modultyp" value="<?php echo $modultyp;?>">
-        <input type="hidden" name="gesamtpreis" value="<?php echo $gesamtpreis;?>">
-
-    </form>
-<?php endif; ?>
-
-<?php
-//Seite 7
-?>
-    <?php if ($formularSeite == 7) : ?>
+   
 <form method="POST" action="">
-        <div class="progress-container">
-            <div class="progress-bar7"></div>
-            <span class="progress-text">90%</span>
-        </div>
         <h1>Bestätigung der Daten</h1>
         <h2>Prüfen Sie Ihre Angaben und die berechneten Optionen.</h2>
         <label>Vor- und Nachname: <?php echo $vornameNachname; ?></label><br>
@@ -506,14 +480,11 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
         <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
         <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
 
-    </form>
-    <?php endif; ?>
+</form>
+<?php endif; ?>
+
 <?php if ($formularSeite == 8) : ?>
         <form method="POST" action="">
-            <div class="progress-container">
-                <div class="progress-bar8"></div>
-                <span class="progress-text">100%</span>
-            </div>
         <h1>Ihr persönliches Angebot wurde erstellt!</h1>
         <h2>Ihr individueller Bereich steht jetzt bereit. Sie können ihn direkt herunterladen oder bequem per E-Mail erhalten.</h2>
         
@@ -573,48 +544,6 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
     }
     ?>
 <?php endif; ?>
-
-<?php if ($formularSeite == 9) : ?>
-        <form method="POST" action="">
-            <form method="POST" action="">
-                <div class="progress-container">
-                    <div class="progress-bar8"></div>
-                    <span class="progress-text">100%</span>
-                </div>
-
-        <h1>Ihr persönliches Angebot wurde erstellt!</h1>
-        <h2>Ihr individueller Bereich steht jetzt bereit. Sie können ihn direkt herunterladen oder bequem per E-Mail erhalten.</h2>
-        
-           
-    
-            <input type="button" value="Bericht herunterladen"><br><br>
-            <input type="button" value="An E-Mail schicken"><br><br>
-
-            <input type="hidden" name="formularSeite" value="9">
-            <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf bald mit Ihnen in Verbindung setzen.</h2><br><br>
-            <button type="submit" name="navigation" value="zurueck">Zurück</button>
-            <button type="submit" name="navigation" value="weiter">Beenden</button>
-
-            <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
-            <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
-            <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
-            <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
-            <input type="hidden" name="personen" value="<?php echo $personen;?>">
-            <input type="hidden" name="speicherCheckbox" value="<?php echo $speicherCheckbox;?>">
-            <input type="hidden" name="wallboxCheckbox" value="<?php echo $wallboxCheckbox;?>">
-            <input type="hidden" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox;?>">
-            <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse;?>">
-            <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp;?>">
-            <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">
-            <input type="hidden" name="modultyp" value="<?php echo $modultyp;?>">
-            <input type="hidden" name="gesamtpreis" value="<?php echo $gesamtpreis;?>">
-            <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
-            <input type="hidden" name="email" value="<?php echo $email;?>">
-            <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
-            <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
-    </form>
-<?php endif; ?>
-
 </body>
 </html>
 
@@ -622,6 +551,5 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
 
 return ob_get_clean();}
 add_shortcode('solarkonfigurator', 'solarkonfigurator_shortcode');
-
 ?>
 
