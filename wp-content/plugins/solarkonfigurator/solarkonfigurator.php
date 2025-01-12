@@ -204,14 +204,27 @@ if ($formularSeite == 1) : ?>
         </div>
         <h1>Kontaktinformationen</h1>
         <h2>Damit wir Ihnen die Ergebnisse zusenden können, tragen Sie bitte Ihre Kontaktdaten ein.</h2>
-        <label for="vornameNachname">Vor- und Nachname:</label>
-        <input type="text" id="vornameNachname" name="vornameNachname" value="<?php echo $vornameNachname;?>" required><br><br>
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" value="<?php echo $email; ?>" required><br><br>
-        <label for="telefonnummer">Telefonnummer:</label>
-        <input type="number" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>"><br><br><br>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="vornameNachname">Vor- und Nachname*:</label>
+                <input type="text" id="vornameNachname" name="vornameNachname" value="<?php echo $vornameNachname; ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail*:</label>
+                <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="telefonnummer">Telefonnummer:</label>
+            <input type="number" id="telefonnummer" name="telefonnummer" value="<?php echo $telefonnummer; ?>">
+        </div>
+
+    <div class="form-grid">
         <label for="datenschutz">Ich stimme den <a href="./agb" target="_blank">AGB</a> und den Datenschutzbestimmungen zu.</label>
         <input type="checkbox" id="datenschutz" name="datenschutz" value="1" <?php echo isset($datenschutz) && $datenschutz == '1' ? 'checked' : ''; ?>><br>
+    </div>
+
         <input type="hidden" name="formularSeite" value="1">
         <div class="button-container">
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
@@ -288,10 +301,16 @@ if ($formularSeite == 4) : ?>
         </div>
         <h1>Energieverbrauch</h1>
         <h2>Geben Sie Ihren Jahresverbrauch oder die Haushaltsgröße an.</h2>
-        <label for="stromverbrauch">Jahresverbrauch (in kWh):</label><br>
-        <input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" min="0" step="100" placeholder="0" /><br><br>
-        <label for="personen">Haushaltsgröße (in Personen):</label><br>
-        <input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" min="0" step="1" placeholder="0"><br><br>
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="stromverbrauch">Jahresverbrauch (in kWh):</label><br>
+                <input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" min="0" step="100" placeholder="0" /><br><br>
+            </div>
+            <div class="form-group">
+                <label for="personen">Haushaltsgröße (in Personen):</label><br>
+                <input type="number" id="personen" name="personen" value="<?php echo $personen; ?>" min="0" step="1" placeholder="0"><br><br>
+            </div>
+        </div>
         <input type="hidden" name="formularSeite" value="4">
         <div class="button-container">
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
@@ -534,13 +553,12 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
             </div>
         <h1>Ihr persönliches Angebot wurde erstellt!</h1>
         <h2>Ihr individueller Bereich steht jetzt bereit. Sie können ihn direkt herunterladen oder bequem per E-Mail erhalten.</h2>
-        
-            <input type="button" value="Bericht herunterladen"><br><br>
-            <input type="button" value="An E-Mail schicken"><br><br>
+
+            <input type="submit" value="Bericht herunterladen"><br><br>
+            <input type="submit" value="An E-Mail schicken"><br><br>
 
             <input type="hidden" name="formularSeite" value="8">
             <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf bald mit Ihnen in Verbindung setzen.</h2><br><br>
-            <button type="submit" name="navigation" value="zurueck">Zurück</button>
 
             <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
             <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
