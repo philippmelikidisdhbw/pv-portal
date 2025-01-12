@@ -129,30 +129,42 @@ ob_start();
 
             //Speichergröße setzen
             if (isset($_POST['speicherGroesse'])) {
-                $speicherGroesse = $_POST['speicherGroesse'];
+                if ($speicherCheckbox === '1') {
+                    $speicherGroesse = $_POST['speicherGroesse'];
+                } else {
+                    $speicherGroesse = "-";
+                }
             }
 
             //Wallboxtyp setzen
             if (isset($_POST['wallboxTyp'])) {
-                $wallboxTyp = $_POST['wallboxTyp'];
+                if ($wallboxCheckbox === '1') {
+                    $wallboxTyp = $_POST['wallboxTyp'];
+                } else {
+                    $wallboxTyp = "-";
+                }
             }
             
             //Förderungshöhe setzen
             if (isset($_POST['foerderungHoehe'])) {
-                $foerderungHoehe = $_POST['foerderungHoehe'];
+                if ($foerderungCheckbox === '1') {
+                    $foerderungHoehe = $_POST['foerderungHoehe'];
+                } else {
+                    $foerderungHoehe = "-";
+                }
             }
             
             //Modultyp setzen
             if (isset($_POST['modultyp'])) {
                 $modultyp = $_POST['modultyp'];
             }
+
             //Gesamtpreis setzen
             if (isset($_POST['gesamtpreis'])) {
                 $gesamtpreis = $_POST['gesamtpreis'];
             }
 
-
-            //Name, Email setzen
+            //Name setzen
             if (isset($_POST['vornameNachname'])) {
                 $vornameNachname = $_POST['vornameNachname'];
             }
@@ -163,8 +175,11 @@ ob_start();
             }
 
             //Telefonnummer setzen
-            if(isset($_POST['telefonnummer'])){
+            if (isset($_POST['telefonnummer'])) {
                 $telefonnummer = $_POST['telefonnummer'];
+                if (empty($telefonnummer) || $telefonnummer === '' || $telefonnummer === 0) {
+                    $telefonnummer = "-";
+                }
             }
         }
     ?>
@@ -364,6 +379,20 @@ if($foerderungCheckbox === '1'){
 
 //Berechnet den Gesamtpreis
 $gesamtpreis = round((float) $preisModule + (float) $preisSpeicher + (float) $preisWallbox - (float) $foerderung, 2);
+
+
+
+//Eingabevalidierung
+if(empty($telefonnummer || $telefonnummer === '' || $telefonnummer === 0))
+{
+    $telefonnummer = "-";
+}
+
+if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
+{
+    $foerderungHoehe = "-";
+}
+
 ?>
 
     <form method="POST" action="">
@@ -465,6 +494,7 @@ $gesamtpreis = round((float) $preisModule + (float) $preisSpeicher + (float) $pr
             <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp;?>">
             <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">
             <input type="hidden" name="modultyp" value="<?php echo $modultyp;?>">
+            <input type="hidden" name="gesamtpreis" value="<?php echo $gesamtpreis;?>">
             <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
             <input type="hidden" name="email" value="<?php echo $email;?>">
             <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
@@ -516,6 +546,24 @@ $gesamtpreis = round((float) $preisModule + (float) $preisSpeicher + (float) $pr
             <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf bald mit Ihnen in Verbindung setzen.</h2><br><br>
             <button type="submit" name="navigation" value="zurueck">Zurück</button>
             <button type="submit" name="navigation" value="weiter">Beenden</button>
+
+            <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
+            <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
+            <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
+            <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
+            <input type="hidden" name="personen" value="<?php echo $personen;?>">
+            <input type="hidden" name="speicherCheckbox" value="<?php echo $speicherCheckbox;?>">
+            <input type="hidden" name="wallboxCheckbox" value="<?php echo $wallboxCheckbox;?>">
+            <input type="hidden" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox;?>">
+            <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse;?>">
+            <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp;?>">
+            <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">
+            <input type="hidden" name="modultyp" value="<?php echo $modultyp;?>">
+            <input type="hidden" name="gesamtpreis" value="<?php echo $gesamtpreis;?>">
+            <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
+            <input type="hidden" name="email" value="<?php echo $email;?>">
+            <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
+            <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
     </form>
 <?php endif; ?>
 
