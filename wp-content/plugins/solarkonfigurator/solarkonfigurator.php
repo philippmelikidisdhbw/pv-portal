@@ -97,6 +97,11 @@ ob_start();
                 $adresse = $_POST['adresse'];
             }
 
+            //Dachfläche setzen
+            if (isset($_POST['dachflaeche'])) {
+                $dachflaeche = $_POST['dachflaeche'];
+            }
+
             //Dachtyp- und Dachneigung setzen
             if (isset($_POST['dachtyp']) && isset($_POST['dachneigung'])) {
                 $dachtyp = $_POST['dachtyp'];
@@ -244,6 +249,9 @@ if ($formularSeite == 1) : ?>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
         <label>Adresse:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
+        <label>Dachfläche:</label>
+        <input type="text" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" required><br><br>
+
         <input type="hidden" name="formularSeite" value="2">
         <div class="button-container">
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
@@ -283,6 +291,7 @@ if ($formularSeite == 3) : ?>
         </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
+        <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
         <input type="hidden" name="email" value="<?php echo $email;?>">
         <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
@@ -318,6 +327,7 @@ if ($formularSeite == 4) : ?>
         </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
+        <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
         <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
@@ -363,6 +373,7 @@ if ($formularSeite == 5) : ?>
         </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
+        <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
         <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
@@ -398,6 +409,7 @@ if ($formularSeite == 6) : ?>
         </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
+        <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
         <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
@@ -525,6 +537,7 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
     </div>
 
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
+        <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
         <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
         <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
@@ -561,6 +574,7 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
             <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf bald mit Ihnen in Verbindung setzen.</h2><br><br>
 
             <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
+            <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
             <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
             <input type="hidden" name="dachneigung" value="<?php echo $dachneigung;?>">
             <input type="hidden" name="stromverbrauch" value="<?php echo $stromverbrauch;?>">
