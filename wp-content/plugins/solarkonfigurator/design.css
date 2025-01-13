@@ -242,15 +242,16 @@ label {
 }
 
 
-
-#place-picker-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #place-picker-container {
-            text-align: left;
-        }
+gmpx-place-picker {
+    width: 100%; 
+    max-width: none;
+    border: 1px solid #4CAF50;
+    box-sizing: border-box;
+    border-radius: 4px;
+   
+}
 
 
+
+
+    

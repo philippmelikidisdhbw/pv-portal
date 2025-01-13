@@ -60,13 +60,50 @@ ob_start();
     <link href="design.css" rel="stylesheet">
 
 
+    <script>
+        async function init() {
 
-//Google Maps
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js">
+            const placePicker = document.querySelector('gmpx-place-picker');
+            placePicker.addEventListener('gmpx-placechange', () => {
+                const place = placePicker.value;
+
+                if (!place.location) {
+                    window.alert(
+                        "No details available for input: '" + place.name + "'"
+                    );
+                    infowindow.close();
+                    marker.position = null;
+                    return;
+                }
+
+                if (place.viewport) {
+                    map.innerMap.fitBounds(place.viewport);
+                } else {
+                    map.center = place.location;
+                    map.zoom = 17;
+                }
+
+                marker.position = place.location;
+                infowindow.setContent(
+                    `<strong>${place.displayName}</strong><br>
+             <span>${place.formattedAddress}</span>
+          `);
+                infowindow.open(map.innerMap, marker);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js">
+    </script>
+
 </head>
+
+
+
+
 <body>
     <?php
         //default-Werte setzen
@@ -262,20 +299,23 @@ if ($formularSeite == 1) : ?>
         </div>
         <h1>Adresse und Dachfläche</h1>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
+
+
+
+
         <label>Adresse*:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
+
+
+
+        <gmpx-api-loader key="AIzaSyDorSR66oY7OoW9Wod1crR5mFypW2VhaE8" solution-channel="GMP_GE_placepicker_v2"></gmpx-api-loader>
+        <gmpx-place-picker id="adresse" placeholder="Geben Sie eine Adresse ein" value="<?php echo $adresse; ?>" required></gmpx-place-picker>
+
+
+
+
         <label>Dachfläche*:</label>
         <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" min="11.55" step="0.001" required><br><br>
-
-
-
-        <gmpx-api-loader key="AIzaSyDorSR66oY7OoW9Wod1crR5mFypW2VhaE8" solution-channel="GMP_GE_placepicker_v2">
-        </gmpx-api-loader>
-        <div id="place-picker-box">
-            <div id="place-picker-container">
-                <gmpx-place-picker placeholder="Enter an address"></gmpx-place-picker>
-            </div>
-        </div>
 
 
 
