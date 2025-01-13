@@ -247,9 +247,9 @@ if ($formularSeite == 1) : ?>
         </div>
         <h1>Adresse</h1>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
-        <label>Adresse:</label>
+        <label>Adresse*:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
-        <label>Dachfläche:</label>
+        <label>Dachfläche*:</label>
         <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" required><br><br>
 
         <input type="hidden" name="formularSeite" value="2">
@@ -276,13 +276,13 @@ if ($formularSeite == 3) : ?>
         </div>
         <h1>Dachtyp und Neigung</h1>
         <h2>Wählen Sie den Dachtyp und die Dachneigung aus.</h2>
-        <label for="dachtyp">Dachtyp:</label><br>
+        <label for="dachtyp">Dachtyp*:</label><br>
         <select id="dachtyp" name="dachtyp" required>
             <option value="Flachdach" <?php if($dachtyp == 'Flachdach') echo 'selected'; ?>>Flachdach</option>
             <option value="Satteldach" <?php if($dachtyp == 'Satteldach') echo 'selected'; ?>>Satteldach</option>
             <option value="Pultdach" <?php if($dachtyp == 'Pultdach') echo 'selected'; ?>>Pultdach</option>
         </select><br><br>
-        <label for="dachneigung">Dachneigung: <span id="dachneigungValue"><?php echo isset($dachneigung) ? $dachneigung : 45; ?>°</span></label><br>
+        <label for="dachneigung">Dachneigung*: <span id="dachneigungValue"><?php echo isset($dachneigung) ? $dachneigung : 45; ?>°</span></label><br>
         <input type="range" id="dachneigung" name="dachneigung" min="0" max="90" value="<?php echo isset($dachneigung) ? $dachneigung : 45; ?>" step="1" oninput="document.getElementById('dachneigungValue').innerText = this.value + '°'" required><br><br>
         <input type="hidden" name="formularSeite" value="3">
         <div class="button-container">
