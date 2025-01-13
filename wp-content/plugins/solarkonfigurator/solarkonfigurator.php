@@ -58,6 +58,14 @@ ob_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistent</title>
     <link href="design.css" rel="stylesheet">
+
+
+
+//Google Maps
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js">
+    </script>
+
+
 </head>
 <body>
     <?php
@@ -79,15 +87,15 @@ ob_start();
         $modultyp = "";
         $gesamtpreis = 0;
         $gesamtpreisRabatt = 0;
-        
 
-      
+
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             //Seitenwechsel
             if (isset($_POST['formularSeite'])) {
                 $formularSeite = $_POST['formularSeite'];
-            
+
                 if (isset($_POST['navigation'])) {
                     if ($_POST['navigation'] == 'weiter') {
                         $formularSeite++; // Seite vorwärts
@@ -131,7 +139,7 @@ ob_start();
             } else {
                 $speicherCheckbox = '0'; // Checkbox ist nicht angekreuzt
             }
-            
+
              //Wallbox-Checkbox setzen
             if (isset($_POST['wallboxCheckbox']) && $_POST['wallboxCheckbox'] == '1') {
                 $wallboxCheckbox = '1'; // Checkbox ist angekreuzt
@@ -167,7 +175,7 @@ ob_start();
                     $wallboxTyp = "Nein"; //für PDF
                 }
             }
-            
+
             //Förderungshöhe setzen
             if (isset($_POST['foerderungHoehe'])) {
                 if ($foerderungCheckbox === '1') {
@@ -176,7 +184,7 @@ ob_start();
                     $foerderungHoehe = 0;
                 }
             }
-            
+
             //Modultyp setzen
             if (isset($_POST['modultyp'])) {
                 $modultyp = $_POST['modultyp'];
@@ -259,6 +267,19 @@ if ($formularSeite == 1) : ?>
         <label>Dachfläche*:</label>
         <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" min="11.55" step="0.001" required><br><br>
 
+
+
+        <gmpx-api-loader key="AIzaSyDorSR66oY7OoW9Wod1crR5mFypW2VhaE8" solution-channel="GMP_GE_placepicker_v2">
+        </gmpx-api-loader>
+        <div id="place-picker-box">
+            <div id="place-picker-container">
+                <gmpx-place-picker placeholder="Enter an address"></gmpx-place-picker>
+            </div>
+        </div>
+
+
+
+
         <input type="hidden" name="formularSeite" value="2">
         <div class="button-container">
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
@@ -272,7 +293,7 @@ if ($formularSeite == 1) : ?>
 <?php endif; ?>
 
 
-<?php 
+<?php
 //Seite 3
 if ($formularSeite == 3) : ?>
     <form method="POST" action="">
@@ -306,7 +327,7 @@ if ($formularSeite == 3) : ?>
 <?php endif; ?>
 
 
-<?php 
+<?php
 //Seite 4
 if ($formularSeite == 4) : ?>
     <form method="POST" action="">
@@ -389,7 +410,7 @@ if ($formularSeite == 5) : ?>
 <?php endif; ?>
 
 
-<?php 
+<?php
 //Seite 6
 if ($formularSeite == 6) : ?>
     <form method="POST" action="">
@@ -421,11 +442,11 @@ if ($formularSeite == 6) : ?>
         <input type="hidden" name="foerderungCheckbox" value="<?php echo $foerderungCheckbox;?>">
         <input type="hidden" name="speicherGroesse" value="<?php echo $speicherGroesse;?>">
         <input type="hidden" name="wallboxTyp" value="<?php echo $wallboxTyp;?>">
-        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">  
+        <input type="hidden" name="foerderungHoehe" value="<?php echo $foerderungHoehe;?>">
         <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
         <input type="hidden" name="email" value="<?php echo $email;?>">
         <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
-        <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">  
+        <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
     </form>
 <?php endif; ?>
 
@@ -485,7 +506,7 @@ $preisModule =  (float) $preisProWp *  (float) $modulanzahl *  (float) $wpProMod
 if ($wallboxCheckbox === '1') {
     if ($wallboxTyp === 'Standard-Wallbox') {
         $preisWallbox = 1500;
-    } 
+    }
     if ($wallboxTyp === 'Bidirektionale Wallbox') {
         $preisWallbox = 3500;
     }
@@ -497,7 +518,7 @@ if ($speicherCheckbox === '1') {
         $speicherJaNein = "Ja";
     }
 
-//Setzt Förderungsbetrag    
+//Setzt Förderungsbetrag
 if($foerderungCheckbox === '1'){
         $foerderung = $foerderungHoehe;
         $foerderungJaNein = "Ja";
@@ -552,7 +573,7 @@ if(empty($telefonnummer || $telefonnummer === '' || $telefonnummer === 0))
     $gesamtkostenPDF = strval($gesamtpreis . "€");
     $gesamtkostenRabattPDF = strval($gesamtpreisRabatt . "€");
 
-    
+
     //PDF-Erstellen
 
     ?>
@@ -604,7 +625,7 @@ if(empty($telefonnummer || $telefonnummer === '' || $telefonnummer === 0))
 
 <?php if ($formularSeite == 8) : ?>
     <?php
-    //PDF erstellen 
+    //PDF erstellen
     //
     //
     ?>

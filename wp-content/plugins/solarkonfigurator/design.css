@@ -241,3 +241,16 @@ label {
     flex-direction: column;
 }
 
+
+
+#place-picker-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #place-picker-container {
+            text-align: left;
+        }
+
+
