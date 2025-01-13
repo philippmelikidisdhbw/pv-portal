@@ -245,7 +245,7 @@ if ($formularSeite == 1) : ?>
             <div class="progress-bar2"></div>
             <span class="progress-text">20%</span>
         </div>
-        <h1>Adresse</h1>
+        <h1>Adresse und Dachfläche</h1>
         <h2>Geben Sie Ihre Adresse ein, um den Standort für die Solaranlage festzulegen.</h2>
         <label>Adresse*:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
