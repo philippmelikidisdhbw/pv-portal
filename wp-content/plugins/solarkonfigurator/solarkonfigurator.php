@@ -226,8 +226,8 @@ if ($formularSeite == 1) : ?>
         </div>
 
     <div class="form-grid">
-        <label for="datenschutz">Ich stimme den <a href="./agb" target="_blank">AGB</a> und den Datenschutzbestimmungen zu.</label>
-        <input type="checkbox" id="datenschutz" name="datenschutz" value="1" <?php echo isset($datenschutz) && $datenschutz == '1' ? 'checked' : ''; ?>><br>
+        <label for="datenschutz">Ich stimme den <a href="./agb" target="_blank">AGB</a> und den Datenschutzbestimmungen zu.*</label>
+        <input type="checkbox" id="datenschutz" name="datenschutz" value="1" <?php echo isset($datenschutz) && $datenschutz == '1' ? 'checked' : '';?> required><br>
     </div>
 
         <input type="hidden" name="formularSeite" value="1">
@@ -250,7 +250,7 @@ if ($formularSeite == 1) : ?>
         <label>Adresse*:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
         <label>Dachfläche*:</label>
-        <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" required><br><br>
+        <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" min="2" step="2" required><br><br>
 
         <input type="hidden" name="formularSeite" value="2">
         <div class="button-container">
@@ -477,10 +477,10 @@ $preisModule =  (float) $preisProWp *  (float) $modulanzahl *  (float) $wpProMod
 //Setzt den Preis für die Wallbox
 if ($wallboxCheckbox === '1') {
     if ($wallboxTyp === 'Standard-Wallbox') {
-        $preisWallbox = 1500.00;
+        $preisWallbox = 1500;
     } 
     if ($wallboxTyp === 'Bidirektionale Wallbox') {
-        $preisWallbox = 3500.00;
+        $preisWallbox = 3500;
     }
 }
 
@@ -559,6 +559,12 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
 <?php endif; ?>
 
 <?php if ($formularSeite == 8) : ?>
+    <?php
+    //Variablen für PDF-Dokument anpassen
+
+    //PDF-Erstellen
+
+    ?>
         <form method="POST" action="">
             <div class="progress-container">
                 <div class="progress-bar8"></div>
