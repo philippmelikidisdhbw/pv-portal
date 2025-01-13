@@ -257,7 +257,6 @@ if ($formularSeite == 1) : ?>
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
         </div>
-
         <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
         <input type="hidden" name="email" value="<?php echo $email;?>">
         <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
@@ -325,7 +324,6 @@ if ($formularSeite == 4) : ?>
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
         </div>
-
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
@@ -336,7 +334,6 @@ if ($formularSeite == 4) : ?>
         <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
      </form>
 <?php endif; ?>
-
 
 <?php
 //Seite 5
@@ -371,7 +368,6 @@ if ($formularSeite == 5) : ?>
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
         </div>
-
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
@@ -407,7 +403,6 @@ if ($formularSeite == 6) : ?>
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
         </div>
-
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
