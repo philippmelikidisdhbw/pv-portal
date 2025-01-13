@@ -62,18 +62,23 @@ ob_start();
 <body>
     <?php
         //default-Werte setzen
-        $formularSeite = 1;
+
+        $formularSeite = 1; //Seitenwechsel
+        $vornameNachname = $email = $telefonnummer = '';
         $adresse = "";
         $dachtyp = "";
         $dachneigung = 45;
         $dachflaeche = 0;
         $stromverbrauch = $personen = 0;
-        $speicherCheckbox = $wallboxCheckbox = $foerderungCheckbox = $datenschutz = '';
+        $speicherCheckbox = $wallboxCheckbox = $foerderungCheckbox = $datenschutz = ''; //Checkboxen
+        $foerderungJaNein = "Nein"; //für PDF
         $foerderungHoehe = 0;
-        $speicherGroesse = $wallboxTyp = '';
-        $modultyp = "Basismodul";
-        $vornameNachname = $email = $telefonnummer = '';
+        $speicherGroesse = 0;
+        $wallboxTyp = "";
+        $speicherJaNein = "Nein"; //für PDF
+        $modultyp = "";
         $gesamtpreis = 0;
+        $gesamtpreisRabatt = 0;
         
 
       
@@ -102,9 +107,13 @@ ob_start();
                 $dachflaeche = $_POST['dachflaeche'];
             }
 
-            //Dachtyp- und Dachneigung setzen
-            if (isset($_POST['dachtyp']) && isset($_POST['dachneigung'])) {
+            //Dachtyp setzen
+            if (isset($_POST['dachtyp'])){
                 $dachtyp = $_POST['dachtyp'];
+            }
+
+            //Dachneigung setzen
+            if (isset($_POST['dachneigung'])) {
                 $dachneigung = $_POST['dachneigung'];
             }
 
@@ -147,8 +156,6 @@ ob_start();
             if (isset($_POST['speicherGroesse'])) {
                 if ($speicherCheckbox === '1') {
                     $speicherGroesse = $_POST['speicherGroesse'];
-                } else {
-                    $speicherGroesse = "-";
                 }
             }
 
@@ -157,7 +164,7 @@ ob_start();
                 if ($wallboxCheckbox === '1') {
                     $wallboxTyp = $_POST['wallboxTyp'];
                 } else {
-                    $wallboxTyp = "-";
+                    $wallboxTyp = "Nein"; //für PDF
                 }
             }
             
@@ -166,7 +173,7 @@ ob_start();
                 if ($foerderungCheckbox === '1') {
                     $foerderungHoehe = $_POST['foerderungHoehe'];
                 } else {
-                    $foerderungHoehe = "-";
+                    $foerderungHoehe = 0;
                 }
             }
             
@@ -250,14 +257,13 @@ if ($formularSeite == 1) : ?>
         <label>Adresse*:</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $adresse; ?>" required><br><br>
         <label>Dachfläche*:</label>
-        <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" min="2" step="2" required><br><br>
+        <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo $dachflaeche; ?>" min="11.55" step="0.001" required><br><br>
 
         <input type="hidden" name="formularSeite" value="2">
         <div class="button-container">
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
         </div>
-
         <input type="hidden" name="vornameNachname" value="<?php echo $vornameNachname;?>">
         <input type="hidden" name="email" value="<?php echo $email;?>">
         <input type="hidden" name="telefonnummer" value="<?php echo $telefonnummer;?>">
@@ -313,7 +319,7 @@ if ($formularSeite == 4) : ?>
         <div class="form-grid">
             <div class="form-group">
                 <label for="stromverbrauch">Jahresverbrauch (in kWh):</label><br>
-                <input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" min="0" step="100" placeholder="0" /><br><br>
+                <input type="number" id="stromverbrauch" name="stromverbrauch" value="<?php echo $stromverbrauch; ?>" min="0" step="1" placeholder="0" /><br><br>
             </div>
             <div class="form-group">
                 <label for="personen">Haushaltsgröße (in Personen):</label><br>
@@ -325,7 +331,6 @@ if ($formularSeite == 4) : ?>
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
         </div>
-
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
@@ -336,7 +341,6 @@ if ($formularSeite == 4) : ?>
         <input type="hidden" name="datenschutz" value="<?php echo $datenschutz;?>">
      </form>
 <?php endif; ?>
-
 
 <?php
 //Seite 5
@@ -365,13 +369,12 @@ if ($formularSeite == 5) : ?>
         </select><br><br>
         <label for="foerderungCheckbox"> Förderung hinzufügen (in Euro):</label>
         <input type="checkbox" id="foerderungCheckbox" name="foerderungCheckbox" value="1" <?php echo isset($foerderungCheckbox) && $foerderungCheckbox == '1' ? 'checked' : ''; ?>><br>
-        <input type="number" id="foerderungHoehe" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>" min="0" max="5000" placeholder="Förderungsbetrag" step="100"><br><br>
+        <input type="number" id="foerderungHoehe" name="foerderungHoehe" value="<?php echo $foerderungHoehe; ?>" min="0" max="5000" placeholder="Förderungsbetrag" step="0.01"><br><br>
         <input type="hidden" name="formularSeite" value="5">
         <div class="button-container">
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
         </div>
-
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
@@ -407,7 +410,6 @@ if ($formularSeite == 6) : ?>
             <button type="submit" name="navigation" value="zurueck" class="btn btn-back"> &larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter  &rarr;</button>
         </div>
-
         <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
         <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
         <input type="hidden" name="dachtyp" value="<?php echo $dachtyp;?>">
@@ -431,26 +433,31 @@ if ($formularSeite == 6) : ?>
 //Seite 7
 if ($formularSeite == 7) : ?>
  <?php
-$wpProModul = 0.0;
-$modulFlaeche = 1.925; 
-$modulanzahl = 0.0;
-$preisProWp = 0.0;
-$preisWallbox = 0.0; 
-$preisModule = 0.0;
-$preisSpeicher = 0.0; 
-$foerderung = 0.0;
+
+ //default-Werte setzen
+$wpProModul = 0;
+$modulFlaeche = 0; //Größe der Module
+$modulanzahl = 0; //Anzahl der Module, die auf das Dach passen
+$preisProWp = 0; //Preis pro Wp in Abhängigkeit der Modulanzahl
+$preisWallbox = 0; //Preis der Wallbox in Abhängigkeit vom Typ
+$preisModule = 0; //Preis für alle Module
+$preisSpeicher = 0; //Preis für den Speicher in Abhängigkeit von der Speichergröße
+$foerderung = 0; //Der Betrag der vom Gesamtpreis abgezogen wird
 
 //Setzt die Stärke der Module in Abhängigkeit vom ausgewählten Modul
 if ($modultyp === 'Basismodul') {
-    $wpProModul = 350.0;
+    $wpProModul = 400.0;
+    $modulFlaeche = 1.925;
 } elseif ($modultyp === 'Premium-Modul') {
-    $wpProModul = 410.0;
+    $wpProModul = 500.0;
+    $modulFlaeche = 2.225;
 } elseif ($modultyp === 'All-Inclusive-Modul') {
-    $wpProModul = 450.0;
+    $wpProModul = 600.0;
+    $modulFlaeche = 2.425;
 }
 
 //Berechnet wieviele Solarmodule auf das Dach passen
-if ($dachflaeche > 0) {
+if ($dachflaeche >= 11.55) {
     $modulanzahl = (int) floor($dachflaeche / $modulFlaeche);
 }
 
@@ -487,15 +494,19 @@ if ($wallboxCheckbox === '1') {
 //Setzt Preis für den Speicher
 if ($speicherCheckbox === '1') {
         $preisSpeicher = $speicherGroesse * 475;
+        $speicherJaNein = "Ja";
     }
 
 //Setzt Förderungsbetrag    
 if($foerderungCheckbox === '1'){
         $foerderung = $foerderungHoehe;
+        $foerderungJaNein = "Ja";
 }
 
 //Berechnet den Gesamtpreis
 $gesamtpreis = round((float) $preisModule + (float) $preisSpeicher + (float) $preisWallbox - (float) $foerderung, 2);
+$rabatt = $gesamtpreis * 0.02;
+$gesamtpreisRabatt = $gesamtpreis - $rabatt;
 
 
 
@@ -505,13 +516,46 @@ if(empty($telefonnummer || $telefonnummer === '' || $telefonnummer === 0))
     $telefonnummer = "-";
 }
 
-if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
-{
-    $foerderungHoehe = "-";
-}
 
-?>
-   
+    //Variablen für Bestätigungsseite und PDF-Dokument anpassen
+
+    //Seite 1
+    $vornameNachnamePDF =strval($vornameNachname);
+    $datumPDF = date('d.m.Y');
+    $telefonnummerPDF = strval($telefonnummer);
+    $emailPDF = strval($email);
+    $adressePDF = strval($adresse);
+    $haushaltsgroeßePDF = strval($personen . " Person/en");
+    $energieverbrauchPDF = strval($stromverbrauch . " kWh");
+
+    //Seite 2
+    $modultypPDF = strval($modultyp);
+    $modulanzahlPDF = strval($modulanzahl);
+    $modulstaerkePDF = strval($wpProModul);
+    $preisProWpPDF = strval($preisProWp . "€/Wp");
+    $dachtypPDF = strval($dachtyp);
+    $dachneigungPDF = strval($dachneigung . "°");
+    $dachfleachePDF = strval($dachflaeche . "m²");
+    $preisDachflaechePDF = strval($preisModule . "€");
+
+    if ($speicherJaNein === "Ja"){
+    $speicherPDF = strval($speicherGroesse . " kWh");
+    } else if ($speicherJaNein === "Nein"){
+        $speicherPDF = strval($speicherJaNein);
+    }
+    $preisSpeicherPDF = strval($preisSpeicher . "€");
+
+    $wallboxTypPDF = strval($wallboxTyp);
+    $preisWallboxPDF = strval($preisWallbox . "€");
+    $foerderungPDF = strval($foerderungJaNein);
+    $foerderungHoehePDF = strval($foerderungHoehe . "€");
+    $gesamtkostenPDF = strval($gesamtpreis . "€");
+    $gesamtkostenRabattPDF = strval($gesamtpreisRabatt . "€");
+
+    
+    //PDF-Erstellen
+
+    ?>
 <form method="POST" action="">
     <div class="progress-container">
         <div class="progress-bar7"></div>
@@ -519,16 +563,16 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
     </div>
         <h1>Bestätigung der Daten</h1>
         <h2>Prüfen Sie Ihre Angaben und die berechneten Optionen.</h2>
-        <label>Vor- und Nachname: <?php echo $vornameNachname; ?></label><br>
-        <label>E-Mail: <?php echo $email; ?></label><br>
-        <label>Telefonnummer: <?php echo $telefonnummer; ?></label><br>
-        <label>Adresse: <?php echo $adresse; ?></label><br>
-        <label>Dachtyp: <?php echo $dachtyp; ?></label><br>
-        <label>Speicher: <?php echo $speicherGroesse; ?></label><br>
-        <label>Ladeinfrastruktur: <?php echo $wallboxTyp; ?></label><br>
-        <label>Förderung: <?php echo $foerderungHoehe; ?></label><br>
-        <label>Modultyp: <?php echo $modultyp; ?></label><br>
-        <label>Vorraussichtliche Kosten: <?php echo $gesamtpreis?></label><br><br>
+        <label>Vor- und Nachname: <?php echo $vornameNachnamePDF; ?></label><br>
+        <label>E-Mail: <?php echo $emailPDF; ?></label><br>
+        <label>Telefonnummer: <?php echo $telefonnummerPDF; ?></label><br>
+        <label>Adresse: <?php echo $adressePDF; ?></label><br>
+        <label>Dachtyp: <?php echo $dachtypPDF; ?></label><br>
+        <label>Speicher: <?php echo $speicherPDF; ?></label><br>
+        <label>Ladeinfrastruktur: <?php echo $wallboxTypPDF; ?></label><br>
+        <label>Förderung: <?php echo $foerderungHoehePDF; ?></label><br>
+        <label>Modultyp: <?php echo $modultypPDF; ?></label><br>
+        <label>Vorraussichtliche Kosten: <?php echo $gesamtkostenPDF?></label><br><br>
 
         <input type="hidden" name="formularSeite" value="7">
     <div class="button-container">
@@ -560,10 +604,9 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
 
 <?php if ($formularSeite == 8) : ?>
     <?php
-    //Variablen für PDF-Dokument anpassen
-
-    //PDF-Erstellen
-
+    //PDF erstellen 
+    //
+    //
     ?>
         <form method="POST" action="">
             <div class="progress-container">
@@ -578,6 +621,7 @@ if(empty($foerderungHoehe || $foerderungHoehe === '' || $foerderungHoehe === 0))
 
             <input type="hidden" name="formularSeite" value="8">
             <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf bald mit Ihnen in Verbindung setzen.</h2><br><br>
+            <button type="button" class="btn btn-next" onclick="window.location.href='https://solarsolutionsgmbh.com';">Zur Startseite</button>
 
             <input type="hidden" name="adresse" value="<?php echo $adresse;?>">
             <input type="hidden" name="dachflaeche" value="<?php echo $dachflaeche;?>">
