@@ -62,3 +62,25 @@ git push origin host
 git push https://github.com/philippmelikidisdhbw/pv-portal.git
 git push https://github.com/philippmelikidisdhbw/pv-portal.git
 [200~
+git push https://github.com/philippmelikidisdhbw/pv-portal.git
+git add .
+git add .
+git remote add origin https://github.com/philippmelikidisdhbw/pv-portal.git
+git branch host
+git checkout host
+git add .
+git checkout -b finish
+git add .
+git commit -m "added project to repo"
+git config --global core.preloadIndex false
+git config --global core.fscache false
+git commit -m "added project to repo"
+git config --global user.email "wi22213@lehre.dhbw-stuttgart.de"
+git config --global user.name "philippmelikidisdhbw"
+git commit -m "added project to repo"
+git branch
+git push
+git push --set-upstream origin finish
+chmod 600 /homepages/16/d4298693242/htdocs/.ssh/id_ed25519
+git push --set-upstream origin finish
+php

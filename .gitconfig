@@ -1,0 +1,6 @@
+[core]
+	preloadIndex = false
+	fscache = false
+[user]
+	email = wi22213@lehre.dhbw-stuttgart.de
+	name = philippmelikidisdhbw

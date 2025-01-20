@@ -19,7 +19,7 @@
     background: #fff;
     padding: 20px 30px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Überschriften im Formular */
@@ -82,7 +82,7 @@
     background: #4CAF50;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 #solarkonfigurator-body input[type=range]::-webkit-slider-runnable-track {
     height: 8px;
@@ -96,7 +96,7 @@
     border-radius: 50%;
     cursor: pointer;
     border: none;
-    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 #solarkonfigurator-body input[type=range]::-moz-range-track {
     height: 8px;
@@ -235,7 +235,7 @@
     border: 2px solid transparent;
     flex: 1 1 250px;
     position: relative;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: border-color 0.2s ease;
     text-align: left;
 }
@@ -273,8 +273,27 @@
     background-color: #ffe6e6;
 }
 
-#solarkonfigurator-body .left-align {
+/* --- Anpassungen für Seite 7: Bestätigungsseite --- */
+/* Alle Texte in der Bestätigungsbox linksbündig */
+#solarkonfigurator-body .confirmation-container,
+#solarkonfigurator-body .confirmation-container p {
     text-align: left !important;
+}
+
+/* --- Anpassungen für Seite 8: Endseite --- */
+/* Endseite: Container für Buttons zentrieren */
+#solarkonfigurator-body .end-page-buttons {
+    display: flex !important;
+    flex-direction: column; /* oder "row", wenn Buttons nebeneinander gewünscht werden */
+    align-items: center !important;
+    justify-content: center;
+    gap: 10px;
+}
+#solarkonfigurator-body .end-page-buttons button,
+#solarkonfigurator-body .end-page-buttons input[type="submit"] {
+    display: inline-block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* Responsive Anpassungen */

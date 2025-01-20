@@ -3,12 +3,23 @@
 Plugin Name: Solarkonfigurator Plugin
 Description: Ein Plugin eines Solarkonfigurators (mit Datenbankanbindung zur Tabelle wp_assistentendb) inkl. PDF-Download, E-Mail-Bericht und Google Maps Auswahl.
 Version: 1.2-mod6
-Author: Fabian Koch und Benedikt Schmuker (überarbeitet)
+Author: Fabian Koch und Benedikt Schmuker
 */
 
 /* ------------------------------------------------------------------------
    1) Plugin-Aktivierung: Tabelle wp_assistentendb erstellen
 ------------------------------------------------------------------------ */
+
+/**
+ * Erstellt die Datenbanktabelle für den Solarkonfigurator, wenn das Plugin aktiviert wird.
+ *
+ * Diese Funktion nutzt die globale Datenbankvariable $wpdb, um eine Tabelle mit dem Präfix
+ * (wp_assistentendb) anzulegen, falls diese noch nicht existiert. Es werden die nötigen Felder
+ * zur Speicherung der Kundeninformationen erstellt.
+ *
+ * @global wpdb $wpdb WordPress-Datenbank-Objekt.
+ * @return void
+ */
 function solarkonfigurator_install() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'assistentendb';
@@ -42,6 +53,15 @@ register_activation_hook(__FILE__, 'solarkonfigurator_install');
 /* ------------------------------------------------------------------------
    2) Plugin-Deaktivierung: Tabelle ggf. löschen (optional)
 ------------------------------------------------------------------------ */
+
+/**
+ * Entfernt (löscht) die Datenbanktabelle wp_assistentendb, wenn das Plugin deaktiviert wird.
+ *
+ * Hinweis: Dies kann optional sein und ggf. entfernt werden, falls keine Datenbanklöschung gewünscht ist.
+ *
+ * @global wpdb $wpdb WordPress-Datenbank-Objekt.
+ * @return void
+ */
 function solarkonfigurator_uninstall() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'assistentendb';
@@ -50,25 +70,48 @@ function solarkonfigurator_uninstall() {
 register_deactivation_hook(__FILE__, 'solarkonfigurator_uninstall');
 
 /* ------------------------------------------------------------------------
-   3) Stylesheet design.css einbinden
+   3) Einbindung des Stylesheets design.css
 ------------------------------------------------------------------------ */
+
+/**
+ * Bindet die CSS-Datei (design.css) des Plugins in die WordPress-Seite ein.
+ *
+ * @return void
+ */
 function solarkonfigurator_enqueue_styles() {
     wp_enqueue_style('solarkonfigurator-style', plugin_dir_url(__FILE__) . 'design.css');
 }
 add_action('wp_enqueue_scripts', 'solarkonfigurator_enqueue_styles');
 
 /* ------------------------------------------------------------------------
-   4) FPDF einbinden und PDF-Funktion definieren
+   4) Einbindung von FPDF und PDF-Funktionalitäten
 ------------------------------------------------------------------------ */
+
+// Einbinden der FPDF-Klasse, falls noch nicht vorhanden
 if ( ! class_exists('FPDF') ) {
     require_once plugin_dir_path(__FILE__) . 'fpdf/fpdf.php';
 }
 
+/**
+ * Konvertiert einen Text von UTF-8 in ISO-8859-1 mit Transliteration.
+ *
+ * @param string $text Der zu konvertierende Text.
+ * @return string Der konvertierte Text.
+ */
 function pdf_conv($text) {
     return iconv('UTF-8', 'ISO-8859-1//TRANSLIT', $text);
 }
 
+/**
+ * Erweiterte FPDF-Klasse zur Erstellung von PDFs mit individuellem Footer.
+ */
 class PDF extends FPDF {
+
+    /**
+     * Fügt im Footer der PDF-Seite einen standardisierten Text ein.
+     *
+     * @return void
+     */
     function Footer() {
         $this->SetY(-15);
         $this->SetFont('Arial','I',8);
@@ -76,6 +119,16 @@ class PDF extends FPDF {
     }
 }
 
+/**
+ * Generiert ein PDF-Dokument basierend auf den übergebenen Kundendaten.
+ *
+ * Diese Funktion erstellt mit Hilfe der erweiterten PDF-Klasse ein mehrseitiges Dokument,
+ * das verschiedene Abschnitte (Kundenangaben, Produktinformation, Kosten) beinhaltet. 
+ * Am Ende wird das PDF als Download ausgeliefert.
+ *
+ * @param array $data Array mit den Kundeneingaben und berechneten Werten.
+ * @return void
+ */
 function solarkonfigurator_generate_pdf($data) {
     global $euro;
     $pdf = new PDF('P','mm','A4');
@@ -273,7 +326,17 @@ function solarkonfigurator_generate_pdf($data) {
 
 /* ------------------------------------------------------------------------
    5) Shortcode definieren: [solarkonfigurator]
------------------------------------------------------------------------- */
+------------------------------------------------------------------------*/
+
+/**
+ * Generiert den HTML-Output für den Solarkonfigurator-Shortcode.
+ *
+ * Diese Funktion verarbeitet die Eingaben aus dem Formular, navigiert zwischen den
+ * unterschiedlichen Formularseiten, versendet Berichte per E-Mail und initiiert den PDF-Download.
+ * Außerdem werden Kundendaten in der Datenbank gespeichert, sofern der Datenschutz bestätigt wurde.
+ *
+ * @return string HTML-Code für den Solarkonfigurator.
+ */
 function solarkonfigurator_shortcode() {
     // Formularfelder definieren
     $felder = array(
@@ -500,7 +563,7 @@ function solarkonfigurator_shortcode() {
                 $modulanzahl = "-";
             }
             $reportHtml .= '<tr><th>Modulanzahl</th><td>' . $modulanzahl . '</td></tr>
-      <tr><th>Voraussichtliche Kosten</th><td>' . ($gesamtpreis ? $gesamtpreis . " €" : '-') . '</td></tr>
+      <tr><th>Voraussichtliche Kosten</th><td>' . ($data['gesamtpreis'] ? $data['gesamtpreis'] . " €" : '-') . '</td></tr>
     </table>
 
     <p>Bitte beachten Sie, dass dieser Bericht unverbindlich ist und auf Grundlage Ihrer Eingaben erstellt wurde.</p>
@@ -867,7 +930,7 @@ function solarkonfigurator_shortcode() {
                 <li>400 Wp pro Modul</li>
                 <li>Gutes Preis-Leistungs-Verhältnis</li>
                 <li>Solide Technologie</li>
-                <li><strong>Ab 5.000 €</strong></li>
+                <li><strong>Ab 2.000 €</strong></li>
               </ul>
             </label>
             <label class="module-card premiummodul">
@@ -878,7 +941,7 @@ function solarkonfigurator_shortcode() {
                 <li>500 Wp pro Modul</li>
                 <li>Hohe Effizienz und Zuverlässigkeit</li>
                 <li>Längere Garantien</li>
-                <li><strong>Ab 9.500 €</strong></li>
+                <li><strong>Ab 3.500 €</strong></li>
               </ul>
             </label>
             <label class="module-card allincludemodul">
@@ -889,7 +952,7 @@ function solarkonfigurator_shortcode() {
                 <li>600 Wp pro Modul</li>
                 <li>Höchste Leistung und Qualität</li>
                 <li>Umfassende Service-Pakete</li>
-                <li><strong>Ab 14.000 €</strong></li>
+                <li><strong>Ab 6.000 €</strong></li>
               </ul>
             </label>
           </div>
@@ -984,7 +1047,7 @@ function solarkonfigurator_shortcode() {
           </div>
           <h1 style="text-align: left;">Bestätigung der Daten</h1>
           <h2 style="text-align: left;">Prüfen Sie Ihre Angaben und die berechneten Optionen.</h2>
-          <div class="left-align">
+          <div class="confirmation-container">
             <p><strong>Vor- und Nachname:</strong> <?php echo esc_html($vornameNachname); ?></p>
             <p><strong>E-Mail:</strong> <?php echo esc_html($email); ?></p>
             <p><strong>Telefonnummer:</strong> <?php echo esc_html($telefonnummer); ?></p>
