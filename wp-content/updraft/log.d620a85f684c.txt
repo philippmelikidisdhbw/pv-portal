@@ -1,0 +1,967 @@
+0000.015 (0) Opened log file at time: Mon, 20 Jan 2025 02:04:26 +0000 on https://solarsolutionsgmbh.com
+0000.018 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.1 WP: 6.7.1 PHP: 8.3.15 (cgi-fcgi, Linux info 3.0 #1337 SMP Tue Jan 01 00:00:00 CEST 2000 all GNU/Linux) MySQL: 10.11.7-MariaDB-log (max packet size=67108864) WPLANG: de_DE Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: -1 (used: 80.6M | 83M) multisite: N openssl: OpenSSL 1.1.1w  11 Sep 2023 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.019 (0) Free space on disk containing Updraft's temporary directory: 917272.1 MB
+0000.021 (0) Tasks: Backup files: 1 (schedule: weekly) Backup DB:  (schedule: daily)
+0000.023 (0) Processed schedules. Combining jobs from co-inciding events. Tasks now: Backup files: 1 Backup DB: 1
+0000.117 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1737291704, seconds_ago=46962)
+0000.121 (0) Set semaphore last lock (fd) time to 2025-01-20 02:04:26
+0000.122 (0) Semaphore lock (fd) complete
+0000.130 (0) Backup run: resumption=0, nonce=d620a85f684c, file_nonce=d620a85f684c begun at=1737338666 (0s ago), job type=backup
+0000.132 (0) Scheduling a resumption (1) after 395 seconds (1737339061) in case this run gets aborted
+0000.194 (0) Checking if we have a zip executable available
+0000.196 (0) Testing: /usr/bin/zip
+0000.345 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.351 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.352 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.354 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.355 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.357 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.359 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.472 (0) Working binary zip found: /usr/bin/zip
+0000.475 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.476 (0) Creation of backups of directories: beginning
+0000.494 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0064.363 (0) Total entities for the zip file: 3150 directories, 18899 files (0 skipped as non-modified), 339 MB
+0064.366 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0064.460 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: size is now: 0.70 MB
+0064.464 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 100 files added (on-disk size: 766.2 KB)
+0064.466 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 200 files added (on-disk size: 766.2 KB)
+0064.468 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 300 files added (on-disk size: 766.2 KB)
+0064.470 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 400 files added (on-disk size: 766.2 KB)
+0064.472 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 500 files added (on-disk size: 766.2 KB)
+0064.474 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 600 files added (on-disk size: 766.2 KB)
+0064.476 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 700 files added (on-disk size: 766.2 KB)
+0064.478 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 800 files added (on-disk size: 766.2 KB)
+0064.481 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 900 files added (on-disk size: 766.2 KB)
+0064.483 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1000 files added (on-disk size: 766.2 KB)
+0064.484 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (6.2 MB, 18899 files batched, 1001 (1002) added so far); re-opening (prior size: 766.2 KB)
+0071.163 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: size is now: 2.60 MB
+0071.167 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1100 files added (on-disk size: 2617.5 KB)
+0071.170 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1200 files added (on-disk size: 2617.5 KB)
+0071.172 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1300 files added (on-disk size: 2617.5 KB)
+0071.173 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (27 MB, 18899 files batched, 330 (1332) added so far); re-opening (prior size: 2617.5 KB)
+0076.091 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: size is now: 8.20 MB
+0076.108 (0) A useful amount of data was added after this amount of zip processing: 5.9 s (normalised: 5.4 s, rate: 4719.9 KB/s)
+0076.112 (0) Performance is good - will increase the amount of data we attempt to batch (time=5.8581380844116, normalised_time=5.4237988552238, max_time=76.095086097717, data points known=1, old_max_bytes=26214400, new_max_bytes=209715200)
+0076.115 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1400 files added (on-disk size: 8402.1 KB)
+0076.118 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1500 files added (on-disk size: 8402.1 KB)
+0076.120 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1600 files added (on-disk size: 8402.1 KB)
+0076.122 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1700 files added (on-disk size: 8402.1 KB)
+0076.125 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1800 files added (on-disk size: 8402.1 KB)
+0076.127 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 1900 files added (on-disk size: 8402.1 KB)
+0076.130 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2000 files added (on-disk size: 8402.1 KB)
+0076.132 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2100 files added (on-disk size: 8402.1 KB)
+0076.134 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2200 files added (on-disk size: 8402.1 KB)
+0076.137 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2300 files added (on-disk size: 8402.1 KB)
+0076.138 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (17.4 MB, 18899 files batched, 1001 (2333) added so far); re-opening (prior size: 8402.1 KB)
+0085.265 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: size is now: 14.10 MB
+0085.270 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2400 files added (on-disk size: 14434.8 KB)
+0085.272 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2500 files added (on-disk size: 14434.8 KB)
+0085.274 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2600 files added (on-disk size: 14434.8 KB)
+0085.277 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2700 files added (on-disk size: 14434.8 KB)
+0085.279 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2800 files added (on-disk size: 14434.8 KB)
+0085.282 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 2900 files added (on-disk size: 14434.8 KB)
+0085.284 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3000 files added (on-disk size: 14434.8 KB)
+0085.287 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3100 files added (on-disk size: 14434.8 KB)
+0085.289 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3200 files added (on-disk size: 14434.8 KB)
+0085.292 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3300 files added (on-disk size: 14434.8 KB)
+0085.294 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (9.2 MB, 18899 files batched, 1001 (3334) added so far); re-opening (prior size: 14434.8 KB)
+0094.466 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: size is now: 20.10 MB
+0094.472 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3400 files added (on-disk size: 20572.9 KB)
+0094.474 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3500 files added (on-disk size: 20572.9 KB)
+0094.477 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3600 files added (on-disk size: 20572.9 KB)
+0094.479 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3700 files added (on-disk size: 20572.9 KB)
+0094.481 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3800 files added (on-disk size: 20572.9 KB)
+0094.484 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 3900 files added (on-disk size: 20572.9 KB)
+0094.486 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4000 files added (on-disk size: 20572.9 KB)
+0094.488 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4100 files added (on-disk size: 20572.9 KB)
+0094.490 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4200 files added (on-disk size: 20572.9 KB)
+0094.493 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4300 files added (on-disk size: 20572.9 KB)
+0094.494 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (11.5 MB, 18899 files batched, 1001 (4335) added so far); re-opening (prior size: 20572.9 KB)
+0108.196 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4400 files added (on-disk size: 24112.6 KB)
+0108.198 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4500 files added (on-disk size: 24112.6 KB)
+0108.201 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4600 files added (on-disk size: 24112.6 KB)
+0108.203 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4700 files added (on-disk size: 24112.6 KB)
+0108.206 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4800 files added (on-disk size: 24112.6 KB)
+0108.209 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 4900 files added (on-disk size: 24112.6 KB)
+0108.211 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5000 files added (on-disk size: 24112.6 KB)
+0108.213 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5100 files added (on-disk size: 24112.6 KB)
+0108.216 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5200 files added (on-disk size: 24112.6 KB)
+0108.218 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5300 files added (on-disk size: 24112.6 KB)
+0108.221 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (12.8 MB, 18899 files batched, 1001 (5336) added so far); re-opening (prior size: 24112.6 KB)
+0121.231 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: size is now: 28.80 MB
+0121.236 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5400 files added (on-disk size: 29467.5 KB)
+0121.238 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5500 files added (on-disk size: 29467.5 KB)
+0121.242 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5600 files added (on-disk size: 29467.5 KB)
+0121.244 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5700 files added (on-disk size: 29467.5 KB)
+0121.247 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5800 files added (on-disk size: 29467.5 KB)
+0121.249 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 5900 files added (on-disk size: 29467.5 KB)
+0121.252 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6000 files added (on-disk size: 29467.5 KB)
+0121.255 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6100 files added (on-disk size: 29467.5 KB)
+0121.257 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6200 files added (on-disk size: 29467.5 KB)
+0121.260 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6300 files added (on-disk size: 29467.5 KB)
+0121.262 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (5.7 MB, 18899 files batched, 1001 (6337) added so far); re-opening (prior size: 29467.5 KB)
+0130.933 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6400 files added (on-disk size: 31242 KB)
+0130.935 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6500 files added (on-disk size: 31242 KB)
+0130.938 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6600 files added (on-disk size: 31242 KB)
+0130.940 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6700 files added (on-disk size: 31242 KB)
+0130.943 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6800 files added (on-disk size: 31242 KB)
+0130.945 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 6900 files added (on-disk size: 31242 KB)
+0130.948 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7000 files added (on-disk size: 31242 KB)
+0130.950 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7100 files added (on-disk size: 31242 KB)
+0130.952 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7200 files added (on-disk size: 31242 KB)
+0130.955 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7300 files added (on-disk size: 31242 KB)
+0130.956 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (3.9 MB, 18899 files batched, 1001 (7338) added so far); re-opening (prior size: 31242 KB)
+0142.133 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7400 files added (on-disk size: 32687 KB)
+0142.135 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7500 files added (on-disk size: 32687 KB)
+0142.138 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7600 files added (on-disk size: 32687 KB)
+0142.140 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7700 files added (on-disk size: 32687 KB)
+0142.142 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7800 files added (on-disk size: 32687 KB)
+0142.144 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 7900 files added (on-disk size: 32687 KB)
+0142.147 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8000 files added (on-disk size: 32687 KB)
+0142.149 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8100 files added (on-disk size: 32687 KB)
+0142.151 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8200 files added (on-disk size: 32687 KB)
+0142.153 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8300 files added (on-disk size: 32687 KB)
+0142.155 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (13.4 MB, 18899 files batched, 1001 (8339) added so far); re-opening (prior size: 32687 KB)
+0153.103 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8400 files added (on-disk size: 37500.4 KB)
+0153.105 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8500 files added (on-disk size: 37500.4 KB)
+0153.108 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8600 files added (on-disk size: 37500.4 KB)
+0153.111 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8700 files added (on-disk size: 37500.4 KB)
+0153.114 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8800 files added (on-disk size: 37500.4 KB)
+0153.117 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 8900 files added (on-disk size: 37500.4 KB)
+0153.119 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9000 files added (on-disk size: 37500.4 KB)
+0153.121 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9100 files added (on-disk size: 37500.4 KB)
+0153.124 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9200 files added (on-disk size: 37500.4 KB)
+0153.126 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9300 files added (on-disk size: 37500.4 KB)
+0153.128 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (18 MB, 18899 files batched, 1001 (9340) added so far); re-opening (prior size: 37500.4 KB)
+0161.717 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: size is now: 45.70 MB
+0161.721 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9400 files added (on-disk size: 46778.8 KB)
+0161.723 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9500 files added (on-disk size: 46778.8 KB)
+0161.726 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9600 files added (on-disk size: 46778.8 KB)
+0161.728 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9700 files added (on-disk size: 46778.8 KB)
+0161.730 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9800 files added (on-disk size: 46778.8 KB)
+0161.732 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 9900 files added (on-disk size: 46778.8 KB)
+0161.734 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10000 files added (on-disk size: 46778.8 KB)
+0161.737 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10100 files added (on-disk size: 46778.8 KB)
+0161.739 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10200 files added (on-disk size: 46778.8 KB)
+0161.741 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10300 files added (on-disk size: 46778.8 KB)
+0161.743 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (0.8 MB, 18899 files batched, 1001 (10341) added so far); re-opening (prior size: 46778.8 KB)
+0165.472 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10400 files added (on-disk size: 47500.2 KB)
+0165.476 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10500 files added (on-disk size: 47500.2 KB)
+0165.478 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10600 files added (on-disk size: 47500.2 KB)
+0165.481 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10700 files added (on-disk size: 47500.2 KB)
+0165.483 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10800 files added (on-disk size: 47500.2 KB)
+0165.485 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 10900 files added (on-disk size: 47500.2 KB)
+0165.488 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11000 files added (on-disk size: 47500.2 KB)
+0165.490 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11100 files added (on-disk size: 47500.2 KB)
+0165.492 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11200 files added (on-disk size: 47500.2 KB)
+0165.495 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11300 files added (on-disk size: 47500.2 KB)
+0165.496 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (6.7 MB, 18899 files batched, 1001 (11342) added so far); re-opening (prior size: 47500.2 KB)
+0171.210 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11400 files added (on-disk size: 50197.9 KB)
+0171.213 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11500 files added (on-disk size: 50197.9 KB)
+0171.215 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11600 files added (on-disk size: 50197.9 KB)
+0171.217 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11700 files added (on-disk size: 50197.9 KB)
+0171.219 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11800 files added (on-disk size: 50197.9 KB)
+0171.221 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 11900 files added (on-disk size: 50197.9 KB)
+0171.224 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12000 files added (on-disk size: 50197.9 KB)
+0171.226 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12100 files added (on-disk size: 50197.9 KB)
+0171.229 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12200 files added (on-disk size: 50197.9 KB)
+0171.232 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12300 files added (on-disk size: 50197.9 KB)
+0171.234 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (16.8 MB, 18899 files batched, 1001 (12343) added so far); re-opening (prior size: 50197.9 KB)
+0179.332 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12400 files added (on-disk size: 56838.1 KB)
+0179.334 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12500 files added (on-disk size: 56838.1 KB)
+0179.337 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12600 files added (on-disk size: 56838.1 KB)
+0179.340 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12700 files added (on-disk size: 56838.1 KB)
+0179.342 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12800 files added (on-disk size: 56838.1 KB)
+0179.344 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 12900 files added (on-disk size: 56838.1 KB)
+0179.347 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13000 files added (on-disk size: 56838.1 KB)
+0179.350 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13100 files added (on-disk size: 56838.1 KB)
+0179.352 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13200 files added (on-disk size: 56838.1 KB)
+0179.355 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13300 files added (on-disk size: 56838.1 KB)
+0179.357 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (17.6 MB, 18899 files batched, 1001 (13344) added so far); re-opening (prior size: 56838.1 KB)
+0190.898 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13400 files added (on-disk size: 63017.3 KB)
+0190.901 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13500 files added (on-disk size: 63017.3 KB)
+0190.903 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13600 files added (on-disk size: 63017.3 KB)
+0190.905 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13700 files added (on-disk size: 63017.3 KB)
+0190.908 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13800 files added (on-disk size: 63017.3 KB)
+0190.910 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 13900 files added (on-disk size: 63017.3 KB)
+0190.912 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14000 files added (on-disk size: 63017.3 KB)
+0190.915 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14100 files added (on-disk size: 63017.3 KB)
+0190.917 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14200 files added (on-disk size: 63017.3 KB)
+0190.919 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14300 files added (on-disk size: 63017.3 KB)
+0190.921 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (12.7 MB, 18899 files batched, 1001 (14345) added so far); re-opening (prior size: 63017.3 KB)
+0198.176 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14400 files added (on-disk size: 68448.9 KB)
+0198.193 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14500 files added (on-disk size: 68448.9 KB)
+0198.198 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14600 files added (on-disk size: 68448.9 KB)
+0198.201 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14700 files added (on-disk size: 68448.9 KB)
+0198.206 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14800 files added (on-disk size: 68448.9 KB)
+0198.208 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 14900 files added (on-disk size: 68448.9 KB)
+0198.210 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15000 files added (on-disk size: 68448.9 KB)
+0198.212 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15100 files added (on-disk size: 68448.9 KB)
+0198.214 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15200 files added (on-disk size: 68448.9 KB)
+0198.217 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15300 files added (on-disk size: 68448.9 KB)
+0198.218 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (26.1 MB, 18899 files batched, 1001 (15346) added so far); re-opening (prior size: 68448.9 KB)
+0210.422 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15400 files added (on-disk size: 79922 KB)
+0210.424 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15500 files added (on-disk size: 79922 KB)
+0210.429 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15600 files added (on-disk size: 79922 KB)
+0210.434 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15700 files added (on-disk size: 79922 KB)
+0210.436 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15800 files added (on-disk size: 79922 KB)
+0210.438 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 15900 files added (on-disk size: 79922 KB)
+0210.440 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16000 files added (on-disk size: 79922 KB)
+0210.442 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16100 files added (on-disk size: 79922 KB)
+0210.445 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16200 files added (on-disk size: 79922 KB)
+0210.447 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16300 files added (on-disk size: 79922 KB)
+0210.449 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (95.6 MB, 18899 files batched, 1001 (16347) added so far); re-opening (prior size: 79922 KB)
+0227.014 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: size is now: 123.80 MB
+0227.018 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16400 files added (on-disk size: 126805.9 KB)
+0227.021 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16500 files added (on-disk size: 126805.9 KB)
+0227.023 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16600 files added (on-disk size: 126805.9 KB)
+0227.026 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16700 files added (on-disk size: 126805.9 KB)
+0227.028 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16800 files added (on-disk size: 126805.9 KB)
+0227.030 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 16900 files added (on-disk size: 126805.9 KB)
+0227.032 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17000 files added (on-disk size: 126805.9 KB)
+0227.035 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17100 files added (on-disk size: 126805.9 KB)
+0227.037 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17200 files added (on-disk size: 126805.9 KB)
+0227.039 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17300 files added (on-disk size: 126805.9 KB)
+0227.041 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (11.1 MB, 18899 files batched, 1001 (17348) added so far); re-opening (prior size: 126805.9 KB)
+0235.374 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17400 files added (on-disk size: 130446.3 KB)
+0235.377 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17500 files added (on-disk size: 130446.3 KB)
+0235.379 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17600 files added (on-disk size: 130446.3 KB)
+0235.381 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17700 files added (on-disk size: 130446.3 KB)
+0235.383 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17800 files added (on-disk size: 130446.3 KB)
+0235.385 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 17900 files added (on-disk size: 130446.3 KB)
+0235.387 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18000 files added (on-disk size: 130446.3 KB)
+0235.390 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18100 files added (on-disk size: 130446.3 KB)
+0235.392 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18200 files added (on-disk size: 130446.3 KB)
+0235.394 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18300 files added (on-disk size: 130446.3 KB)
+0235.396 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (21.5 MB, 18899 files batched, 1001 (18349) added so far); re-opening (prior size: 130446.3 KB)
+0249.396 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18400 files added (on-disk size: 136923.7 KB)
+0249.399 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18500 files added (on-disk size: 136923.7 KB)
+0249.401 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18600 files added (on-disk size: 136923.7 KB)
+0249.404 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18700 files added (on-disk size: 136923.7 KB)
+0249.406 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.tmp: 18800 files added (on-disk size: 136923.7 KB)
+0256.130 (0) Creating zip file manifest (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.list-temp.tmp)
+0256.193 (0) Successfully created zip file manifest (size: 1740212)
+0257.251 (0) Created plugins zip (0) - 138374.6 KB in 256.7 s (539 KB/s) (sha1: 3b93b2970eb1a000488ba00bc768d096b7e54bee, sha256: b4c3316c10f747fdd87edb838f2a4e9c99d9fc8e783e48cdbd3f6b3b18637bb0)
+0257.272 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0257.273 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-2f95a1f70e9e071ebc92d1ed98a41706)
+0258.310 (0) Google Drive: quota usage: used=205.5 MB, total=15360 MB, available=15154.5 MB
+0258.311 (0) Google Drive: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip: Attempting to upload to Google Drive (into folder id: 1bPBiZAj5k7tNJYolvhGchrLBY3w3jMhs)
+0259.109 (0) Googledrive chunked upload: 0.7 % uploaded (1048576)
+0259.220 (0) Googledrive chunked upload: 1.5 % uploaded (2097152)
+0259.353 (0) Googledrive chunked upload: 2.2 % uploaded (3145728)
+0259.465 (0) Googledrive chunked upload: 3 % uploaded (4194304)
+0259.618 (0) Googledrive chunked upload: 3.7 % uploaded (5242880)
+0259.752 (0) Googledrive chunked upload: 4.4 % uploaded (6291456)
+0259.869 (0) Googledrive chunked upload: 5.2 % uploaded (7340032)
+0259.988 (0) Googledrive chunked upload: 5.9 % uploaded (8388608)
+0260.108 (0) Googledrive chunked upload: 6.7 % uploaded (9437184)
+0260.237 (0) Googledrive chunked upload: 7.4 % uploaded (10485760)
+0260.431 (0) Googledrive chunked upload: 8.1 % uploaded (11534336)
+0260.563 (0) Googledrive chunked upload: 8.9 % uploaded (12582912)
+0260.700 (0) Googledrive chunked upload: 9.6 % uploaded (13631488)
+0260.830 (0) Googledrive chunked upload: 10.4 % uploaded (14680064)
+0260.933 (0) Googledrive chunked upload: 11.1 % uploaded (15728640)
+0261.074 (0) Googledrive chunked upload: 11.8 % uploaded (16777216)
+0261.216 (0) Googledrive chunked upload: 12.6 % uploaded (17825792)
+0261.336 (0) Googledrive chunked upload: 13.3 % uploaded (18874368)
+0261.462 (0) Googledrive chunked upload: 14.1 % uploaded (19922944)
+0261.555 (0) Googledrive chunked upload: 14.8 % uploaded (20971520)
+0261.755 (0) Googledrive chunked upload: 15.5 % uploaded (22020096)
+0261.978 (0) Googledrive chunked upload: 16.3 % uploaded (23068672)
+0262.120 (0) Googledrive chunked upload: 17 % uploaded (24117248)
+0262.229 (0) Googledrive chunked upload: 17.8 % uploaded (25165824)
+0262.453 (0) Googledrive chunked upload: 18.5 % uploaded (26214400)
+0262.585 (0) Googledrive chunked upload: 19.2 % uploaded (27262976)
+0262.768 (0) Googledrive chunked upload: 20 % uploaded (28311552)
+0262.899 (0) Googledrive chunked upload: 20.7 % uploaded (29360128)
+0263.007 (0) Googledrive chunked upload: 21.5 % uploaded (30408704)
+0263.120 (0) Googledrive chunked upload: 22.2 % uploaded (31457280)
+0263.322 (0) Googledrive chunked upload: 22.9 % uploaded (32505856)
+0263.420 (0) Googledrive chunked upload: 23.7 % uploaded (33554432)
+0263.529 (0) Googledrive chunked upload: 24.4 % uploaded (34603008)
+0263.665 (0) Googledrive chunked upload: 25.2 % uploaded (35651584)
+0263.807 (0) Googledrive chunked upload: 25.9 % uploaded (36700160)
+0263.936 (0) Googledrive chunked upload: 26.6 % uploaded (37748736)
+0264.040 (0) Googledrive chunked upload: 27.4 % uploaded (38797312)
+0264.168 (0) Googledrive chunked upload: 28.1 % uploaded (39845888)
+0264.317 (0) Googledrive chunked upload: 28.9 % uploaded (40894464)
+0264.456 (0) Googledrive chunked upload: 29.6 % uploaded (41943040)
+0264.644 (0) Googledrive chunked upload: 30.3 % uploaded (42991616)
+0264.761 (0) Googledrive chunked upload: 31.1 % uploaded (44040192)
+0264.889 (0) Googledrive chunked upload: 31.8 % uploaded (45088768)
+0265.033 (0) Googledrive chunked upload: 32.6 % uploaded (46137344)
+0265.139 (0) Googledrive chunked upload: 33.3 % uploaded (47185920)
+0265.276 (0) Googledrive chunked upload: 34 % uploaded (48234496)
+0265.449 (0) Googledrive chunked upload: 34.8 % uploaded (49283072)
+0265.568 (0) Googledrive chunked upload: 35.5 % uploaded (50331648)
+0265.717 (0) Googledrive chunked upload: 36.3 % uploaded (51380224)
+0265.847 (0) Googledrive chunked upload: 37 % uploaded (52428800)
+0266.073 (0) Googledrive chunked upload: 37.7 % uploaded (53477376)
+0266.227 (0) Googledrive chunked upload: 38.5 % uploaded (54525952)
+0266.353 (0) Googledrive chunked upload: 39.2 % uploaded (55574528)
+0266.517 (0) Googledrive chunked upload: 40 % uploaded (56623104)
+0266.663 (0) Googledrive chunked upload: 40.7 % uploaded (57671680)
+0266.797 (0) Googledrive chunked upload: 41.4 % uploaded (58720256)
+0266.983 (0) Googledrive chunked upload: 42.2 % uploaded (59768832)
+0267.114 (0) Googledrive chunked upload: 42.9 % uploaded (60817408)
+0267.222 (0) Googledrive chunked upload: 43.7 % uploaded (61865984)
+0267.371 (0) Googledrive chunked upload: 44.4 % uploaded (62914560)
+0267.566 (0) Googledrive chunked upload: 45.1 % uploaded (63963136)
+0267.692 (0) Googledrive chunked upload: 45.9 % uploaded (65011712)
+0267.821 (0) Googledrive chunked upload: 46.6 % uploaded (66060288)
+0267.952 (0) Googledrive chunked upload: 47.4 % uploaded (67108864)
+0268.093 (0) Googledrive chunked upload: 48.1 % uploaded (68157440)
+0268.201 (0) Googledrive chunked upload: 48.8 % uploaded (69206016)
+0268.308 (0) Googledrive chunked upload: 49.6 % uploaded (70254592)
+0268.432 (0) Googledrive chunked upload: 50.3 % uploaded (71303168)
+0268.555 (0) Googledrive chunked upload: 51.1 % uploaded (72351744)
+0268.662 (0) Googledrive chunked upload: 51.8 % uploaded (73400320)
+0268.881 (0) Googledrive chunked upload: 52.5 % uploaded (74448896)
+0268.986 (0) Googledrive chunked upload: 53.3 % uploaded (75497472)
+0269.113 (0) Googledrive chunked upload: 54 % uploaded (76546048)
+0269.253 (0) Googledrive chunked upload: 54.8 % uploaded (77594624)
+0269.392 (0) Googledrive chunked upload: 55.5 % uploaded (78643200)
+0269.560 (0) Googledrive chunked upload: 56.2 % uploaded (79691776)
+0269.667 (0) Googledrive chunked upload: 57 % uploaded (80740352)
+0269.791 (0) Googledrive chunked upload: 57.7 % uploaded (81788928)
+0269.899 (0) Googledrive chunked upload: 58.5 % uploaded (82837504)
+0270.037 (0) Googledrive chunked upload: 59.2 % uploaded (83886080)
+0270.260 (0) Googledrive chunked upload: 59.9 % uploaded (84934656)
+0270.386 (0) Googledrive chunked upload: 60.7 % uploaded (85983232)
+0270.506 (0) Googledrive chunked upload: 61.4 % uploaded (87031808)
+0270.651 (0) Googledrive chunked upload: 62.2 % uploaded (88080384)
+0270.784 (0) Googledrive chunked upload: 62.9 % uploaded (89128960)
+0270.888 (0) Googledrive chunked upload: 63.6 % uploaded (90177536)
+0271.005 (0) Googledrive chunked upload: 64.4 % uploaded (91226112)
+0271.128 (0) Googledrive chunked upload: 65.1 % uploaded (92274688)
+0271.274 (0) Googledrive chunked upload: 65.9 % uploaded (93323264)
+0271.379 (0) Googledrive chunked upload: 66.6 % uploaded (94371840)
+0271.583 (0) Googledrive chunked upload: 67.3 % uploaded (95420416)
+0271.724 (0) Googledrive chunked upload: 68.1 % uploaded (96468992)
+0271.851 (0) Googledrive chunked upload: 68.8 % uploaded (97517568)
+0271.979 (0) Googledrive chunked upload: 69.6 % uploaded (98566144)
+0272.099 (0) Googledrive chunked upload: 70.3 % uploaded (99614720)
+0272.229 (0) Googledrive chunked upload: 71 % uploaded (100663296)
+0272.357 (0) Googledrive chunked upload: 71.8 % uploaded (101711872)
+0272.478 (0) Googledrive chunked upload: 72.5 % uploaded (102760448)
+0272.605 (0) Googledrive chunked upload: 73.3 % uploaded (103809024)
+0272.717 (0) Googledrive chunked upload: 74 % uploaded (104857600)
+0272.946 (0) Googledrive chunked upload: 74.7 % uploaded (105906176)
+0273.071 (0) Googledrive chunked upload: 75.5 % uploaded (106954752)
+0273.196 (0) Googledrive chunked upload: 76.2 % uploaded (108003328)
+0273.329 (0) Googledrive chunked upload: 77 % uploaded (109051904)
+0273.444 (0) Googledrive chunked upload: 77.7 % uploaded (110100480)
+0273.581 (0) Googledrive chunked upload: 78.4 % uploaded (111149056)
+0273.727 (0) Googledrive chunked upload: 79.2 % uploaded (112197632)
+0273.882 (0) Googledrive chunked upload: 79.9 % uploaded (113246208)
+0273.991 (0) Googledrive chunked upload: 80.7 % uploaded (114294784)
+0274.116 (0) Googledrive chunked upload: 81.4 % uploaded (115343360)
+0274.324 (0) Googledrive chunked upload: 82.1 % uploaded (116391936)
+0274.441 (0) Googledrive chunked upload: 82.9 % uploaded (117440512)
+0274.549 (0) Googledrive chunked upload: 83.6 % uploaded (118489088)
+0274.712 (0) Googledrive chunked upload: 84.4 % uploaded (119537664)
+0274.834 (0) Googledrive chunked upload: 85.1 % uploaded (120586240)
+0274.945 (0) Googledrive chunked upload: 85.8 % uploaded (121634816)
+0275.065 (0) Googledrive chunked upload: 86.6 % uploaded (122683392)
+0275.183 (0) Googledrive chunked upload: 87.3 % uploaded (123731968)
+0275.304 (0) Googledrive chunked upload: 88.1 % uploaded (124780544)
+0275.429 (0) Googledrive chunked upload: 88.8 % uploaded (125829120)
+0275.658 (0) Googledrive chunked upload: 89.5 % uploaded (126877696)
+0275.762 (0) Googledrive chunked upload: 90.3 % uploaded (127926272)
+0275.888 (0) Googledrive chunked upload: 91 % uploaded (128974848)
+0275.985 (0) Googledrive chunked upload: 91.8 % uploaded (130023424)
+0276.110 (0) Googledrive chunked upload: 92.5 % uploaded (131072000)
+0276.228 (0) Googledrive chunked upload: 93.2 % uploaded (132120576)
+0276.338 (0) Googledrive chunked upload: 94 % uploaded (133169152)
+0276.440 (0) Googledrive chunked upload: 94.7 % uploaded (134217728)
+0276.564 (0) Googledrive chunked upload: 95.5 % uploaded (135266304)
+0276.691 (0) Googledrive chunked upload: 96.2 % uploaded (136314880)
+0276.900 (0) Googledrive chunked upload: 96.9 % uploaded (137363456)
+0277.027 (0) Googledrive chunked upload: 97.7 % uploaded (138412032)
+0277.136 (0) Googledrive chunked upload: 98.4 % uploaded (139460608)
+0277.270 (0) Googledrive chunked upload: 99.2 % uploaded (140509184)
+0277.399 (0) Googledrive chunked upload: 99.9 % uploaded (141557760)
+0278.958 (0) Googledrive chunked upload: 100 % uploaded (141557760)
+0278.963 (0) Google Drive: OK: Archive backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip uploaded in 20.65 seconds
+0278.964 (0) Recording as successfully uploaded: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip
+0278.967 (0) Deleting local file: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip: OK
+0278.973 (0) Beginning creation of dump of themes (split every: 400 MB)
+0283.661 (0) Total entities for the zip file: 81 directories, 641 files (0 skipped as non-modified), 22.6 MB
+0283.663 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0283.695 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.tmp: size is now: 0.00 MB
+0283.701 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.tmp: 100 files added (on-disk size: 16 KB)
+0283.706 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.tmp: 200 files added (on-disk size: 16 KB)
+0283.712 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.tmp: 300 files added (on-disk size: 16 KB)
+0283.722 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.tmp: 400 files added (on-disk size: 16 KB)
+0283.727 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.tmp: 500 files added (on-disk size: 16 KB)
+0283.730 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.tmp: 600 files added (on-disk size: 16 KB)
+0295.823 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.tmp: size is now: 19.60 MB
+0295.830 (0) Creating zip file manifest (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.list-temp.tmp)
+0295.834 (0) Successfully created zip file manifest (size: 44820)
+0295.996 (0) Created themes zip (0) - 20042 KB in 17 s (1177.7 KB/s) (sha1: 62aacd955cc4fd38c8b3d4927fb88af7976a3205, sha256: 6c3e45793f71e45535748220ce2f11370072818f832bfa176a698b686b959dc8)
+0296.000 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0296.002 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-2f95a1f70e9e071ebc92d1ed98a41706)
+0296.234 (0) Google Drive: quota usage: used=340.6 MB, total=15360 MB, available=15019.4 MB
+0296.235 (0) Google Drive: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip: Attempting to upload to Google Drive (into folder id: 1bPBiZAj5k7tNJYolvhGchrLBY3w3jMhs)
+0296.997 (0) Googledrive chunked upload: 5.1 % uploaded (1048576)
+0297.135 (0) Googledrive chunked upload: 10.2 % uploaded (2097152)
+0297.278 (0) Googledrive chunked upload: 15.3 % uploaded (3145728)
+0297.372 (0) Googledrive chunked upload: 20.4 % uploaded (4194304)
+0297.465 (0) Googledrive chunked upload: 25.5 % uploaded (5242880)
+0297.608 (0) Googledrive chunked upload: 30.7 % uploaded (6291456)
+0297.703 (0) Googledrive chunked upload: 35.8 % uploaded (7340032)
+0297.810 (0) Googledrive chunked upload: 40.9 % uploaded (8388608)
+0297.977 (0) Googledrive chunked upload: 46 % uploaded (9437184)
+0298.104 (0) Googledrive chunked upload: 51.1 % uploaded (10485760)
+0298.326 (0) Googledrive chunked upload: 56.2 % uploaded (11534336)
+0298.440 (0) Googledrive chunked upload: 61.3 % uploaded (12582912)
+0298.551 (0) Googledrive chunked upload: 66.4 % uploaded (13631488)
+0298.661 (0) Googledrive chunked upload: 71.5 % uploaded (14680064)
+0298.766 (0) Googledrive chunked upload: 76.6 % uploaded (15728640)
+0298.893 (0) Googledrive chunked upload: 81.7 % uploaded (16777216)
+0299.065 (0) Googledrive chunked upload: 86.9 % uploaded (17825792)
+0299.197 (0) Googledrive chunked upload: 92 % uploaded (18874368)
+0299.307 (0) Googledrive chunked upload: 97.1 % uploaded (19922944)
+0300.965 (0) Googledrive chunked upload: 100 % uploaded (19922944)
+0300.970 (0) Google Drive: OK: Archive backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip uploaded in 4.73 seconds
+0300.971 (0) Recording as successfully uploaded: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip
+0300.974 (0) Deleting local file: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip: OK
+0300.979 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0300.981 (0) Looking for candidates to backup in: /homepages/16/d4298693242/htdocs/wp-content/uploads
+0300.982 (0) finding files: fonts: adding to list (1)
+0300.984 (0) finding files: master-slider: adding to list (2)
+0300.985 (0) finding files: wpcf7_uploads: adding to list (3)
+0300.987 (0) finding files: 2024: adding to list (4)
+0300.988 (0) finding files: 2025: adding to list (5)
+0300.989 (0) finding files: elementor: adding to list (6)
+0300.991 (0) finding files: wpcode: adding to list (7)
+0300.992 (0) finding files: wpforms: adding to list (8)
+0300.993 (0) finding files: pum: adding to list (9)
+0300.995 (0) finding files: rank-math: adding to list (10)
+0300.996 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0301.744 (0) Total entities for the zip file: 17 directories, 180 files (0 skipped as non-modified), 45 MB
+0301.747 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0308.952 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip.tmp: size is now: 44.80 MB
+0308.957 (0) Creating zip file manifest (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip.list-temp.tmp)
+0308.959 (0) Successfully created zip file manifest (size: 11817)
+0309.314 (0) Created uploads zip (0) - 45865.7 KB in 8.3 s (5515.7 KB/s) (sha1: f55d8fcff9cc1482626f34108c606c926d3062c7, sha256: c25519068718c4a039a4bd5733a1b3aff9782367bd56f72287fc4c7452b164a9)
+0309.318 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0309.320 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-2f95a1f70e9e071ebc92d1ed98a41706)
+0309.572 (0) Google Drive: quota usage: used=360.2 MB, total=15360 MB, available=14999.8 MB
+0309.573 (0) Google Drive: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip: Attempting to upload to Google Drive (into folder id: 1bPBiZAj5k7tNJYolvhGchrLBY3w3jMhs)
+0310.202 (0) Googledrive chunked upload: 2.2 % uploaded (1048576)
+0310.320 (0) Googledrive chunked upload: 4.5 % uploaded (2097152)
+0310.462 (0) Googledrive chunked upload: 6.7 % uploaded (3145728)
+0310.620 (0) Googledrive chunked upload: 8.9 % uploaded (4194304)
+0310.738 (0) Googledrive chunked upload: 11.2 % uploaded (5242880)
+0310.841 (0) Googledrive chunked upload: 13.4 % uploaded (6291456)
+0310.958 (0) Googledrive chunked upload: 15.6 % uploaded (7340032)
+0311.096 (0) Googledrive chunked upload: 17.9 % uploaded (8388608)
+0311.226 (0) Googledrive chunked upload: 20.1 % uploaded (9437184)
+0311.332 (0) Googledrive chunked upload: 22.3 % uploaded (10485760)
+0311.541 (0) Googledrive chunked upload: 24.6 % uploaded (11534336)
+0311.667 (0) Googledrive chunked upload: 26.8 % uploaded (12582912)
+0311.766 (0) Googledrive chunked upload: 29 % uploaded (13631488)
+0311.903 (0) Googledrive chunked upload: 31.3 % uploaded (14680064)
+0311.999 (0) Googledrive chunked upload: 33.5 % uploaded (15728640)
+0312.113 (0) Googledrive chunked upload: 35.7 % uploaded (16777216)
+0312.207 (0) Googledrive chunked upload: 38 % uploaded (17825792)
+0312.337 (0) Googledrive chunked upload: 40.2 % uploaded (18874368)
+0312.465 (0) Googledrive chunked upload: 42.4 % uploaded (19922944)
+0312.602 (0) Googledrive chunked upload: 44.7 % uploaded (20971520)
+0312.826 (0) Googledrive chunked upload: 46.9 % uploaded (22020096)
+0312.948 (0) Googledrive chunked upload: 49.1 % uploaded (23068672)
+0313.093 (0) Googledrive chunked upload: 51.3 % uploaded (24117248)
+0313.216 (0) Googledrive chunked upload: 53.6 % uploaded (25165824)
+0313.367 (0) Googledrive chunked upload: 55.8 % uploaded (26214400)
+0313.506 (0) Googledrive chunked upload: 58 % uploaded (27262976)
+0313.628 (0) Googledrive chunked upload: 60.3 % uploaded (28311552)
+0313.772 (0) Googledrive chunked upload: 62.5 % uploaded (29360128)
+0313.879 (0) Googledrive chunked upload: 64.7 % uploaded (30408704)
+0314.019 (0) Googledrive chunked upload: 67 % uploaded (31457280)
+0314.213 (0) Googledrive chunked upload: 69.2 % uploaded (32505856)
+0314.334 (0) Googledrive chunked upload: 71.4 % uploaded (33554432)
+0314.480 (0) Googledrive chunked upload: 73.7 % uploaded (34603008)
+0314.624 (0) Googledrive chunked upload: 75.9 % uploaded (35651584)
+0314.776 (0) Googledrive chunked upload: 78.1 % uploaded (36700160)
+0314.904 (0) Googledrive chunked upload: 80.4 % uploaded (37748736)
+0315.011 (0) Googledrive chunked upload: 82.6 % uploaded (38797312)
+0315.102 (0) Googledrive chunked upload: 84.8 % uploaded (39845888)
+0315.229 (0) Googledrive chunked upload: 87.1 % uploaded (40894464)
+0315.372 (0) Googledrive chunked upload: 89.3 % uploaded (41943040)
+0315.583 (0) Googledrive chunked upload: 91.5 % uploaded (42991616)
+0315.734 (0) Googledrive chunked upload: 93.8 % uploaded (44040192)
+0315.841 (0) Googledrive chunked upload: 96 % uploaded (45088768)
+0315.972 (0) Googledrive chunked upload: 98.2 % uploaded (46137344)
+0317.466 (0) Googledrive chunked upload: 100 % uploaded (46137344)
+0317.470 (0) Google Drive: OK: Archive backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip uploaded in 7.9 seconds
+0317.472 (0) Recording as successfully uploaded: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip
+0317.474 (0) Deleting local file: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip: OK
+0317.478 (0) Beginning creation of dump of mu-plugins (split every: 400 MB)
+0317.479 (0) Does not exist: /homepages/16/d4298693242/htdocs/wp-content/mu-plugins
+0317.480 (0) There are no mu-plugins to backup. Will not raise an error.
+0317.481 (0) mu-plugins: create_zip returned an error
+0317.484 (0) Beginning backup of other directories found in the content directory (index: 0)
+0317.485 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0317.486 (0) Looking for candidates to backup in: /homepages/16/d4298693242/htdocs/wp-content
+0317.487 (0) finding files: languages: adding to list (1)
+0317.488 (0) finding files: index.php: adding to list (2)
+0317.489 (0) finding files: plugins: skipping: this is the plugins directory
+0317.490 (0) finding files: themes: skipping: this is the themes directory
+0317.492 (0) finding files: upgrade: skipping: excluded by options
+0317.493 (0) finding files: logs: adding to list (3)
+0317.494 (0) finding files: upgrade-temp-backup: adding to list (4)
+0317.495 (0) finding files: uploads: skipping: this is the uploads directory
+0317.496 (0) finding files: backups-dup-lite: skipping: excluded by options (glob)
+0317.498 (0) finding files: updraft: skipping: this is the updraft directory
+0319.043 (0) Total entities for the zip file: 6 directories, 568 files (0 skipped as non-modified), 18.6 MB
+0319.046 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip.tmp: 100 files added (on-disk size: 0 KB)
+0319.048 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip.tmp: 200 files added (on-disk size: 0 KB)
+0319.051 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip.tmp: 300 files added (on-disk size: 0 KB)
+0319.053 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip.tmp: 400 files added (on-disk size: 0 KB)
+0319.055 (0) Zip: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip.tmp: 500 files added (on-disk size: 0 KB)
+0331.896 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip.tmp: size is now: 5.50 MB
+0331.903 (0) Creating zip file manifest (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip.list-temp.tmp)
+0331.907 (0) Successfully created zip file manifest (size: 40966)
+0331.960 (0) Created others zip (0) - 5645.5 KB in 14.5 s (390.5 KB/s) (sha1: 2cc6c0499a2affa4d73e4410162929a3ef35a86c, sha256: febac8368278bb3c3abfb2a69a40fd1ad4e80ea8e35bd6a6e026b1b9e97c4756)
+0331.969 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0331.970 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-2f95a1f70e9e071ebc92d1ed98a41706)
+0332.225 (0) Google Drive: quota usage: used=405 MB, total=15360 MB, available=14955 MB
+0332.228 (0) Google Drive: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip: Attempting to upload to Google Drive (into folder id: 1bPBiZAj5k7tNJYolvhGchrLBY3w3jMhs)
+0332.906 (0) Googledrive chunked upload: 18.1 % uploaded (1048576)
+0333.002 (0) Googledrive chunked upload: 36.3 % uploaded (2097152)
+0333.093 (0) Googledrive chunked upload: 54.4 % uploaded (3145728)
+0333.232 (0) Googledrive chunked upload: 72.6 % uploaded (4194304)
+0333.363 (0) Googledrive chunked upload: 90.7 % uploaded (5242880)
+0334.979 (0) Googledrive chunked upload: 100 % uploaded (5242880)
+0334.989 (0) Google Drive: OK: Archive backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip uploaded in 2.76 seconds
+0334.995 (0) Recording as successfully uploaded: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip
+0335.005 (0) Deleting local file: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip: OK
+0335.021 (0) Saving backup status to database (elements: 8)
+0335.025 (0) Beginning creation of database dump (WordPress DB)
+0335.026 (0) Couldn't get the sql_mode value (N;); will not attempt any adjustment
+0335.029 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0335.050 (0) Output: /*M!999999\- enable the sandbox mode */ \n/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `wp_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!4010 (truncated - 1490 bytes total)
+0335.054 (0) Working binary mysqldump found: /usr/bin/mysqldump
+0335.104 (0) Table wp_options: Total expected rows (via COUNT): 546
+0335.149 (0) Table wp_options: Rows added in this batch (next record: 9128): 542 (uncompressed bytes in this segment=1109806) in 0.06 seconds
+0335.158 (0) Table wp_options: finishing file(s) (2, 151.5 KB)
+0335.163 (0) Table wp_users: Total expected rows (via COUNT): 6
+0335.164 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.168 (0) Table wp_users: Rows added in this batch (next record: 7): 6 (uncompressed bytes in this segment=1889) in 0.01 seconds
+0335.176 (0) Table wp_users: finishing file(s) (2, 0.9 KB)
+0335.198 (0) Table wp_usermeta: Total expected rows (via COUNT): 210
+0335.199 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.209 (0) Table wp_usermeta: Rows added in this batch (next record: 227): 210 (uncompressed bytes in this segment=38112) in 0.03 seconds
+0335.222 (0) Table wp_usermeta: finishing file(s) (2, 8.2 KB)
+0335.229 (0) Table wp_actionscheduler_actions: Total expected rows (via COUNT): 103
+0335.230 (0) Table is relatively small; fetch_rows will thus be: 200 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.237 (0) Table wp_actionscheduler_actions: Rows added in this batch (next record: 147): 103 (uncompressed bytes in this segment=40840) in 0.01 seconds
+0335.246 (0) Table wp_actionscheduler_actions: finishing file(s) (2, 3.8 KB)
+0335.250 (0) Table wp_actionscheduler_claims: Total expected rows (via COUNT): 0
+0335.254 (0) Table wp_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=626) in 0.00 seconds
+0335.259 (0) Table wp_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0335.264 (0) Table wp_actionscheduler_groups: Total expected rows (via COUNT): 5
+0335.266 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.274 (0) Table wp_actionscheduler_groups: Rows added in this batch (next record: 5): 5 (uncompressed bytes in this segment=726) in 0.01 seconds
+0335.283 (0) Table wp_actionscheduler_groups: finishing file(s) (2, 0.4 KB)
+0335.288 (0) Table wp_actionscheduler_logs: Total expected rows (via COUNT): 293
+0335.289 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.298 (0) Table wp_actionscheduler_logs: Rows added in this batch (next record: 316): 293 (uncompressed bytes in this segment=26728) in 0.01 seconds
+0335.306 (0) Table wp_actionscheduler_logs: finishing file(s) (2, 3.4 KB)
+0335.316 (0) Table wp_commentmeta: Total expected rows (via COUNT): 0
+0335.320 (0) Table wp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=634) in 0.01 seconds
+0335.326 (0) Table wp_commentmeta: finishing file(s) (2, 0.4 KB)
+0335.332 (0) Table wp_comments: Total expected rows (via COUNT): 1
+0335.333 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.337 (0) Table wp_comments: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1927) in 0.01 seconds
+0335.343 (0) Table wp_comments: finishing file(s) (2, 0.8 KB)
+0335.348 (0) Table wp_links: Total expected rows (via COUNT): 0
+0335.352 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1027) in 0.01 seconds
+0335.358 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0335.365 (0) Table wp_postmeta: Total expected rows (approximate): 1019
+0335.378 (0) Table wp_postmeta: Rows added in this batch (next record: 1305): 1030 (uncompressed bytes in this segment=236851) in 0.02 seconds
+0335.386 (0) Table wp_postmeta: finishing file(s) (2, 23.7 KB)
+0335.392 (0) Table wp_posts: Total expected rows (via COUNT): 477
+0335.394 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.482 (0) Table wp_posts: Rows added in this batch (next record: 586): 477 (uncompressed bytes in this segment=3701605) in 0.09 seconds
+0335.501 (0) Table wp_posts: finishing file(s) (2, 242.8 KB)
+0335.510 (0) Table wp_term_relationships: Total expected rows (approximate): 72
+0335.522 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 75 (uncompressed bytes in this segment=1715) in 0.01 seconds
+0335.528 (0) Table wp_term_relationships: finishing file(s) (2, 0.6 KB)
+0335.535 (0) Table wp_term_taxonomy: Total expected rows (via COUNT): 33
+0335.537 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.542 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 35): 33 (uncompressed bytes in this segment=2381) in 0.01 seconds
+0335.551 (0) Table wp_term_taxonomy: finishing file(s) (2, 0.9 KB)
+0335.559 (0) Table wp_termmeta: Total expected rows (via COUNT): 0
+0335.564 (0) Table wp_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=607) in 0.01 seconds
+0335.575 (0) Table wp_termmeta: finishing file(s) (2, 0.4 KB)
+0335.580 (0) Table wp_terms: Total expected rows (via COUNT): 33
+0335.583 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.587 (0) Table wp_terms: Rows added in this batch (next record: 35): 33 (uncompressed bytes in this segment=1818) in 0.01 seconds
+0335.593 (0) Table wp_terms: finishing file(s) (2, 0.8 KB)
+0335.600 (0) Table wp_aioseo_cache: Total expected rows (via COUNT): 22
+0335.601 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.610 (0) Table wp_aioseo_cache: Rows added in this batch (next record: 164): 22 (uncompressed bytes in this segment=98485) in 0.01 seconds
+0335.619 (0) Table wp_aioseo_cache: finishing file(s) (2, 19.4 KB)
+0335.624 (0) Table wp_aioseo_crawl_cleanup_blocked_args: Total expected rows (via COUNT): 0
+0335.630 (0) Table wp_aioseo_crawl_cleanup_blocked_args: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=947) in 0.01 seconds
+0335.636 (0) Table wp_aioseo_crawl_cleanup_blocked_args: finishing file(s) (2, 0.4 KB)
+0335.644 (0) Table wp_aioseo_crawl_cleanup_logs: Total expected rows (via COUNT): 0
+0335.647 (0) Table wp_aioseo_crawl_cleanup_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=770) in 0.01 seconds
+0335.653 (0) Table wp_aioseo_crawl_cleanup_logs: finishing file(s) (2, 0.4 KB)
+0335.663 (0) Table wp_aioseo_notifications: Total expected rows (via COUNT): 4
+0335.664 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.669 (0) Table wp_aioseo_notifications: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=3989) in 0.01 seconds
+0335.676 (0) Table wp_aioseo_notifications: finishing file(s) (2, 1.1 KB)
+0335.684 (0) Table wp_aioseo_posts: Total expected rows (via COUNT): 59
+0335.685 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.692 (0) Table wp_aioseo_posts: Rows added in this batch (next record: 59): 59 (uncompressed bytes in this segment=57072) in 0.01 seconds
+0335.700 (0) Table wp_aioseo_posts: finishing file(s) (2, 2.9 KB)
+0335.705 (0) Table wp_aioseo_writing_assistant_keywords: Total expected rows (via COUNT): 0
+0335.709 (0) Table wp_aioseo_writing_assistant_keywords: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1082) in 0.01 seconds
+0335.715 (0) Table wp_aioseo_writing_assistant_keywords: finishing file(s) (2, 0.5 KB)
+0335.722 (0) Table wp_aioseo_writing_assistant_posts: Total expected rows (via COUNT): 0
+0335.726 (0) Table wp_aioseo_writing_assistant_posts: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=982) in 0.01 seconds
+0335.754 (0) Table wp_aioseo_writing_assistant_posts: finishing file(s) (2, 0.4 KB)
+0335.766 (0) Table wp_assistentendb: Total expected rows (via COUNT): 11
+0335.769 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.774 (0) Table wp_assistentendb: Rows added in this batch (next record: 11): 11 (uncompressed bytes in this segment=2983) in 0.01 seconds
+0335.778 (0) Table wp_assistentendb: finishing file(s) (2, 1 KB)
+0335.785 (0) Table wp_cky_banners: Total expected rows (via COUNT): 2
+0335.787 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.795 (0) Table wp_cky_banners: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=20501) in 0.01 seconds
+0335.804 (0) Table wp_cky_banners: finishing file(s) (2, 3.5 KB)
+0335.818 (0) Table wp_cky_cookie_categories: Total expected rows (via COUNT): 5
+0335.820 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.822 (0) Table wp_cky_cookie_categories: Rows added in this batch (next record: 5): 5 (uncompressed bytes in this segment=2619) in 0.01 seconds
+0335.832 (0) Table wp_cky_cookie_categories: finishing file(s) (2, 1 KB)
+0335.851 (0) Table wp_cky_cookies: Total expected rows (via COUNT): 0
+0335.855 (0) Table wp_cky_cookies: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=959) in 0.02 seconds
+0335.862 (0) Table wp_cky_cookies: finishing file(s) (2, 0.5 KB)
+0335.870 (0) Table wp_duplicator_packages: Total expected rows (via COUNT): 0
+0335.873 (0) Table wp_duplicator_packages: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=707) in 0.01 seconds
+0335.880 (0) Table wp_duplicator_packages: finishing file(s) (2, 0.4 KB)
+0335.885 (0) Table wp_e_events: Total expected rows (via COUNT): 1
+0335.886 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.890 (0) Table wp_e_events: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=773) in 0.01 seconds
+0335.896 (0) Table wp_e_events: finishing file(s) (2, 0.5 KB)
+0335.901 (0) Table wp_masterslider_options: Total expected rows (via COUNT): 2
+0335.902 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.905 (0) Table wp_masterslider_options: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=768) in 0.01 seconds
+0335.911 (0) Table wp_masterslider_options: finishing file(s) (2, 0.5 KB)
+0335.916 (0) Table wp_masterslider_sliders: Total expected rows (via COUNT): 1
+0335.917 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.919 (0) Table wp_masterslider_sliders: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=4336) in 0.01 seconds
+0335.925 (0) Table wp_masterslider_sliders: finishing file(s) (2, 1.9 KB)
+0335.931 (0) Table wp_newsletter: Total expected rows (via COUNT): 3
+0335.932 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.935 (0) Table wp_newsletter: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=5540) in 0.01 seconds
+0335.942 (0) Table wp_newsletter: finishing file(s) (2, 1 KB)
+0335.951 (0) Table wp_newsletter_emails: Total expected rows (via COUNT): 2
+0335.953 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.957 (0) Table wp_newsletter_emails: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=31222) in 0.01 seconds
+0335.963 (0) Table wp_newsletter_emails: finishing file(s) (2, 8.1 KB)
+0335.972 (0) Table wp_newsletter_logs: Total expected rows (via COUNT): 1
+0335.973 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0335.976 (0) Table wp_newsletter_logs: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=832) in 0.01 seconds
+0335.984 (0) Table wp_newsletter_logs: finishing file(s) (2, 0.5 KB)
+0335.988 (0) Table wp_newsletter_sent: Total expected rows (approximate): 0
+0335.992 (0) Table wp_newsletter_sent: Rows added in this batch (next record: 1000): 1 (uncompressed bytes in this segment=886) in 0.00 seconds
+0335.997 (0) Table wp_newsletter_sent: finishing file(s) (2, 0.4 KB)
+0336.004 (0) Table wp_newsletter_stats: Total expected rows (via COUNT): 2
+0336.015 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.045 (0) Table wp_newsletter_stats: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=915) in 0.04 seconds
+0336.060 (0) Table wp_newsletter_stats: finishing file(s) (2, 0.5 KB)
+0336.078 (0) Table wp_newsletter_user_logs: Total expected rows (via COUNT): 2
+0336.081 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.087 (0) Table wp_newsletter_user_logs: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=907) in 0.02 seconds
+0336.093 (0) Table wp_newsletter_user_logs: finishing file(s) (2, 0.5 KB)
+0336.100 (0) Table wp_newsletter_user_meta: Total expected rows (via COUNT): 0
+0336.103 (0) Table wp_newsletter_user_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=611) in 0.01 seconds
+0336.110 (0) Table wp_newsletter_user_meta: finishing file(s) (2, 0.4 KB)
+0336.116 (0) Table wp_nextend2_image_storage: Total expected rows (via COUNT): 0
+0336.120 (0) Table wp_nextend2_image_storage: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=591) in 0.01 seconds
+0336.127 (0) Table wp_nextend2_image_storage: finishing file(s) (2, 0.4 KB)
+0336.132 (0) Table wp_nextend2_section_storage: Total expected rows (via COUNT): 1
+0336.133 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.137 (0) Table wp_nextend2_section_storage: Rows added in this batch (next record: 10000): 1 (uncompressed bytes in this segment=1113) in 0.01 seconds
+0336.141 (0) Table wp_nextend2_section_storage: finishing file(s) (2, 0.6 KB)
+0336.146 (0) Table wp_nextend2_smartslider3_generators: Total expected rows (via COUNT): 0
+0336.150 (0) Table wp_nextend2_smartslider3_generators: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=625) in 0.01 seconds
+0336.154 (0) Table wp_nextend2_smartslider3_generators: finishing file(s) (2, 0.4 KB)
+0336.159 (0) Table wp_nextend2_smartslider3_sliders: Total expected rows (via COUNT): 1
+0336.160 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.164 (0) Table wp_nextend2_smartslider3_sliders: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=20517) in 0.01 seconds
+0336.169 (0) Table wp_nextend2_smartslider3_sliders: finishing file(s) (2, 3.8 KB)
+0336.174 (0) Table wp_nextend2_smartslider3_sliders_xref: Total expected rows (approximate): 0
+0336.177 (0) Table wp_nextend2_smartslider3_sliders_xref: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=659) in 0.00 seconds
+0336.182 (0) Table wp_nextend2_smartslider3_sliders_xref: finishing file(s) (2, 0.3 KB)
+0336.188 (0) Table wp_nextend2_smartslider3_slides: Total expected rows (via COUNT): 2
+0336.189 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.193 (0) Table wp_nextend2_smartslider3_slides: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=30909) in 0.01 seconds
+0336.199 (0) Table wp_nextend2_smartslider3_slides: finishing file(s) (2, 2.8 KB)
+0336.208 (0) Table wp_qcld_slider_hero_sliders: Total expected rows (via COUNT): 2
+0336.210 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.213 (0) Table wp_qcld_slider_hero_sliders: Rows added in this batch (next record: 3): 2 (uncompressed bytes in this segment=6020) in 0.01 seconds
+0336.220 (0) Table wp_qcld_slider_hero_sliders: finishing file(s) (2, 1.5 KB)
+0336.228 (0) Table wp_qcld_slider_hero_slides: Total expected rows (via COUNT): 5
+0336.231 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.234 (0) Table wp_qcld_slider_hero_slides: Rows added in this batch (next record: 6): 5 (uncompressed bytes in this segment=2963) in 0.01 seconds
+0336.253 (0) Table wp_qcld_slider_hero_slides: finishing file(s) (2, 0.9 KB)
+0336.262 (0) Table wp_rank_math_analytics_gsc: Total expected rows (via COUNT): 0
+0336.269 (0) Table wp_rank_math_analytics_gsc: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=859) in 0.01 seconds
+0336.279 (0) Table wp_rank_math_analytics_gsc: finishing file(s) (2, 0.4 KB)
+0336.292 (0) Table wp_rank_math_analytics_inspections: Total expected rows (via COUNT): 0
+0336.295 (0) Table wp_rank_math_analytics_inspections: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1410) in 0.01 seconds
+0336.308 (0) Table wp_rank_math_analytics_inspections: finishing file(s) (2, 0.6 KB)
+0336.313 (0) Table wp_rank_math_analytics_objects: Total expected rows (via COUNT): 13
+0336.314 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.318 (0) Table wp_rank_math_analytics_objects: Rows added in this batch (next record: 13): 13 (uncompressed bytes in this segment=3257) in 0.01 seconds
+0336.323 (0) Table wp_rank_math_analytics_objects: finishing file(s) (2, 1 KB)
+0336.327 (0) Table wp_rank_math_internal_links: Total expected rows (via COUNT): 9
+0336.329 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.331 (0) Table wp_rank_math_internal_links: Rows added in this batch (next record: 110): 9 (uncompressed bytes in this segment=1227) in 0.00 seconds
+0336.337 (0) Table wp_rank_math_internal_links: finishing file(s) (2, 0.6 KB)
+0336.342 (0) Table wp_rank_math_internal_meta: Total expected rows (via COUNT): 14
+0336.344 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.347 (0) Table wp_rank_math_internal_meta: Rows added in this batch (next record: 536): 14 (uncompressed bytes in this segment=925) in 0.01 seconds
+0336.352 (0) Table wp_rank_math_internal_meta: finishing file(s) (2, 0.4 KB)
+0336.360 (0) Table wp_solarkonfigurator: Total expected rows (via COUNT): 0
+0336.363 (0) Table wp_solarkonfigurator: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=543) in 0.00 seconds
+0336.368 (0) Table wp_solarkonfigurator: finishing file(s) (2, 0.4 KB)
+0336.373 (0) Table wp_solarkonfigurator_v2: Total expected rows (via COUNT): 0
+0336.374 (0) Table wp_solarkonfigurator_v2: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=561) in 0.00 seconds
+0336.380 (0) Table wp_solarkonfigurator_v2: finishing file(s) (2, 0.4 KB)
+0336.386 (0) Table wp_trp_gettext_de_de: Total expected rows (via COUNT): 23
+0336.388 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.397 (0) Table wp_trp_gettext_de_de: Rows added in this batch (next record: 23): 23 (uncompressed bytes in this segment=2310) in 0.01 seconds
+0336.412 (0) Table wp_trp_gettext_de_de: finishing file(s) (2, 0.9 KB)
+0336.432 (0) Table wp_trp_gettext_original_meta: Total expected rows (via COUNT): 0
+0336.437 (0) Table wp_trp_gettext_original_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=746) in 0.01 seconds
+0336.443 (0) Table wp_trp_gettext_original_meta: finishing file(s) (2, 0.4 KB)
+0336.448 (0) Table wp_trp_gettext_original_strings: Total expected rows (via COUNT): 23
+0336.449 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.453 (0) Table wp_trp_gettext_original_strings: Rows added in this batch (next record: 23): 23 (uncompressed bytes in this segment=2135) in 0.01 seconds
+0336.457 (0) Table wp_trp_gettext_original_strings: finishing file(s) (2, 0.7 KB)
+0336.464 (0) Table wp_userfeedback_survey_responses: Total expected rows (via COUNT): 0
+0336.468 (0) Table wp_userfeedback_survey_responses: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1067) in 0.01 seconds
+0336.475 (0) Table wp_userfeedback_survey_responses: finishing file(s) (2, 0.5 KB)
+0336.485 (0) Table wp_userfeedback_surveys: Total expected rows (via COUNT): 0
+0336.488 (0) Table wp_userfeedback_surveys: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=830) in 0.01 seconds
+0336.496 (0) Table wp_userfeedback_surveys: finishing file(s) (2, 0.4 KB)
+0336.508 (0) Table wp_wp_phpmyadmin_extension__errors_log: Total expected rows (via COUNT): 0
+0336.511 (0) Table wp_wp_phpmyadmin_extension__errors_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=717) in 0.01 seconds
+0336.519 (0) Table wp_wp_phpmyadmin_extension__errors_log: finishing file(s) (2, 0.4 KB)
+0336.528 (0) Table wp_wpforms_logs: Total expected rows (via COUNT): 0
+0336.531 (0) Table wp_wpforms_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=659) in 0.01 seconds
+0336.542 (0) Table wp_wpforms_logs: finishing file(s) (2, 0.4 KB)
+0336.549 (0) Table wp_wpforms_payment_meta: Total expected rows (via COUNT): 0
+0336.554 (0) Table wp_wpforms_payment_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=690) in 0.01 seconds
+0336.562 (0) Table wp_wpforms_payment_meta: finishing file(s) (2, 0.4 KB)
+0336.578 (0) Table wp_wpforms_payments: Total expected rows (via COUNT): 0
+0336.588 (0) Table wp_wpforms_payments: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1650) in 0.01 seconds
+0336.607 (0) Table wp_wpforms_payments: finishing file(s) (2, 0.6 KB)
+0336.621 (0) Table wp_wpforms_tasks_meta: Total expected rows (via COUNT): 4
+0336.622 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.629 (0) Table wp_wpforms_tasks_meta: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=888) in 0.01 seconds
+0336.638 (0) Table wp_wpforms_tasks_meta: finishing file(s) (2, 0.4 KB)
+0336.644 (0) Table wp_yoast_indexable: Total expected rows (via COUNT): 24
+0336.645 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.649 (0) Table wp_yoast_indexable: Rows added in this batch (next record: 24): 24 (uncompressed bytes in this segment=14017) in 0.01 seconds
+0336.656 (0) Table wp_yoast_indexable: finishing file(s) (2, 2.8 KB)
+0336.660 (0) Table wp_yoast_indexable_hierarchy: Total expected rows (approximate): 21
+0336.663 (0) Table wp_yoast_indexable_hierarchy: Rows added in this batch (next record: 1000): 22 (uncompressed bytes in this segment=1142) in 0.00 seconds
+0336.668 (0) Table wp_yoast_indexable_hierarchy: finishing file(s) (2, 0.5 KB)
+0336.672 (0) Table wp_yoast_migrations: Total expected rows (via COUNT): 24
+0336.674 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.677 (0) Table wp_yoast_migrations: Rows added in this batch (next record: 24): 24 (uncompressed bytes in this segment=1234) in 0.01 seconds
+0336.682 (0) Table wp_yoast_migrations: finishing file(s) (2, 0.6 KB)
+0336.687 (0) Table wp_yoast_primary_term: Total expected rows (via COUNT): 0
+0336.690 (0) Table wp_yoast_primary_term: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=829) in 0.00 seconds
+0336.695 (0) Table wp_yoast_primary_term: finishing file(s) (2, 0.4 KB)
+0336.699 (0) Table wp_yoast_seo_links: Total expected rows (via COUNT): 16
+0336.701 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0336.705 (0) Table wp_yoast_seo_links: Rows added in this batch (next record: 16): 16 (uncompressed bytes in this segment=3029) in 0.01 seconds
+0336.710 (0) Table wp_yoast_seo_links: finishing file(s) (2, 1 KB)
+0336.711 (0) PHP event: code E_WARNING: filemtime(): stat failed for /homepages/16/d4298693242/htdocs/wp-content/updraft/backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db.gz (line 1923, wp-content/plugins/updraftplus/backup.php)
+0336.713 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_options.table.tmpr9129.gz (1/68/fopen): adding to final database dump
+0336.716 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_options.table.gz (2/68/fopen): adding to final database dump
+0336.718 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_users.table.tmpr8.gz (3/68/fopen): adding to final database dump
+0336.719 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_users.table.gz (4/68/fopen): adding to final database dump
+0336.721 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_usermeta.table.tmpr228.gz (5/68/fopen): adding to final database dump
+0336.722 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_usermeta.table.gz (6/68/fopen): adding to final database dump
+0336.723 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_actionscheduler_actions.table.tmpr148.gz (7/68/fopen): adding to final database dump
+0336.725 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_actionscheduler_actions.table.gz (8/68/fopen): adding to final database dump
+0336.726 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_actionscheduler_claims.table.tmpr0.gz (9/68/fopen): adding to final database dump
+0336.727 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_actionscheduler_claims.table.gz (10/68/fopen): adding to final database dump
+0336.728 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_actionscheduler_groups.table.tmpr6.gz (11/68/fopen): adding to final database dump
+0336.730 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_actionscheduler_groups.table.gz (12/68/fopen): adding to final database dump
+0336.731 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_actionscheduler_logs.table.tmpr317.gz (13/68/fopen): adding to final database dump
+0336.732 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_actionscheduler_logs.table.gz (14/68/fopen): adding to final database dump
+0336.734 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_commentmeta.table.tmpr0.gz (15/68/fopen): adding to final database dump
+0336.735 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_commentmeta.table.gz (16/68/fopen): adding to final database dump
+0336.736 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_comments.table.tmpr2.gz (17/68/fopen): adding to final database dump
+0336.737 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_comments.table.gz (18/68/fopen): adding to final database dump
+0336.739 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_links.table.tmpr0.gz (19/68/fopen): adding to final database dump
+0336.740 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_links.table.gz (20/68/fopen): adding to final database dump
+0336.741 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_postmeta.table.tmpr1306.gz (21/68/fopen): adding to final database dump
+0336.743 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_postmeta.table.gz (22/68/fopen): adding to final database dump
+0336.745 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_posts.table.tmpr587.gz (23/68/fopen): adding to final database dump
+0336.750 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_posts.table.gz (24/68/fopen): adding to final database dump
+0336.751 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_term_relationships.table.tmpr100001.gz (25/68/fopen): adding to final database dump
+0336.753 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_term_relationships.table.gz (26/68/fopen): adding to final database dump
+0336.758 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_term_taxonomy.table.tmpr36.gz (27/68/fopen): adding to final database dump
+0336.760 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_term_taxonomy.table.gz (28/68/fopen): adding to final database dump
+0336.762 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_termmeta.table.tmpr0.gz (29/68/fopen): adding to final database dump
+0336.764 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_termmeta.table.gz (30/68/fopen): adding to final database dump
+0336.765 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_terms.table.tmpr36.gz (31/68/fopen): adding to final database dump
+0336.766 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_terms.table.gz (32/68/fopen): adding to final database dump
+0336.767 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_cache.table.tmpr165.gz (33/68/fopen): adding to final database dump
+0336.769 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_cache.table.gz (34/68/fopen): adding to final database dump
+0336.770 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_crawl_cleanup_blocked_args.table.tmpr0.gz (35/68/fopen): adding to final database dump
+0336.771 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_crawl_cleanup_blocked_args.table.gz (36/68/fopen): adding to final database dump
+0336.773 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_crawl_cleanup_logs.table.tmpr0.gz (37/68/fopen): adding to final database dump
+0336.774 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_crawl_cleanup_logs.table.gz (38/68/fopen): adding to final database dump
+0336.775 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_notifications.table.tmpr5.gz (39/68/fopen): adding to final database dump
+0336.776 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_notifications.table.gz (40/68/fopen): adding to final database dump
+0336.778 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_posts.table.tmpr60.gz (41/68/fopen): adding to final database dump
+0336.779 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_posts.table.gz (42/68/fopen): adding to final database dump
+0336.781 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_writing_assistant_keywords.table.tmpr0.gz (43/68/fopen): adding to final database dump
+0336.782 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_writing_assistant_keywords.table.gz (44/68/fopen): adding to final database dump
+0336.784 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_writing_assistant_posts.table.tmpr0.gz (45/68/fopen): adding to final database dump
+0336.785 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_aioseo_writing_assistant_posts.table.gz (46/68/fopen): adding to final database dump
+0336.787 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_assistentendb.table.tmpr12.gz (47/68/fopen): adding to final database dump
+0336.788 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_assistentendb.table.gz (48/68/fopen): adding to final database dump
+0336.789 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_cky_banners.table.tmpr3.gz (49/68/fopen): adding to final database dump
+0336.791 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_cky_banners.table.gz (50/68/fopen): adding to final database dump
+0336.792 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_cky_cookie_categories.table.tmpr6.gz (51/68/fopen): adding to final database dump
+0336.793 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_cky_cookie_categories.table.gz (52/68/fopen): adding to final database dump
+0336.794 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_cky_cookies.table.tmpr0.gz (53/68/fopen): adding to final database dump
+0336.796 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_cky_cookies.table.gz (54/68/fopen): adding to final database dump
+0336.797 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_duplicator_packages.table.tmpr0.gz (55/68/fopen): adding to final database dump
+0336.798 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_duplicator_packages.table.gz (56/68/fopen): adding to final database dump
+0336.799 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_e_events.table.tmpr2.gz (57/68/fopen): adding to final database dump
+0336.800 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_e_events.table.gz (58/68/fopen): adding to final database dump
+0336.801 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_masterslider_options.table.tmpr3.gz (59/68/fopen): adding to final database dump
+0336.803 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_masterslider_options.table.gz (60/68/fopen): adding to final database dump
+0336.804 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_masterslider_sliders.table.tmpr2.gz (61/68/fopen): adding to final database dump
+0336.807 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_masterslider_sliders.table.gz (62/68/fopen): adding to final database dump
+0336.809 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter.table.tmpr4.gz (63/68/fopen): adding to final database dump
+0336.810 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter.table.gz (64/68/fopen): adding to final database dump
+0336.812 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_emails.table.tmpr3.gz (65/68/fopen): adding to final database dump
+0336.813 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_emails.table.gz (66/68/fopen): adding to final database dump
+0336.814 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_logs.table.tmpr2.gz (67/68/fopen): adding to final database dump
+0336.816 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_logs.table.gz (68/68/fopen): adding to final database dump
+0336.817 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_sent.table.tmpr1001.gz (69/68/fopen): adding to final database dump
+0336.820 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_sent.table.gz (70/68/fopen): adding to final database dump
+0336.822 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_stats.table.tmpr3.gz (71/68/fopen): adding to final database dump
+0336.828 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_stats.table.gz (72/68/fopen): adding to final database dump
+0336.829 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_user_logs.table.tmpr3.gz (73/68/fopen): adding to final database dump
+0336.831 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_user_logs.table.gz (74/68/fopen): adding to final database dump
+0336.834 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_user_meta.table.tmpr0.gz (75/68/fopen): adding to final database dump
+0336.836 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_newsletter_user_meta.table.gz (76/68/fopen): adding to final database dump
+0336.837 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_image_storage.table.tmpr0.gz (77/68/fopen): adding to final database dump
+0336.838 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_image_storage.table.gz (78/68/fopen): adding to final database dump
+0336.839 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_section_storage.table.tmpr10001.gz (79/68/fopen): adding to final database dump
+0336.840 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_section_storage.table.gz (80/68/fopen): adding to final database dump
+0336.841 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_smartslider3_generators.table.tmpr0.gz (81/68/fopen): adding to final database dump
+0336.843 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_smartslider3_generators.table.gz (82/68/fopen): adding to final database dump
+0336.844 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_smartslider3_sliders.table.tmpr2.gz (83/68/fopen): adding to final database dump
+0336.845 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_smartslider3_sliders.table.gz (84/68/fopen): adding to final database dump
+0336.846 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_smartslider3_sliders_xref.table.tmpr1.gz (85/68/fopen): adding to final database dump
+0336.848 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_smartslider3_sliders_xref.table.gz (86/68/fopen): adding to final database dump
+0336.849 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_smartslider3_slides.table.tmpr3.gz (87/68/fopen): adding to final database dump
+0336.850 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_nextend2_smartslider3_slides.table.gz (88/68/fopen): adding to final database dump
+0336.851 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_qcld_slider_hero_sliders.table.tmpr4.gz (89/68/fopen): adding to final database dump
+0336.853 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_qcld_slider_hero_sliders.table.gz (90/68/fopen): adding to final database dump
+0336.854 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_qcld_slider_hero_slides.table.tmpr7.gz (91/68/fopen): adding to final database dump
+0336.856 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_qcld_slider_hero_slides.table.gz (92/68/fopen): adding to final database dump
+0336.857 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_analytics_gsc.table.tmpr0.gz (93/68/fopen): adding to final database dump
+0336.859 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_analytics_gsc.table.gz (94/68/fopen): adding to final database dump
+0336.860 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_analytics_inspections.table.tmpr0.gz (95/68/fopen): adding to final database dump
+0336.862 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_analytics_inspections.table.gz (96/68/fopen): adding to final database dump
+0336.863 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_analytics_objects.table.tmpr14.gz (97/68/fopen): adding to final database dump
+0336.864 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_analytics_objects.table.gz (98/68/fopen): adding to final database dump
+0336.865 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_internal_links.table.tmpr111.gz (99/68/fopen): adding to final database dump
+0336.868 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_internal_links.table.gz (100/68/fopen): adding to final database dump
+0336.869 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_internal_meta.table.tmpr537.gz (101/68/fopen): adding to final database dump
+0336.873 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_rank_math_internal_meta.table.gz (102/68/fopen): adding to final database dump
+0336.879 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_solarkonfigurator.table.tmpr0.gz (103/68/fopen): adding to final database dump
+0336.890 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_solarkonfigurator.table.gz (104/68/fopen): adding to final database dump
+0336.902 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_solarkonfigurator_v2.table.tmpr0.gz (105/68/fopen): adding to final database dump
+0336.909 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_solarkonfigurator_v2.table.gz (106/68/fopen): adding to final database dump
+0336.910 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_trp_gettext_de_de.table.tmpr24.gz (107/68/fopen): adding to final database dump
+0336.911 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_trp_gettext_de_de.table.gz (108/68/fopen): adding to final database dump
+0336.912 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_trp_gettext_original_meta.table.tmpr0.gz (109/68/fopen): adding to final database dump
+0336.914 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_trp_gettext_original_meta.table.gz (110/68/fopen): adding to final database dump
+0336.915 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_trp_gettext_original_strings.table.tmpr24.gz (111/68/fopen): adding to final database dump
+0336.916 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_trp_gettext_original_strings.table.gz (112/68/fopen): adding to final database dump
+0336.918 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_userfeedback_survey_responses.table.tmpr0.gz (113/68/fopen): adding to final database dump
+0336.919 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_userfeedback_survey_responses.table.gz (114/68/fopen): adding to final database dump
+0336.920 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_userfeedback_surveys.table.tmpr0.gz (115/68/fopen): adding to final database dump
+0336.922 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_userfeedback_surveys.table.gz (116/68/fopen): adding to final database dump
+0336.923 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wp_phpmyadmin_extension__errors_log.table.tmpr0.gz (117/68/fopen): adding to final database dump
+0336.924 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wp_phpmyadmin_extension__errors_log.table.gz (118/68/fopen): adding to final database dump
+0336.925 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wpforms_logs.table.tmpr0.gz (119/68/fopen): adding to final database dump
+0336.927 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wpforms_logs.table.gz (120/68/fopen): adding to final database dump
+0336.928 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wpforms_payment_meta.table.tmpr0.gz (121/68/fopen): adding to final database dump
+0336.929 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wpforms_payment_meta.table.gz (122/68/fopen): adding to final database dump
+0336.930 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wpforms_payments.table.tmpr0.gz (123/68/fopen): adding to final database dump
+0336.932 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wpforms_payments.table.gz (124/68/fopen): adding to final database dump
+0336.933 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wpforms_tasks_meta.table.tmpr5.gz (125/68/fopen): adding to final database dump
+0336.934 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_wpforms_tasks_meta.table.gz (126/68/fopen): adding to final database dump
+0336.936 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_indexable.table.tmpr25.gz (127/68/fopen): adding to final database dump
+0336.937 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_indexable.table.gz (128/68/fopen): adding to final database dump
+0336.939 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_indexable_hierarchy.table.tmpr1001.gz (129/68/fopen): adding to final database dump
+0336.941 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_indexable_hierarchy.table.gz (130/68/fopen): adding to final database dump
+0336.942 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_migrations.table.tmpr25.gz (131/68/fopen): adding to final database dump
+0336.943 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_migrations.table.gz (132/68/fopen): adding to final database dump
+0336.944 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_primary_term.table.tmpr0.gz (133/68/fopen): adding to final database dump
+0336.946 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_primary_term.table.gz (134/68/fopen): adding to final database dump
+0336.947 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_seo_links.table.tmpr17.gz (135/68/fopen): adding to final database dump
+0336.949 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db-table-wp_yoast_seo_links.table.gz (136/68/fopen): adding to final database dump
+0336.951 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db.gz: finished writing out complete database file (509.3 KB)
+0337.072 (0) Total database tables backed up: 68 (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db.gz, size: 521691, sha1: 77be9b2e5845176f003fc484f2df4d15a0de58a9, sha256: f78f9519927a9a3b087eaf2a4f43c1ee379107ed588f389bbf97f5e434f6fe9b)
+0337.080 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip: plugins: This file has already been successfully uploaded
+0337.082 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip: themes: This file has already been successfully uploaded
+0337.083 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip: uploads: This file has already been successfully uploaded
+0337.084 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip: others: This file has already been successfully uploaded
+0337.085 (0) backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db.gz: db: This file has not yet been successfully uploaded: will queue
+0337.087 (0) Saving backup history. Total backup size: 205.5 MB
+0337.091 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0337.096 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0337.097 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-2f95a1f70e9e071ebc92d1ed98a41706)
+0337.355 (0) Google Drive: quota usage: used=410.5 MB, total=15360 MB, available=14949.5 MB
+0337.357 (0) Google Drive: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db.gz: Attempting to upload to Google Drive (into folder id: 1bPBiZAj5k7tNJYolvhGchrLBY3w3jMhs)
+0339.400 (0) Googledrive chunked upload: 100 % uploaded
+0339.405 (0) Google Drive: OK: Archive backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db.gz uploaded in 2.05 seconds
+0339.406 (0) Recording as successfully uploaded: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db.gz
+0339.409 (0) Deleting local file: backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-db.gz: OK
+0339.412 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0339.414 (0) Number of backup sets in history: 2; groups (db): 1
+0339.415 (0) Examining (for databases) backup set with group_id=0, nonce=d620a85f684c, datestamp=1737338666 (Jan 20 2025 02:04:26)
+0339.416 (0) This backup set is the backup set just made, so will not be deleted.
+0339.416 (0) Examining (for databases) backup set with group_id=0, nonce=d3286af4c5ec, datestamp=1737291704 (Jan 19 2025 13:01:44)
+0339.416 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0339.418 (0) Number of backup sets in history: 2; groups (files): 1
+0339.419 (0) Examining (for files) backup set with nonce=d620a85f684c, datestamp=1737338666 (Jan 20 2025 02:04:26)
+0339.419 (0) This backup set is the backup set just made, so will not be deleted.
+0339.421 (0) This backup set is the backup set just made, so will not be deleted.
+0339.421 (0) This backup set is the backup set just made, so will not be deleted.
+0339.421 (0) This backup set is the backup set just made, so will not be deleted.
+0339.421 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0339.422 (0) Examining (for files) backup set with nonce=d3286af4c5ec, datestamp=1737291704 (Jan 19 2025 13:01:44)
+0339.422 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0339.422 (0) Retain: saving new backup history (sets now: 2) and finishing retain operation
+0339.426 (0) Resume backup (d620a85f684c, 0): finish run
+0339.431 (0) Decremented the semaphore (fd) by 1
+0339.434 (0) Semaphore (fd) unlocked
+0339.435 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0339.440 (0) Deleting zip manifest (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-plugins.zip.list.tmp)
+0339.441 (0) Deleting zip manifest (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-themes.zip.list.tmp)
+0339.443 (0) Deleting zip manifest (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-uploads.zip.list.tmp)
+0339.444 (0) Deleting zip manifest (backup_2025-01-20-0304_SolarSolutions_Weil_die_Zukunf_d620a85f684c-others.zip.list.tmp)
+0339.445 (0) No email will/can be sent - the user has not configured an email address.
+0339.447 (0) The backup succeeded and is now complete

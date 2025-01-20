@@ -1,0 +1,433 @@
+0000.000 (0) Opened log file at time: Mon, 20 Jan 2025 02:10:08 +0000 on http://solarsolutionsgmbh.com
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.1 WP: 6.7.1 PHP: 8.3.15 (cgi-fcgi, Linux info 3.0 #1337 SMP Tue Jan 01 00:00:00 CEST 2000 all GNU/Linux) MySQL: 10.11.7-MariaDB-log (max packet size=67108864) WPLANG: de_DE Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: -1 (used: 80.6M | 83M) multisite: N openssl: OpenSSL 1.1.1w  11 Sep 2023 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.003 (0) Free space on disk containing Updraft's temporary directory: 917301 MB
+0000.005 (0) Tasks: Backup files:  (schedule: weekly) Backup DB: 1 (schedule: daily)
+0000.007 (0) Processed schedules. Tasks now: Backup files:  Backup DB: 1
+0000.011 (0) Semaphore (d, wp_options) being initialised
+0000.017 (0) Requesting semaphore lock (d) (apparently not via scheduler)
+0000.020 (0) Set semaphore last lock (d) time to 2025-01-20 02:10:08
+0000.021 (0) Semaphore lock (d) complete
+0000.026 (0) Backup run: resumption=0, nonce=2c917ffa5cb8, file_nonce=2c917ffa5cb8 begun at=1737339008 (0s ago), job type=backup
+0000.028 (0) Scheduling a resumption (1) after 300 seconds (1737339308) in case this run gets aborted
+0000.038 (0) This backup run is not intended for files - skipping
+0000.039 (0) Beginning creation of database dump (WordPress DB)
+0000.040 (0) Couldn't get the sql_mode value (N;); will not attempt any adjustment
+0000.043 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0000.054 (0) Output: /*M!999999\- enable the sandbox mode */ \n/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `wp_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!4010 (truncated - 1490 bytes total)
+0000.055 (0) Working binary mysqldump found: /usr/bin/mysqldump
+0000.065 (0) Table wp_options: Total expected rows (via COUNT): 549
+0000.109 (0) Table wp_options: Rows added in this batch (next record: 9135): 545 (uncompressed bytes in this segment=1110865) in 0.05 seconds
+0000.119 (0) Table wp_options: finishing file(s) (2, 151.7 KB)
+0000.123 (0) Table wp_users: Total expected rows (via COUNT): 6
+0000.124 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.127 (0) Table wp_users: Rows added in this batch (next record: 7): 6 (uncompressed bytes in this segment=1889) in 0.01 seconds
+0000.135 (0) Table wp_users: finishing file(s) (2, 0.9 KB)
+0000.141 (0) Table wp_usermeta: Total expected rows (via COUNT): 210
+0000.142 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.147 (0) Table wp_usermeta: Rows added in this batch (next record: 227): 210 (uncompressed bytes in this segment=38112) in 0.01 seconds
+0000.153 (0) Table wp_usermeta: finishing file(s) (2, 8.2 KB)
+0000.158 (0) Table wp_actionscheduler_actions: Total expected rows (via COUNT): 103
+0000.159 (0) Table is relatively small; fetch_rows will thus be: 200 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.164 (0) Table wp_actionscheduler_actions: Rows added in this batch (next record: 147): 103 (uncompressed bytes in this segment=40840) in 0.01 seconds
+0000.169 (0) Table wp_actionscheduler_actions: finishing file(s) (2, 3.8 KB)
+0000.173 (0) Table wp_actionscheduler_claims: Total expected rows (via COUNT): 0
+0000.176 (0) Table wp_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=626) in 0.00 seconds
+0000.180 (0) Table wp_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0000.184 (0) Table wp_actionscheduler_groups: Total expected rows (via COUNT): 5
+0000.185 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.188 (0) Table wp_actionscheduler_groups: Rows added in this batch (next record: 5): 5 (uncompressed bytes in this segment=726) in 0.01 seconds
+0000.192 (0) Table wp_actionscheduler_groups: finishing file(s) (2, 0.4 KB)
+0000.196 (0) Table wp_actionscheduler_logs: Total expected rows (via COUNT): 293
+0000.197 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.203 (0) Table wp_actionscheduler_logs: Rows added in this batch (next record: 316): 293 (uncompressed bytes in this segment=26728) in 0.01 seconds
+0000.207 (0) Table wp_actionscheduler_logs: finishing file(s) (2, 3.4 KB)
+0000.212 (0) Table wp_commentmeta: Total expected rows (via COUNT): 0
+0000.216 (0) Table wp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=634) in 0.01 seconds
+0000.221 (0) Table wp_commentmeta: finishing file(s) (2, 0.4 KB)
+0000.225 (0) Table wp_comments: Total expected rows (via COUNT): 1
+0000.227 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.230 (0) Table wp_comments: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1927) in 0.01 seconds
+0000.234 (0) Table wp_comments: finishing file(s) (2, 0.8 KB)
+0000.238 (0) Table wp_links: Total expected rows (via COUNT): 0
+0000.241 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1027) in 0.00 seconds
+0000.245 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0000.250 (0) Table wp_postmeta: Total expected rows (approximate): 1019
+0000.262 (0) Table wp_postmeta: Rows added in this batch (next record: 1305): 1030 (uncompressed bytes in this segment=236851) in 0.01 seconds
+0000.268 (0) Table wp_postmeta: finishing file(s) (2, 23.7 KB)
+0000.274 (0) Table wp_posts: Total expected rows (via COUNT): 477
+0000.275 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.364 (0) Table wp_posts: Rows added in this batch (next record: 586): 477 (uncompressed bytes in this segment=3701605) in 0.09 seconds
+0000.371 (0) Table wp_posts: finishing file(s) (2, 242.8 KB)
+0000.375 (0) Table wp_term_relationships: Total expected rows (approximate): 72
+0000.380 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 75 (uncompressed bytes in this segment=1715) in 0.01 seconds
+0000.385 (0) Table wp_term_relationships: finishing file(s) (2, 0.6 KB)
+0000.391 (0) Table wp_term_taxonomy: Total expected rows (via COUNT): 33
+0000.393 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.398 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 35): 33 (uncompressed bytes in this segment=2381) in 0.01 seconds
+0000.406 (0) Table wp_term_taxonomy: finishing file(s) (2, 0.9 KB)
+0000.414 (0) Table wp_termmeta: Total expected rows (via COUNT): 0
+0000.417 (0) Table wp_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=607) in 0.01 seconds
+0000.423 (0) Table wp_termmeta: finishing file(s) (2, 0.4 KB)
+0000.427 (0) Table wp_terms: Total expected rows (via COUNT): 33
+0000.428 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.432 (0) Table wp_terms: Rows added in this batch (next record: 35): 33 (uncompressed bytes in this segment=1818) in 0.01 seconds
+0000.437 (0) Table wp_terms: finishing file(s) (2, 0.8 KB)
+0000.442 (0) Table wp_aioseo_cache: Total expected rows (via COUNT): 22
+0000.443 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.450 (0) Table wp_aioseo_cache: Rows added in this batch (next record: 164): 22 (uncompressed bytes in this segment=98485) in 0.01 seconds
+0000.456 (0) Table wp_aioseo_cache: finishing file(s) (2, 19.4 KB)
+0000.460 (0) Table wp_aioseo_crawl_cleanup_blocked_args: Total expected rows (via COUNT): 0
+0000.463 (0) Table wp_aioseo_crawl_cleanup_blocked_args: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=947) in 0.00 seconds
+0000.467 (0) Table wp_aioseo_crawl_cleanup_blocked_args: finishing file(s) (2, 0.4 KB)
+0000.471 (0) Table wp_aioseo_crawl_cleanup_logs: Total expected rows (via COUNT): 0
+0000.473 (0) Table wp_aioseo_crawl_cleanup_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=770) in 0.00 seconds
+0000.477 (0) Table wp_aioseo_crawl_cleanup_logs: finishing file(s) (2, 0.4 KB)
+0000.482 (0) Table wp_aioseo_notifications: Total expected rows (via COUNT): 4
+0000.483 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.487 (0) Table wp_aioseo_notifications: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=3989) in 0.01 seconds
+0000.492 (0) Table wp_aioseo_notifications: finishing file(s) (2, 1.1 KB)
+0000.498 (0) Table wp_aioseo_posts: Total expected rows (via COUNT): 59
+0000.499 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.505 (0) Table wp_aioseo_posts: Rows added in this batch (next record: 59): 59 (uncompressed bytes in this segment=57072) in 0.01 seconds
+0000.510 (0) Table wp_aioseo_posts: finishing file(s) (2, 2.9 KB)
+0000.514 (0) Table wp_aioseo_writing_assistant_keywords: Total expected rows (via COUNT): 0
+0000.517 (0) Table wp_aioseo_writing_assistant_keywords: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1082) in 0.00 seconds
+0000.521 (0) Table wp_aioseo_writing_assistant_keywords: finishing file(s) (2, 0.5 KB)
+0000.525 (0) Table wp_aioseo_writing_assistant_posts: Total expected rows (via COUNT): 0
+0000.527 (0) Table wp_aioseo_writing_assistant_posts: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=982) in 0.00 seconds
+0000.531 (0) Table wp_aioseo_writing_assistant_posts: finishing file(s) (2, 0.4 KB)
+0000.535 (0) Table wp_assistentendb: Total expected rows (via COUNT): 11
+0000.536 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.540 (0) Table wp_assistentendb: Rows added in this batch (next record: 11): 11 (uncompressed bytes in this segment=2983) in 0.01 seconds
+0000.544 (0) Table wp_assistentendb: finishing file(s) (2, 1 KB)
+0000.574 (0) Table wp_cky_banners: Total expected rows (via COUNT): 2
+0000.575 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.578 (0) Table wp_cky_banners: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=20501) in 0.03 seconds
+0000.584 (0) Table wp_cky_banners: finishing file(s) (2, 3.5 KB)
+0000.591 (0) Table wp_cky_cookie_categories: Total expected rows (via COUNT): 5
+0000.592 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.595 (0) Table wp_cky_cookie_categories: Rows added in this batch (next record: 5): 5 (uncompressed bytes in this segment=2619) in 0.01 seconds
+0000.601 (0) Table wp_cky_cookie_categories: finishing file(s) (2, 1 KB)
+0000.607 (0) Table wp_cky_cookies: Total expected rows (via COUNT): 0
+0000.610 (0) Table wp_cky_cookies: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=959) in 0.01 seconds
+0000.616 (0) Table wp_cky_cookies: finishing file(s) (2, 0.5 KB)
+0000.621 (0) Table wp_duplicator_packages: Total expected rows (via COUNT): 0
+0000.623 (0) Table wp_duplicator_packages: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=707) in 0.00 seconds
+0000.629 (0) Table wp_duplicator_packages: finishing file(s) (2, 0.4 KB)
+0000.633 (0) Table wp_e_events: Total expected rows (via COUNT): 1
+0000.634 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.637 (0) Table wp_e_events: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=773) in 0.01 seconds
+0000.641 (0) Table wp_e_events: finishing file(s) (2, 0.5 KB)
+0000.645 (0) Table wp_masterslider_options: Total expected rows (via COUNT): 2
+0000.647 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.649 (0) Table wp_masterslider_options: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=768) in 0.01 seconds
+0000.654 (0) Table wp_masterslider_options: finishing file(s) (2, 0.5 KB)
+0000.658 (0) Table wp_masterslider_sliders: Total expected rows (via COUNT): 1
+0000.659 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.663 (0) Table wp_masterslider_sliders: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=4336) in 0.01 seconds
+0000.671 (0) Table wp_masterslider_sliders: finishing file(s) (2, 1.9 KB)
+0000.676 (0) Table wp_newsletter: Total expected rows (via COUNT): 3
+0000.678 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.681 (0) Table wp_newsletter: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=5540) in 0.01 seconds
+0000.685 (0) Table wp_newsletter: finishing file(s) (2, 1 KB)
+0000.692 (0) Table wp_newsletter_emails: Total expected rows (via COUNT): 2
+0000.693 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.696 (0) Table wp_newsletter_emails: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=31222) in 0.01 seconds
+0000.701 (0) Table wp_newsletter_emails: finishing file(s) (2, 8.1 KB)
+0000.707 (0) Table wp_newsletter_logs: Total expected rows (via COUNT): 1
+0000.708 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.710 (0) Table wp_newsletter_logs: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=832) in 0.01 seconds
+0000.717 (0) Table wp_newsletter_logs: finishing file(s) (2, 0.5 KB)
+0000.721 (0) Table wp_newsletter_sent: Total expected rows (approximate): 0
+0000.724 (0) Table wp_newsletter_sent: Rows added in this batch (next record: 1000): 1 (uncompressed bytes in this segment=886) in 0.00 seconds
+0000.729 (0) Table wp_newsletter_sent: finishing file(s) (2, 0.4 KB)
+0000.733 (0) Table wp_newsletter_stats: Total expected rows (via COUNT): 2
+0000.734 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.737 (0) Table wp_newsletter_stats: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=915) in 0.01 seconds
+0000.742 (0) Table wp_newsletter_stats: finishing file(s) (2, 0.5 KB)
+0000.748 (0) Table wp_newsletter_user_logs: Total expected rows (via COUNT): 2
+0000.749 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.751 (0) Table wp_newsletter_user_logs: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=907) in 0.01 seconds
+0000.757 (0) Table wp_newsletter_user_logs: finishing file(s) (2, 0.5 KB)
+0000.763 (0) Table wp_newsletter_user_meta: Total expected rows (via COUNT): 0
+0000.766 (0) Table wp_newsletter_user_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=611) in 0.01 seconds
+0000.771 (0) Table wp_newsletter_user_meta: finishing file(s) (2, 0.4 KB)
+0000.775 (0) Table wp_nextend2_image_storage: Total expected rows (via COUNT): 0
+0000.778 (0) Table wp_nextend2_image_storage: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=591) in 0.00 seconds
+0000.782 (0) Table wp_nextend2_image_storage: finishing file(s) (2, 0.4 KB)
+0000.787 (0) Table wp_nextend2_section_storage: Total expected rows (via COUNT): 1
+0000.788 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.791 (0) Table wp_nextend2_section_storage: Rows added in this batch (next record: 10000): 1 (uncompressed bytes in this segment=1113) in 0.01 seconds
+0000.796 (0) Table wp_nextend2_section_storage: finishing file(s) (2, 0.6 KB)
+0000.808 (0) Table wp_nextend2_smartslider3_generators: Total expected rows (via COUNT): 0
+0000.833 (0) Table wp_nextend2_smartslider3_generators: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=625) in 0.03 seconds
+0000.838 (0) Table wp_nextend2_smartslider3_generators: finishing file(s) (2, 0.4 KB)
+0000.843 (0) Table wp_nextend2_smartslider3_sliders: Total expected rows (via COUNT): 1
+0000.844 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.848 (0) Table wp_nextend2_smartslider3_sliders: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=20517) in 0.01 seconds
+0000.853 (0) Table wp_nextend2_smartslider3_sliders: finishing file(s) (2, 3.8 KB)
+0000.857 (0) Table wp_nextend2_smartslider3_sliders_xref: Total expected rows (approximate): 0
+0000.859 (0) Table wp_nextend2_smartslider3_sliders_xref: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=659) in 0.00 seconds
+0000.865 (0) Table wp_nextend2_smartslider3_sliders_xref: finishing file(s) (2, 0.3 KB)
+0000.871 (0) Table wp_nextend2_smartslider3_slides: Total expected rows (via COUNT): 2
+0000.873 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.877 (0) Table wp_nextend2_smartslider3_slides: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=30909) in 0.01 seconds
+0000.883 (0) Table wp_nextend2_smartslider3_slides: finishing file(s) (2, 2.8 KB)
+0000.889 (0) Table wp_qcld_slider_hero_sliders: Total expected rows (via COUNT): 2
+0000.891 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.893 (0) Table wp_qcld_slider_hero_sliders: Rows added in this batch (next record: 3): 2 (uncompressed bytes in this segment=6020) in 0.01 seconds
+0000.898 (0) Table wp_qcld_slider_hero_sliders: finishing file(s) (2, 1.5 KB)
+0000.905 (0) Table wp_qcld_slider_hero_slides: Total expected rows (via COUNT): 5
+0000.906 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.908 (0) Table wp_qcld_slider_hero_slides: Rows added in this batch (next record: 6): 5 (uncompressed bytes in this segment=2963) in 0.01 seconds
+0000.915 (0) Table wp_qcld_slider_hero_slides: finishing file(s) (2, 0.9 KB)
+0000.919 (0) Table wp_rank_math_analytics_gsc: Total expected rows (via COUNT): 0
+0000.922 (0) Table wp_rank_math_analytics_gsc: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=859) in 0.00 seconds
+0000.927 (0) Table wp_rank_math_analytics_gsc: finishing file(s) (2, 0.4 KB)
+0000.934 (0) Table wp_rank_math_analytics_inspections: Total expected rows (via COUNT): 0
+0000.936 (0) Table wp_rank_math_analytics_inspections: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1410) in 0.01 seconds
+0000.946 (0) Table wp_rank_math_analytics_inspections: finishing file(s) (2, 0.6 KB)
+0000.950 (0) Table wp_rank_math_analytics_objects: Total expected rows (via COUNT): 13
+0000.951 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.958 (0) Table wp_rank_math_analytics_objects: Rows added in this batch (next record: 13): 13 (uncompressed bytes in this segment=3257) in 0.01 seconds
+0000.962 (0) Table wp_rank_math_analytics_objects: finishing file(s) (2, 1 KB)
+0000.966 (0) Table wp_rank_math_internal_links: Total expected rows (via COUNT): 9
+0000.968 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.970 (0) Table wp_rank_math_internal_links: Rows added in this batch (next record: 110): 9 (uncompressed bytes in this segment=1227) in 0.00 seconds
+0000.974 (0) Table wp_rank_math_internal_links: finishing file(s) (2, 0.6 KB)
+0000.979 (0) Table wp_rank_math_internal_meta: Total expected rows (via COUNT): 14
+0000.980 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.982 (0) Table wp_rank_math_internal_meta: Rows added in this batch (next record: 536): 14 (uncompressed bytes in this segment=925) in 0.00 seconds
+0000.987 (0) Table wp_rank_math_internal_meta: finishing file(s) (2, 0.4 KB)
+0000.992 (0) Table wp_solarkonfigurator: Total expected rows (via COUNT): 0
+0000.995 (0) Table wp_solarkonfigurator: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=543) in 0.00 seconds
+0000.999 (0) Table wp_solarkonfigurator: finishing file(s) (2, 0.4 KB)
+0001.003 (0) Table wp_solarkonfigurator_v2: Total expected rows (via COUNT): 0
+0001.005 (0) Table wp_solarkonfigurator_v2: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=561) in 0.00 seconds
+0001.009 (0) Table wp_solarkonfigurator_v2: finishing file(s) (2, 0.4 KB)
+0001.015 (0) Table wp_trp_gettext_de_de: Total expected rows (via COUNT): 23
+0001.016 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0001.020 (0) Table wp_trp_gettext_de_de: Rows added in this batch (next record: 23): 23 (uncompressed bytes in this segment=2310) in 0.01 seconds
+0001.025 (0) Table wp_trp_gettext_de_de: finishing file(s) (2, 0.9 KB)
+0001.031 (0) Table wp_trp_gettext_original_meta: Total expected rows (via COUNT): 0
+0001.033 (0) Table wp_trp_gettext_original_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=746) in 0.01 seconds
+0001.039 (0) Table wp_trp_gettext_original_meta: finishing file(s) (2, 0.4 KB)
+0001.042 (0) Table wp_trp_gettext_original_strings: Total expected rows (via COUNT): 23
+0001.043 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0001.047 (0) Table wp_trp_gettext_original_strings: Rows added in this batch (next record: 23): 23 (uncompressed bytes in this segment=2135) in 0.01 seconds
+0001.051 (0) Table wp_trp_gettext_original_strings: finishing file(s) (2, 0.7 KB)
+0001.057 (0) Table wp_userfeedback_survey_responses: Total expected rows (via COUNT): 0
+0001.061 (0) Table wp_userfeedback_survey_responses: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1067) in 0.01 seconds
+0001.066 (0) Table wp_userfeedback_survey_responses: finishing file(s) (2, 0.5 KB)
+0001.072 (0) Table wp_userfeedback_surveys: Total expected rows (via COUNT): 0
+0001.074 (0) Table wp_userfeedback_surveys: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=830) in 0.00 seconds
+0001.088 (0) Table wp_userfeedback_surveys: finishing file(s) (2, 0.4 KB)
+0001.106 (0) Table wp_wp_phpmyadmin_extension__errors_log: Total expected rows (via COUNT): 0
+0001.107 (0) Table wp_wp_phpmyadmin_extension__errors_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=717) in 0.00 seconds
+0001.113 (0) Table wp_wp_phpmyadmin_extension__errors_log: finishing file(s) (2, 0.4 KB)
+0001.119 (0) Table wp_wpforms_logs: Total expected rows (via COUNT): 0
+0001.120 (0) Table wp_wpforms_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=659) in 0.00 seconds
+0001.126 (0) Table wp_wpforms_logs: finishing file(s) (2, 0.4 KB)
+0001.132 (0) Table wp_wpforms_payment_meta: Total expected rows (via COUNT): 0
+0001.135 (0) Table wp_wpforms_payment_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=690) in 0.01 seconds
+0001.141 (0) Table wp_wpforms_payment_meta: finishing file(s) (2, 0.4 KB)
+0001.145 (0) Table wp_wpforms_payments: Total expected rows (via COUNT): 0
+0001.148 (0) Table wp_wpforms_payments: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1650) in 0.00 seconds
+0001.153 (0) Table wp_wpforms_payments: finishing file(s) (2, 0.6 KB)
+0001.171 (0) Table wp_wpforms_tasks_meta: Total expected rows (via COUNT): 4
+0001.173 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0001.184 (0) Table wp_wpforms_tasks_meta: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=888) in 0.03 seconds
+0001.190 (0) Table wp_wpforms_tasks_meta: finishing file(s) (2, 0.4 KB)
+0001.200 (0) Table wp_yoast_indexable: Total expected rows (via COUNT): 24
+0001.201 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0001.206 (0) Table wp_yoast_indexable: Rows added in this batch (next record: 24): 24 (uncompressed bytes in this segment=14017) in 0.01 seconds
+0001.215 (0) Table wp_yoast_indexable: finishing file(s) (2, 2.8 KB)
+0001.219 (0) Table wp_yoast_indexable_hierarchy: Total expected rows (approximate): 21
+0001.222 (0) Table wp_yoast_indexable_hierarchy: Rows added in this batch (next record: 1000): 22 (uncompressed bytes in this segment=1142) in 0.00 seconds
+0001.226 (0) Table wp_yoast_indexable_hierarchy: finishing file(s) (2, 0.5 KB)
+0001.232 (0) Table wp_yoast_migrations: Total expected rows (via COUNT): 24
+0001.233 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0001.237 (0) Table wp_yoast_migrations: Rows added in this batch (next record: 24): 24 (uncompressed bytes in this segment=1234) in 0.01 seconds
+0001.242 (0) Table wp_yoast_migrations: finishing file(s) (2, 0.6 KB)
+0001.247 (0) Table wp_yoast_primary_term: Total expected rows (via COUNT): 0
+0001.252 (0) Table wp_yoast_primary_term: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=829) in 0.01 seconds
+0001.256 (0) Table wp_yoast_primary_term: finishing file(s) (2, 0.4 KB)
+0001.260 (0) Table wp_yoast_seo_links: Total expected rows (via COUNT): 16
+0001.261 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0001.268 (0) Table wp_yoast_seo_links: Rows added in this batch (next record: 16): 16 (uncompressed bytes in this segment=3029) in 0.01 seconds
+0001.272 (0) Table wp_yoast_seo_links: finishing file(s) (2, 1 KB)
+0001.273 (0) PHP event: code E_WARNING: filemtime(): stat failed for /homepages/16/d4298693242/htdocs/wp-content/updraft/backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db.gz (line 1923, wp-content/plugins/updraftplus/backup.php)
+0001.275 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_options.table.tmpr9136.gz (1/68/fopen): adding to final database dump
+0001.279 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_options.table.gz (2/68/fopen): adding to final database dump
+0001.280 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_users.table.tmpr8.gz (3/68/fopen): adding to final database dump
+0001.281 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_users.table.gz (4/68/fopen): adding to final database dump
+0001.282 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_usermeta.table.tmpr228.gz (5/68/fopen): adding to final database dump
+0001.284 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_usermeta.table.gz (6/68/fopen): adding to final database dump
+0001.285 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_actionscheduler_actions.table.tmpr148.gz (7/68/fopen): adding to final database dump
+0001.286 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_actionscheduler_actions.table.gz (8/68/fopen): adding to final database dump
+0001.287 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_actionscheduler_claims.table.tmpr0.gz (9/68/fopen): adding to final database dump
+0001.289 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_actionscheduler_claims.table.gz (10/68/fopen): adding to final database dump
+0001.290 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_actionscheduler_groups.table.tmpr6.gz (11/68/fopen): adding to final database dump
+0001.291 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_actionscheduler_groups.table.gz (12/68/fopen): adding to final database dump
+0001.293 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_actionscheduler_logs.table.tmpr317.gz (13/68/fopen): adding to final database dump
+0001.294 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_actionscheduler_logs.table.gz (14/68/fopen): adding to final database dump
+0001.295 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_commentmeta.table.tmpr0.gz (15/68/fopen): adding to final database dump
+0001.296 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_commentmeta.table.gz (16/68/fopen): adding to final database dump
+0001.298 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_comments.table.tmpr2.gz (17/68/fopen): adding to final database dump
+0001.299 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_comments.table.gz (18/68/fopen): adding to final database dump
+0001.300 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_links.table.tmpr0.gz (19/68/fopen): adding to final database dump
+0001.301 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_links.table.gz (20/68/fopen): adding to final database dump
+0001.303 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_postmeta.table.tmpr1306.gz (21/68/fopen): adding to final database dump
+0001.304 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_postmeta.table.gz (22/68/fopen): adding to final database dump
+0001.306 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_posts.table.tmpr587.gz (23/68/fopen): adding to final database dump
+0001.310 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_posts.table.gz (24/68/fopen): adding to final database dump
+0001.312 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_term_relationships.table.tmpr100001.gz (25/68/fopen): adding to final database dump
+0001.313 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_term_relationships.table.gz (26/68/fopen): adding to final database dump
+0001.314 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_term_taxonomy.table.tmpr36.gz (27/68/fopen): adding to final database dump
+0001.315 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_term_taxonomy.table.gz (28/68/fopen): adding to final database dump
+0001.317 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_termmeta.table.tmpr0.gz (29/68/fopen): adding to final database dump
+0001.318 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_termmeta.table.gz (30/68/fopen): adding to final database dump
+0001.320 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_terms.table.tmpr36.gz (31/68/fopen): adding to final database dump
+0001.321 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_terms.table.gz (32/68/fopen): adding to final database dump
+0001.323 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_cache.table.tmpr165.gz (33/68/fopen): adding to final database dump
+0001.324 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_cache.table.gz (34/68/fopen): adding to final database dump
+0001.326 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_crawl_cleanup_blocked_args.table.tmpr0.gz (35/68/fopen): adding to final database dump
+0001.327 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_crawl_cleanup_blocked_args.table.gz (36/68/fopen): adding to final database dump
+0001.329 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_crawl_cleanup_logs.table.tmpr0.gz (37/68/fopen): adding to final database dump
+0001.331 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_crawl_cleanup_logs.table.gz (38/68/fopen): adding to final database dump
+0001.332 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_notifications.table.tmpr5.gz (39/68/fopen): adding to final database dump
+0001.333 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_notifications.table.gz (40/68/fopen): adding to final database dump
+0001.335 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_posts.table.tmpr60.gz (41/68/fopen): adding to final database dump
+0001.336 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_posts.table.gz (42/68/fopen): adding to final database dump
+0001.337 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_writing_assistant_keywords.table.tmpr0.gz (43/68/fopen): adding to final database dump
+0001.339 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_writing_assistant_keywords.table.gz (44/68/fopen): adding to final database dump
+0001.340 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_writing_assistant_posts.table.tmpr0.gz (45/68/fopen): adding to final database dump
+0001.342 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_aioseo_writing_assistant_posts.table.gz (46/68/fopen): adding to final database dump
+0001.344 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_assistentendb.table.tmpr12.gz (47/68/fopen): adding to final database dump
+0001.345 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_assistentendb.table.gz (48/68/fopen): adding to final database dump
+0001.346 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_cky_banners.table.tmpr3.gz (49/68/fopen): adding to final database dump
+0001.347 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_cky_banners.table.gz (50/68/fopen): adding to final database dump
+0001.349 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_cky_cookie_categories.table.tmpr6.gz (51/68/fopen): adding to final database dump
+0001.350 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_cky_cookie_categories.table.gz (52/68/fopen): adding to final database dump
+0001.352 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_cky_cookies.table.tmpr0.gz (53/68/fopen): adding to final database dump
+0001.353 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_cky_cookies.table.gz (54/68/fopen): adding to final database dump
+0001.354 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_duplicator_packages.table.tmpr0.gz (55/68/fopen): adding to final database dump
+0001.356 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_duplicator_packages.table.gz (56/68/fopen): adding to final database dump
+0001.357 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_e_events.table.tmpr2.gz (57/68/fopen): adding to final database dump
+0001.358 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_e_events.table.gz (58/68/fopen): adding to final database dump
+0001.360 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_masterslider_options.table.tmpr3.gz (59/68/fopen): adding to final database dump
+0001.361 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_masterslider_options.table.gz (60/68/fopen): adding to final database dump
+0001.363 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_masterslider_sliders.table.tmpr2.gz (61/68/fopen): adding to final database dump
+0001.369 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_masterslider_sliders.table.gz (62/68/fopen): adding to final database dump
+0001.384 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter.table.tmpr4.gz (63/68/fopen): adding to final database dump
+0001.396 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter.table.gz (64/68/fopen): adding to final database dump
+0001.397 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_emails.table.tmpr3.gz (65/68/fopen): adding to final database dump
+0001.399 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_emails.table.gz (66/68/fopen): adding to final database dump
+0001.401 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_logs.table.tmpr2.gz (67/68/fopen): adding to final database dump
+0001.402 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_logs.table.gz (68/68/fopen): adding to final database dump
+0001.403 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_sent.table.tmpr1001.gz (69/68/fopen): adding to final database dump
+0001.404 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_sent.table.gz (70/68/fopen): adding to final database dump
+0001.406 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_stats.table.tmpr3.gz (71/68/fopen): adding to final database dump
+0001.408 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_stats.table.gz (72/68/fopen): adding to final database dump
+0001.416 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_user_logs.table.tmpr3.gz (73/68/fopen): adding to final database dump
+0001.418 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_user_logs.table.gz (74/68/fopen): adding to final database dump
+0001.419 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_user_meta.table.tmpr0.gz (75/68/fopen): adding to final database dump
+0001.420 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_newsletter_user_meta.table.gz (76/68/fopen): adding to final database dump
+0001.421 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_image_storage.table.tmpr0.gz (77/68/fopen): adding to final database dump
+0001.423 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_image_storage.table.gz (78/68/fopen): adding to final database dump
+0001.424 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_section_storage.table.tmpr10001.gz (79/68/fopen): adding to final database dump
+0001.425 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_section_storage.table.gz (80/68/fopen): adding to final database dump
+0001.426 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_smartslider3_generators.table.tmpr0.gz (81/68/fopen): adding to final database dump
+0001.427 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_smartslider3_generators.table.gz (82/68/fopen): adding to final database dump
+0001.429 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_smartslider3_sliders.table.tmpr2.gz (83/68/fopen): adding to final database dump
+0001.430 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_smartslider3_sliders.table.gz (84/68/fopen): adding to final database dump
+0001.431 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_smartslider3_sliders_xref.table.tmpr1.gz (85/68/fopen): adding to final database dump
+0001.433 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_smartslider3_sliders_xref.table.gz (86/68/fopen): adding to final database dump
+0001.434 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_smartslider3_slides.table.tmpr3.gz (87/68/fopen): adding to final database dump
+0001.435 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_nextend2_smartslider3_slides.table.gz (88/68/fopen): adding to final database dump
+0001.436 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_qcld_slider_hero_sliders.table.tmpr4.gz (89/68/fopen): adding to final database dump
+0001.437 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_qcld_slider_hero_sliders.table.gz (90/68/fopen): adding to final database dump
+0001.439 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_qcld_slider_hero_slides.table.tmpr7.gz (91/68/fopen): adding to final database dump
+0001.440 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_qcld_slider_hero_slides.table.gz (92/68/fopen): adding to final database dump
+0001.442 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_analytics_gsc.table.tmpr0.gz (93/68/fopen): adding to final database dump
+0001.443 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_analytics_gsc.table.gz (94/68/fopen): adding to final database dump
+0001.444 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_analytics_inspections.table.tmpr0.gz (95/68/fopen): adding to final database dump
+0001.445 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_analytics_inspections.table.gz (96/68/fopen): adding to final database dump
+0001.446 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_analytics_objects.table.tmpr14.gz (97/68/fopen): adding to final database dump
+0001.448 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_analytics_objects.table.gz (98/68/fopen): adding to final database dump
+0001.449 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_internal_links.table.tmpr111.gz (99/68/fopen): adding to final database dump
+0001.452 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_internal_links.table.gz (100/68/fopen): adding to final database dump
+0001.453 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_internal_meta.table.tmpr537.gz (101/68/fopen): adding to final database dump
+0001.454 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_rank_math_internal_meta.table.gz (102/68/fopen): adding to final database dump
+0001.456 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_solarkonfigurator.table.tmpr0.gz (103/68/fopen): adding to final database dump
+0001.457 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_solarkonfigurator.table.gz (104/68/fopen): adding to final database dump
+0001.458 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_solarkonfigurator_v2.table.tmpr0.gz (105/68/fopen): adding to final database dump
+0001.461 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_solarkonfigurator_v2.table.gz (106/68/fopen): adding to final database dump
+0001.462 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_trp_gettext_de_de.table.tmpr24.gz (107/68/fopen): adding to final database dump
+0001.464 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_trp_gettext_de_de.table.gz (108/68/fopen): adding to final database dump
+0001.465 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_trp_gettext_original_meta.table.tmpr0.gz (109/68/fopen): adding to final database dump
+0001.468 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_trp_gettext_original_meta.table.gz (110/68/fopen): adding to final database dump
+0001.470 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_trp_gettext_original_strings.table.tmpr24.gz (111/68/fopen): adding to final database dump
+0001.471 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_trp_gettext_original_strings.table.gz (112/68/fopen): adding to final database dump
+0001.472 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_userfeedback_survey_responses.table.tmpr0.gz (113/68/fopen): adding to final database dump
+0001.475 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_userfeedback_survey_responses.table.gz (114/68/fopen): adding to final database dump
+0001.480 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_userfeedback_surveys.table.tmpr0.gz (115/68/fopen): adding to final database dump
+0001.482 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_userfeedback_surveys.table.gz (116/68/fopen): adding to final database dump
+0001.484 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wp_phpmyadmin_extension__errors_log.table.tmpr0.gz (117/68/fopen): adding to final database dump
+0001.486 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wp_phpmyadmin_extension__errors_log.table.gz (118/68/fopen): adding to final database dump
+0001.489 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wpforms_logs.table.tmpr0.gz (119/68/fopen): adding to final database dump
+0001.490 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wpforms_logs.table.gz (120/68/fopen): adding to final database dump
+0001.491 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wpforms_payment_meta.table.tmpr0.gz (121/68/fopen): adding to final database dump
+0001.493 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wpforms_payment_meta.table.gz (122/68/fopen): adding to final database dump
+0001.494 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wpforms_payments.table.tmpr0.gz (123/68/fopen): adding to final database dump
+0001.495 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wpforms_payments.table.gz (124/68/fopen): adding to final database dump
+0001.496 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wpforms_tasks_meta.table.tmpr5.gz (125/68/fopen): adding to final database dump
+0001.498 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_wpforms_tasks_meta.table.gz (126/68/fopen): adding to final database dump
+0001.499 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_indexable.table.tmpr25.gz (127/68/fopen): adding to final database dump
+0001.500 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_indexable.table.gz (128/68/fopen): adding to final database dump
+0001.502 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_indexable_hierarchy.table.tmpr1001.gz (129/68/fopen): adding to final database dump
+0001.503 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_indexable_hierarchy.table.gz (130/68/fopen): adding to final database dump
+0001.504 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_migrations.table.tmpr25.gz (131/68/fopen): adding to final database dump
+0001.506 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_migrations.table.gz (132/68/fopen): adding to final database dump
+0001.507 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_primary_term.table.tmpr0.gz (133/68/fopen): adding to final database dump
+0001.508 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_primary_term.table.gz (134/68/fopen): adding to final database dump
+0001.510 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_seo_links.table.tmpr17.gz (135/68/fopen): adding to final database dump
+0001.511 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db-table-wp_yoast_seo_links.table.gz (136/68/fopen): adding to final database dump
+0001.560 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db.gz: finished writing out complete database file (509.5 KB)
+0001.603 (0) Total database tables backed up: 68 (backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db.gz, size: 521895, sha1: 484416fa8f776683098517aa1e1e4886d27ce2e2, sha256: a0ea01920d356ac5bf26f55d8a65f8973b48b6fd313e5c678f6483c981937597)
+0001.612 (0) backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db.gz: db: This file has not yet been successfully uploaded: will queue
+0001.613 (0) Saving backup history. Total backup size: 509.7 KB
+0001.617 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0001.621 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0001.622 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-2f95a1f70e9e071ebc92d1ed98a41706)
+0002.362 (0) Google Drive: quota usage: used=411 MB, total=15360 MB, available=14949 MB
+0002.364 (0) Google Drive: backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db.gz: Attempting to upload to Google Drive (into folder id: 1bPBiZAj5k7tNJYolvhGchrLBY3w3jMhs)
+0004.280 (0) Googledrive chunked upload: 100 % uploaded
+0004.284 (0) Google Drive: OK: Archive backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db.gz uploaded in 1.92 seconds
+0004.285 (0) Recording as successfully uploaded: backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db.gz
+0004.288 (0) Deleting local file: backup_2025-01-20-0310_SolarSolutions_Weil_die_Zukunf_2c917ffa5cb8-db.gz: OK
+0004.292 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0004.293 (0) Number of backup sets in history: 3; groups (db): 1
+0004.295 (0) Examining (for databases) backup set with group_id=0, nonce=2c917ffa5cb8, datestamp=1737339008 (Jan 20 2025 02:10:08)
+0004.296 (0) This backup set is the backup set just made, so will not be deleted.
+0004.296 (0) Examining (for databases) backup set with group_id=0, nonce=d620a85f684c, datestamp=1737338666 (Jan 20 2025 02:04:26)
+0004.296 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.297 (0) Examining (for databases) backup set with group_id=0, nonce=d3286af4c5ec, datestamp=1737291704 (Jan 19 2025 13:01:44)
+0004.297 (0) 1737291704: db: this set includes a database (backup_2025-01-19-1401_SolarSolutions_Weil_die_Zukunf_d3286af4c5ec-db.gz); db count is now 2
+0004.297 (0) 1737291704: db: over retain limit (2); will delete this database
+0006.526 (0) Google Drive: backup_2025-01-19-1401_SolarSolutions_Weil_die_Zukunf_d3286af4c5ec-db.gz: Deletion successful
+0006.530 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0006.531 (0) Number of backup sets in history: 3; groups (files): 1
+0006.532 (0) Examining (for files) backup set with nonce=2c917ffa5cb8, datestamp=1737339008 (Jan 20 2025 02:10:08)
+0006.532 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0006.534 (0) Examining (for files) backup set with nonce=d620a85f684c, datestamp=1737338666 (Jan 20 2025 02:04:26)
+0006.534 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0006.535 (0) Examining (for files) backup set with nonce=d3286af4c5ec, datestamp=1737291704 (Jan 19 2025 13:01:44)
+0006.535 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0006.536 (0) Retain: saving new backup history (sets now: 3) and finishing retain operation
+0006.540 (0) Resume backup (2c917ffa5cb8, 0): finish run
+0006.544 (0) Decremented the semaphore (d) by 1
+0006.546 (0) Semaphore (d) unlocked
+0006.547 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0006.551 (0) No email will/can be sent - the user has not configured an email address.
+0006.552 (0) The backup succeeded and is now complete

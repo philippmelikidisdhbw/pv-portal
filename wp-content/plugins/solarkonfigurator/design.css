@@ -1,0 +1,325 @@
+/*
+    design.css – Beispiel für "Solarkonfigurator"
+*/
+
+/* Hintergrund und Schrift */
+#solarkonfigurator-body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Formular-Container: nur direkte Kind-Formulare */
+#solarkonfigurator-body > form {
+    min-height: 600px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Überschriften im Formular */
+#solarkonfigurator-body form h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+}
+#solarkonfigurator-body form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 18px;
+}
+#solarkonfigurator-body form p {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Formularelemente – Labels und Felder */
+#solarkonfigurator-body .form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+#solarkonfigurator-body input[type=text],
+#solarkonfigurator-body input[type=email],
+#solarkonfigurator-body input[type=number],
+#solarkonfigurator-body input[type=tel],
+#solarkonfigurator-body select,
+#solarkonfigurator-body textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Range-Slider */
+#solarkonfigurator-body input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 15px;
+    opacity: 0.9;
+    transition: opacity .2s;
+}
+#solarkonfigurator-body input[type=range]:hover {
+    opacity: 1;
+}
+#solarkonfigurator-body input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+#solarkonfigurator-body input[type=range]::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #4CAF50, #4CAF50) no-repeat;
+}
+#solarkonfigurator-body input[type=range]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+#solarkonfigurator-body input[type=range]::-moz-range-track {
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+/* Buttons */
+#solarkonfigurator-body button,
+#solarkonfigurator-body input[type=submit] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+#solarkonfigurator-body button:hover,
+#solarkonfigurator-body input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Kleine Aktions-Buttons */
+#solarkonfigurator-body .btn-small {
+    width: 420px;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    padding: 14px 20px;
+}
+
+/* Button-Container */
+#solarkonfigurator-body .button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+#solarkonfigurator-body .btn-reset {
+    background-color: transparent;
+    color: #333;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    font-weight: normal;
+}
+#solarkonfigurator-body .btn-back {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ccc;
+    font-weight: normal;
+    margin-right: auto;
+}
+#solarkonfigurator-body .btn-back:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* Fortschrittsbalken */
+#solarkonfigurator-body .progress-container {
+    width: 100%;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    height: 24px;
+    margin: 20px 0;
+    text-align: left;
+}
+#solarkonfigurator-body .progress-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+#solarkonfigurator-body .progress-bar1,
+#solarkonfigurator-body .progress-bar2,
+#solarkonfigurator-body .progress-bar3,
+#solarkonfigurator-body .progress-bar4,
+#solarkonfigurator-body .progress-bar5,
+#solarkonfigurator-body .progress-bar6,
+#solarkonfigurator-body .progress-bar7,
+#solarkonfigurator-body .progress-bar8 {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.6s ease;
+}
+
+/* Grid für Eingabefelder */
+#solarkonfigurator-body .form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+#solarkonfigurator-body .form-group {
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tooltip */
+#solarkonfigurator-body .help-tooltip {
+    display: inline-block;
+    margin-left: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 18px;
+    cursor: help;
+    vertical-align: middle;
+}
+
+/* Module-Karten */
+#solarkonfigurator-body .module-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+#solarkonfigurator-body .module-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    flex: 1 1 250px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: border-color 0.2s ease;
+    text-align: left;
+}
+#solarkonfigurator-body .module-card:hover {
+    border-color: #4CAF50;
+}
+#solarkonfigurator-body .module-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+#solarkonfigurator-body .module-card ul {
+    margin: 0;
+    padding-left: 1.2em;
+    list-style-type: disc;
+}
+#solarkonfigurator-body .module-card li {
+    margin-bottom: 0.3em;
+}
+#solarkonfigurator-body .module-card input[type="radio"] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+/* Farbliche Hintergründe für Module-Karten */
+#solarkonfigurator-body .module-card.basismodul {
+    background-color: #e6ffe6;
+}
+#solarkonfigurator-body .module-card.premiummodul {
+    background-color: #fffbd7;
+}
+#solarkonfigurator-body .module-card.allincludemodul {
+    background-color: #ffe6e6;
+}
+
+#solarkonfigurator-body .left-align {
+    text-align: left !important;
+}
+
+/* Responsive Anpassungen */
+@media only screen and (max-width: 480px) {
+    #solarkonfigurator-body > form {
+        padding: 15px 20px;
+        margin-bottom: 30px;
+    }
+    #solarkonfigurator-body form h1 {
+        font-size: 20px;
+    }
+    #solarkonfigurator-body form h2 {
+        font-size: 16px;
+    }
+    #solarkonfigurator-body input[type=text],
+    #solarkonfigurator-body input[type=email],
+    #solarkonfigurator-body input[type=number],
+    #solarkonfigurator-body input[type=tel],
+    #solarkonfigurator-body select,
+    #solarkonfigurator-body textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+    #solarkonfigurator-body .btn-small {
+        width: 100%;
+        max-width: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        border-radius: 4px;
+        margin: 10px 0;
+    }
+    #solarkonfigurator-body .button-container,
+    #solarkonfigurator-body .end-page-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    #solarkonfigurator-body .btn-back,
+    #solarkonfigurator-body .btn-reset {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    #solarkonfigurator-body .progress-text {
+        font-size: 12px;
+        right: 5px;
+    }
+}
