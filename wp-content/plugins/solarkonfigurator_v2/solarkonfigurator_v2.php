@@ -288,7 +288,7 @@ elseif ($formularSeite == 2) : ?>
 
 <?php
 // -----------------------------------
-// Seite 3
+// Seite 3: Dachtyp & Dachneigung
 // -----------------------------------
 elseif ($formularSeite == 3) : ?>
 <form method="POST" action="">
@@ -310,7 +310,7 @@ elseif ($formularSeite == 3) : ?>
         <option value="Pultdach"   <?php if($dachtyp == 'Pultdach')   echo 'selected'; ?>>Pultdach</option>
     </select><br><br>
 
-    <!-- Visuelle Darstellung Dachneigung -->
+    <!-- Visuelle Darstellung Dachneigung mittels SVG -->
     <div class="dachneigung-visual-container">
         <label for="dachneigung">
             Dachneigung*: <span id="dachneigungValue"><?php echo intval($dachneigung); ?>°</span>
@@ -320,20 +320,20 @@ elseif ($formularSeite == 3) : ?>
                min="0" max="90" value="<?php echo intval($dachneigung); ?>" step="1"
                oninput="updateDachneigungVisual(this.value)"
                required>
-        <div class="dachneigung-visual" id="dachneigungVisual">
-            <!-- Beispielbild; bitte in den Plugin-Ordner legen oder anpassen -->
-            <img src="<?php echo plugin_dir_url(__FILE__); ?>images/roof_angle.png" 
-                 style="transform: rotate(<?php echo intval($dachneigung) * 0.5; ?>deg);" 
-                 id="dachneigungImage"
-                 alt="Dachneigung-Visualisierung">
+        <div id="roofVisualization" style="margin-top:20px; height:100px;">
+            <!-- Einfaches SVG-Element, das eine Dachlinie darstellt -->
+            <svg id="roofSVG" width="200" height="100">
+                <line id="roofLine" x1="10" y1="90" x2="190" y2="90" stroke="black" stroke-width="4" />
+            </svg>
         </div>
     </div>
 
     <script>
     function updateDachneigungVisual(value) {
         document.getElementById('dachneigungValue').innerText = value + '°';
-        var img = document.getElementById('dachneigungImage');
-        img.style.transform = 'rotate(' + (value * 0.5) + 'deg)';
+        var roofLine = document.getElementById('roofLine');
+        // Drehung um den linken Endpunkt (10,90); negative Rotation für einen realistischen Neigungseffekt
+        roofLine.setAttribute("transform", "rotate(-" + value + " 10 90)");
     }
     </script>
 
@@ -356,12 +356,11 @@ elseif ($formularSeite == 3) : ?>
     <input type="hidden" name="email" value="<?php echo esc_attr($email);?>">
     <input type="hidden" name="telefonnummer" value="<?php echo esc_attr($telefonnummer);?>">
     <input type="hidden" name="datenschutz" value="<?php echo esc_attr($datenschutz);?>">
-
 </form>
 
 <?php
 // -----------------------------------
-// Seite 4
+// Seite 4: Energieverbrauch (mit Balkendiagramm und Durchschnittsvergleich)
 // -----------------------------------
 elseif ($formularSeite == 4) : ?>
 <form method="POST" action="">
@@ -376,20 +375,26 @@ elseif ($formularSeite == 4) : ?>
         <div class="form-group">
             <label for="stromverbrauch">
                 Jahresverbrauch (in kWh)
-                <span class="help-tooltip" title="1 kWh = 100-W-Lampe für ca. 10 Stunden">i</span>
+                <span class="help-tooltip" title="z.B. 3500 kWh">i</span>
             </label><br>
             <input type="number" id="stromverbrauch" name="stromverbrauch"
                    value="<?php echo esc_attr($stromverbrauch); ?>" min="0" step="1"
                    placeholder="z.B. 3500">
-            <small>Falls nicht bekannt, lassen Sie das Feld leer oder schätzen Sie.</small>
+            <small>Bitte geben Sie Ihren jährlichen Verbrauch ein.</small>
         </div>
         <div class="form-group">
             <label for="personen">Haushaltsgröße (in Personen)*:</label><br>
             <input type="number" id="personen" name="personen"
                    value="<?php echo esc_attr($personen); ?>" min="1" step="1"
                    required>
-            <small>Typischer Richtwert: 2 Personen ~ 2500 kWh/Jahr.</small>
+            <small>Für 2 Personen liegt der Durchschnitt z.B. bei ca. 2500 kWh/Jahr.</small>
         </div>
+    </div>
+
+    <!-- Balkendiagramm und Vergleichstext -->
+    <div style="margin-top:20px;">
+        <canvas id="energyChart" width="400" height="200" style="border:1px solid #ccc;"></canvas>
+        <p id="energyText" style="text-align:center; font-size:0.9em;"></p>
     </div>
 
     <input type="hidden" name="formularSeite" value="4">
@@ -411,7 +416,60 @@ elseif ($formularSeite == 4) : ?>
     <input type="hidden" name="email" value="<?php echo esc_attr($email);?>">
     <input type="hidden" name="telefonnummer" value="<?php echo esc_attr($telefonnummer);?>">
     <input type="hidden" name="datenschutz" value="<?php echo esc_attr($datenschutz);?>">
+
 </form>
+
+<!-- JavaScript: Balkendiagramm und Vergleich des Energieverbrauchs -->
+<script>
+function drawEnergyChart() {
+    var canvas = document.getElementById('energyChart');
+    if (!canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    var userValue = parseFloat(document.getElementById('stromverbrauch').value) || 0;
+    var persons = parseInt(document.getElementById('personen').value) || 1;
+    // Durchschnittlicher Verbrauch: 1250 kWh pro Person (Beispiel)
+    var average = persons * 1250;
+    
+    // Bestimme den maximalen Wert für die Skala
+    var maxVal = Math.max(userValue, average, 1000);
+    var chartWidth = 300; // maximale Balkenbreite
+    var barHeight = 30;
+    var xStart = 50;
+    
+    // Berechne Balkenbreiten
+    var userBarWidth = (userValue / maxVal) * chartWidth;
+    var avgBarWidth = (average / maxVal) * chartWidth;
+    
+    // Zeichne den Balken für den eigenen Verbrauch (grün)
+    ctx.fillStyle = 'green';
+    ctx.fillRect(xStart, 50, userBarWidth, barHeight);
+    ctx.fillStyle = 'black';
+    ctx.font = '14px sans-serif';
+    ctx.fillText("Dein Verbrauch: " + userValue + " kWh", xStart, 45);
+    
+    // Zeichne den Balken für den Durchschnitt (blau)
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(xStart, 120, avgBarWidth, barHeight);
+    ctx.fillStyle = 'black';
+    ctx.fillText("Durchschnitt: " + average + " kWh", xStart, 115);
+    
+    // Vergleichstext unten
+    var energyText = document.getElementById('energyText');
+    if(userValue < average) {
+        energyText.innerText = "Dein Verbrauch liegt unter dem Durchschnitt für " + persons + " Person(en).";
+    } else if(userValue > average) {
+        energyText.innerText = "Dein Verbrauch liegt über dem Durchschnitt für " + persons + " Person(en).";
+    } else {
+        energyText.innerText = "Dein Verbrauch entspricht exakt dem Durchschnitt für " + persons + " Person(en).";
+    }
+}
+
+document.getElementById('stromverbrauch').addEventListener('input', drawEnergyChart);
+document.getElementById('personen').addEventListener('input', drawEnergyChart);
+window.addEventListener('load', drawEnergyChart);
+</script>
 
 <?php
 // -----------------------------------
@@ -505,7 +563,6 @@ elseif ($formularSeite == 5) : ?>
     <input type="hidden" name="email" value="<?php echo esc_attr($email);?>">
     <input type="hidden" name="telefonnummer" value="<?php echo esc_attr($telefonnummer);?>">
     <input type="hidden" name="datenschutz" value="<?php echo esc_attr($datenschutz);?>">
-
 </form>
 
 <?php

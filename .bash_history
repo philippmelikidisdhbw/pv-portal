@@ -84,3 +84,7 @@ git push --set-upstream origin finish
 chmod 600 /homepages/16/d4298693242/htdocs/.ssh/id_ed25519
 git push --set-upstream origin finish
 php
+git add .
+git commit -m "fix"
+git push
+git push --force origin main

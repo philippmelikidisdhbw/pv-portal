@@ -19,26 +19,28 @@
  */
 
 // ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'dbs13649387' );
+/* MySQL-Einstellungen - Diese Zugangsdaten bekommst du von deinem Webhoster. */
+
+/* Der Name der Datenbank für WordPress */
+define( 'DB_NAME', 'wordpress_pv' );
 
 /* MySQL-Benutzername */
-define( 'DB_USER', 'dbu439248' );
+define( 'DB_USER', 'root' );
 
 /* MySQL-Passwort */
-define( 'DB_PASSWORD', 'SolarSolutionsGmbH!' );
+define( 'DB_PASSWORD', '' );
 
 /* MySQL-Serveradresse */
-define( 'DB_HOST', 'db5016923583.hosting-data.io' );
+define( 'DB_HOST', 'localhost' ); // Assuming local server
 
 /** Database charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define( 'DB_CHARSET', 'utf8' );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-define('WP_HOME', 'https://solarsolutionsgmbh.com');
-define('WP_SITEURL', 'https://solarsolutionsgmbh.com');
+define('WP_HOME', 'http://localhost/pv-portal/');
+define('WP_SITEURL', 'http://localhost/pv-portal/');
 
 /**#@+
  * Authentication unique keys and salts.
