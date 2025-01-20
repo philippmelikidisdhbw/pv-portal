@@ -2,7 +2,7 @@
 /*
 Plugin Name: Solarkonfigurator Plugin
 Description: Ein Plugin eines Solarkonfigurators (mit Datenbankanbindung zur Tabelle wp_assistentendb) inkl. PDF-Download, E-Mail-Bericht und Google Maps Auswahl.
-Version: 1.2-mod6
+Version: 1.2-mod7
 Author: Fabian Koch und Benedikt Schmuker
 */
 
@@ -10,16 +10,6 @@ Author: Fabian Koch und Benedikt Schmuker
    1) Plugin-Aktivierung: Tabelle wp_assistentendb erstellen
 ------------------------------------------------------------------------ */
 
-/**
- * Erstellt die Datenbanktabelle für den Solarkonfigurator, wenn das Plugin aktiviert wird.
- *
- * Diese Funktion nutzt die globale Datenbankvariable $wpdb, um eine Tabelle mit dem Präfix
- * (wp_assistentendb) anzulegen, falls diese noch nicht existiert. Es werden die nötigen Felder
- * zur Speicherung der Kundeninformationen erstellt.
- *
- * @global wpdb $wpdb WordPress-Datenbank-Objekt.
- * @return void
- */
 function solarkonfigurator_install() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'assistentendb';
@@ -54,14 +44,6 @@ register_activation_hook(__FILE__, 'solarkonfigurator_install');
    2) Plugin-Deaktivierung: Tabelle ggf. löschen (optional)
 ------------------------------------------------------------------------ */
 
-/**
- * Entfernt (löscht) die Datenbanktabelle wp_assistentendb, wenn das Plugin deaktiviert wird.
- *
- * Hinweis: Dies kann optional sein und ggf. entfernt werden, falls keine Datenbanklöschung gewünscht ist.
- *
- * @global wpdb $wpdb WordPress-Datenbank-Objekt.
- * @return void
- */
 function solarkonfigurator_uninstall() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'assistentendb';
@@ -73,11 +55,6 @@ register_deactivation_hook(__FILE__, 'solarkonfigurator_uninstall');
    3) Einbindung des Stylesheets design.css
 ------------------------------------------------------------------------ */
 
-/**
- * Bindet die CSS-Datei (design.css) des Plugins in die WordPress-Seite ein.
- *
- * @return void
- */
 function solarkonfigurator_enqueue_styles() {
     wp_enqueue_style('solarkonfigurator-style', plugin_dir_url(__FILE__) . 'design.css');
 }
@@ -87,31 +64,15 @@ add_action('wp_enqueue_scripts', 'solarkonfigurator_enqueue_styles');
    4) Einbindung von FPDF und PDF-Funktionalitäten
 ------------------------------------------------------------------------ */
 
-// Einbinden der FPDF-Klasse, falls noch nicht vorhanden
 if ( ! class_exists('FPDF') ) {
     require_once plugin_dir_path(__FILE__) . 'fpdf/fpdf.php';
 }
 
-/**
- * Konvertiert einen Text von UTF-8 in ISO-8859-1 mit Transliteration.
- *
- * @param string $text Der zu konvertierende Text.
- * @return string Der konvertierte Text.
- */
 function pdf_conv($text) {
     return iconv('UTF-8', 'ISO-8859-1//TRANSLIT', $text);
 }
 
-/**
- * Erweiterte FPDF-Klasse zur Erstellung von PDFs mit individuellem Footer.
- */
 class PDF extends FPDF {
-
-    /**
-     * Fügt im Footer der PDF-Seite einen standardisierten Text ein.
-     *
-     * @return void
-     */
     function Footer() {
         $this->SetY(-15);
         $this->SetFont('Arial','I',8);
@@ -119,16 +80,6 @@ class PDF extends FPDF {
     }
 }
 
-/**
- * Generiert ein PDF-Dokument basierend auf den übergebenen Kundendaten.
- *
- * Diese Funktion erstellt mit Hilfe der erweiterten PDF-Klasse ein mehrseitiges Dokument,
- * das verschiedene Abschnitte (Kundenangaben, Produktinformation, Kosten) beinhaltet. 
- * Am Ende wird das PDF als Download ausgeliefert.
- *
- * @param array $data Array mit den Kundeneingaben und berechneten Werten.
- * @return void
- */
 function solarkonfigurator_generate_pdf($data) {
     global $euro;
     $pdf = new PDF('P','mm','A4');
@@ -289,9 +240,7 @@ function solarkonfigurator_generate_pdf($data) {
     }
     $preisFoerderung = (is_numeric($data['foerderungHoehe']) && $data['foerderungHoehe'] > 0) ? $data['foerderungHoehe'] : 0;
     
-    // Gesamtpreis (ohne Förderungsabzug) aus allen Komponenten:
     $total = $preisModule + $preisDach + $preisDachflaeche + $preisSpeicher + $preisLade;
-    // Gesamtpreis = Total minus Förderung (falls genutzt)
     $gesamtpreis = round($total - $preisFoerderung, 2);
     
     $rabattPreis = round($gesamtpreis * 0.98,2);
@@ -328,15 +277,6 @@ function solarkonfigurator_generate_pdf($data) {
    5) Shortcode definieren: [solarkonfigurator]
 ------------------------------------------------------------------------*/
 
-/**
- * Generiert den HTML-Output für den Solarkonfigurator-Shortcode.
- *
- * Diese Funktion verarbeitet die Eingaben aus dem Formular, navigiert zwischen den
- * unterschiedlichen Formularseiten, versendet Berichte per E-Mail und initiiert den PDF-Download.
- * Außerdem werden Kundendaten in der Datenbank gespeichert, sofern der Datenschutz bestätigt wurde.
- *
- * @return string HTML-Code für den Solarkonfigurator.
- */
 function solarkonfigurator_shortcode() {
     // Formularfelder definieren
     $felder = array(
@@ -387,7 +327,6 @@ function solarkonfigurator_shortcode() {
             exit;
         }
         if(isset($_POST['requestOffer'])){
-            // Alert wird nur einmal über PHP ausgegeben
             echo '<script>alert("Ihre Anfrage wurde verschickt. Wir melden uns in Kürze!");</script>';
             $formularSeite = 8;
             $empfaenger = 'philipp.melikidis@gmail.com';
@@ -449,7 +388,6 @@ function solarkonfigurator_shortcode() {
             exit;
         }
         if(isset($_POST['sendEmail']) && $_POST['sendEmail'] == "An E-Mail senden") {
-            // Gesamtpreis berechnen (analog zu PDF)
             if($data['dachflaeche'] >= 15){
                 if($data['modultyp'] == "Basismodul"){
                     $modulFlaeche = 1.925;
@@ -586,10 +524,11 @@ function solarkonfigurator_shortcode() {
     
     $data['formularSeite'] = $formularSeite;
     
-    // Variablen aus dem Array zuweisen
+    // Zuweisung der Formularvariablen
     $vornameNachname    = isset($data['vornameNachname']) ? $data['vornameNachname'] : '';
     $email              = isset($data['email']) ? $data['email'] : '';
-    $telefonnummer      = isset($data['telefonnummer']) ? $data['telefonnummer'] : '';
+    // Ist noch kein Wert eingetragen, wird "+49" vorbefüllt:
+    $telefonnummer      = isset($data['telefonnummer']) && $data['telefonnummer'] !== '' ? $data['telefonnummer'] : '+49';
     $adresse            = isset($data['adresse']) ? $data['adresse'] : '';
     $dachtyp            = isset($data['dachtyp']) ? $data['dachtyp'] : '';
     $dachneigung        = ($data['dachneigung'] !== '') ? (int)$data['dachneigung'] : 45;
@@ -617,106 +556,104 @@ function solarkonfigurator_shortcode() {
       <!-- Google Maps Extended Component Library -->
       <script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js"></script>
       <script>
-        
         /* Blink-Timer: Wenn der Nutzer inaktiv ist, wechselt der Dokumenttitel */
-      let timeoutId;
-      let blinkIntervalId;
-      const originalTitle = document.title;
-      const blinkTitle = "🔥 Kalkulieren Sie jetzt! 🔥";
+        let timeoutId;
+        let blinkIntervalId;
+        const originalTitle = document.title;
+        const blinkTitle = "🔥 Kalkulieren Sie jetzt! 🔥";
       
-      function resetTimer() {
-        clearTimeout(timeoutId);
-        clearInterval(blinkIntervalId);
-        document.title = originalTitle;
-        timeoutId = setTimeout(startBlinking, 300000);
-      }
-      
-      function startBlinking() {
-        let isOriginalTitle = true;
-        blinkIntervalId = setInterval(() => {
-          document.title = isOriginalTitle ? blinkTitle : originalTitle;
-          isOriginalTitle = !isOriginalTitle;
-        }, 1000);
-      }
-      
-      window.onload = resetTimer;
-      document.onmousemove = resetTimer;
-      document.onkeypress = resetTimer;
-      
-      document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState === 'visible') {
-          resetTimer();
+        function resetTimer() {
+          clearTimeout(timeoutId);
+          clearInterval(blinkIntervalId);
+          document.title = originalTitle;
+          timeoutId = setTimeout(startBlinking, 300000);
         }
-      });
-      // Google Maps Initialisierung inkl. Polygon-Zeichnung und Übernahme der ausgewählten Adresse
-      let polygon;
-      let googleMap;
-      let polygonCoords = [];
-      let markers = [];
       
-      async function initMap() {
-          await customElements.whenDefined('gmp-map');
-          const mapElement = document.querySelector('gmp-map');
-          const placePicker = document.querySelector('gmpx-place-picker');
+        function startBlinking() {
+          let isOriginalTitle = true;
+          blinkIntervalId = setInterval(() => {
+            document.title = isOriginalTitle ? blinkTitle : originalTitle;
+            isOriginalTitle = !isOriginalTitle;
+          }, 1000);
+        }
+      
+        window.onload = resetTimer;
+        document.onmousemove = resetTimer;
+        document.onkeypress = resetTimer;
+      
+        document.addEventListener('visibilitychange', function() {
+          if (document.visibilityState === 'visible') {
+            resetTimer();
+          }
+        });
+      
+        // Google Maps Initialisierung inkl. Polygon-Zeichnung und Übernahme der ausgewählten Adresse
+        let polygon;
+        let googleMap;
+        let polygonCoords = [];
+        let markers = [];
+      
+        async function initMap() {
+            await customElements.whenDefined('gmp-map');
+            const mapElement = document.querySelector('gmp-map');
+            const placePicker = document.querySelector('gmpx-place-picker');
           
-          googleMap = mapElement.innerMap;
-          googleMap.setOptions({
-              disableDefaultUI: true,
-              mapTypeControl: false,
-              mapTypeId: 'hybrid'
-          });
+            googleMap = mapElement.innerMap;
+            googleMap.setOptions({
+                disableDefaultUI: true,
+                mapTypeControl: false,
+                mapTypeId: 'hybrid'
+            });
           
-          // Wenn eine Adresse im Place Picker ausgewählt wird, 
-          // wird diese (z. B. als formattedAddress) in das versteckte Inputfeld "adresse" geschrieben.
-          placePicker.addEventListener('gmpx-placechange', () => {
-              const place = placePicker.value;
-              if(place && place.location){
-                  googleMap.setCenter(place.location);
-                  googleMap.setZoom(20);
-              } else {
-                  alert("Bitte wählen Sie eine gültige Adresse aus.");
-              }
-              if(place && place.formattedAddress){
-                  const adresseInput = document.querySelector('input[name="adresse"]');
-                  if(adresseInput){
-                      adresseInput.value = place.formattedAddress;
-                  }
-              }
-          });
+            placePicker.addEventListener('gmpx-placechange', () => {
+                const place = placePicker.value;
+                if(place && place.location){
+                    googleMap.setCenter(place.location);
+                    googleMap.setZoom(20);
+                } else {
+                    alert("Bitte wählen Sie eine gültige Adresse aus.");
+                }
+                if(place && place.formattedAddress){
+                    const adresseInput = document.querySelector('input[name="adresse"]');
+                    if(adresseInput){
+                        adresseInput.value = place.formattedAddress;
+                    }
+                }
+            });
           
-          polygon = new google.maps.Polygon({
-              paths: polygonCoords,
-              strokeColor: "#4CAF50",
-              strokeOpacity: 0.8,
-              strokeWeight: 3,
-              fillColor: "#4CAF50",
-              fillOpacity: 0.35
-          });
-          polygon.setMap(googleMap);
+            polygon = new google.maps.Polygon({
+                paths: polygonCoords,
+                strokeColor: "#4CAF50",
+                strokeOpacity: 0.8,
+                strokeWeight: 3,
+                fillColor: "#4CAF50",
+                fillOpacity: 0.35
+            });
+            polygon.setMap(googleMap);
           
-          googleMap.addListener("click", function(event) {
-              polygonCoords.push(event.latLng);
-              polygon.setPaths(polygonCoords);
-              const marker = new google.maps.Marker({
-                  position: event.latLng,
-                  map: googleMap
-              });
-              markers.push(marker);
-              if (polygonCoords.length >= 3) {
-                  const area = google.maps.geometry.spherical.computeArea(polygon.getPath());
-                  document.getElementById('dachflaeche').value = area.toFixed(2);
-              }
-          });
+            googleMap.addListener("click", function(event) {
+                polygonCoords.push(event.latLng);
+                polygon.setPaths(polygonCoords);
+                const marker = new google.maps.Marker({
+                    position: event.latLng,
+                    map: googleMap
+                });
+                markers.push(marker);
+                if (polygonCoords.length >= 3) {
+                    const area = google.maps.geometry.spherical.computeArea(polygon.getPath());
+                    document.getElementById('dachflaeche').value = area.toFixed(2);
+                }
+            });
           
-          document.getElementById('resetPolygonButton').addEventListener('click', function(){
-              polygonCoords = [];
-              polygon.setPaths(polygonCoords);
-              markers.forEach(m => m.setMap(null));
-              markers = [];
-              document.getElementById('dachflaeche').value = '';
-          });
-      }
-      document.addEventListener('DOMContentLoaded', initMap);
+            document.getElementById('resetPolygonButton').addEventListener('click', function(){
+                polygonCoords = [];
+                polygon.setPaths(polygonCoords);
+                markers.forEach(m => m.setMap(null));
+                markers = [];
+                document.getElementById('dachflaeche').value = '';
+            });
+        }
+        document.addEventListener('DOMContentLoaded', initMap);
       </script>
     </head>
     <body id="solarkonfigurator-body">
@@ -739,10 +676,10 @@ function solarkonfigurator_shortcode() {
               <input type="email" id="email" name="email" value="<?php echo esc_attr($email); ?>" required>
             </div>
           </div>
-          <!-- Telefonfeld mit Placeholder -->
           <div class="form-group">
             <label for="telefonnummer">Telefonnummer:</label>
-            <input type="number" id="telefonnummer" name="telefonnummer" value="<?php echo esc_attr($telefonnummer); ?>" placeholder="+49">
+            <!-- Das Feld ist jetzt vom Typ tel und zeigt +49 vorbefüllt an, sofern noch kein Wert vorhanden ist -->
+            <input type="tel" id="telefonnummer" name="telefonnummer" value="<?php echo esc_attr($telefonnummer); ?>" placeholder="+49">
           </div>
           <div class="form-grid">
             <label for="datenschutz">
@@ -753,6 +690,7 @@ function solarkonfigurator_shortcode() {
           </div>
           <input type="hidden" name="formularSeite" value="1">
           <div class="button-container">
+            <!-- Nur Vorwärtsschritt – kein Back-Button auf der ersten Seite -->
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter &rarr;</button>
           </div>
         </form>
@@ -765,7 +703,6 @@ function solarkonfigurator_shortcode() {
           </div>
           <h1>Adresse</h1>
           <h2>Geben Sie Ihre Adresse ein und markieren Sie per Klick die Dachfläche.</h2>
-          <!-- Google Maps Place Picker -->
           <gmpx-api-loader key="AIzaSyDorSR66oY7OoW9Wod1crR5mFypW2VhaE8" solution-channel="GMP_GE_mapsandplacesautocomplete_v2"></gmpx-api-loader>
           <label>Adresse*:</label><br>
           <gmpx-place-picker id="adressePicker" placeholder="Geben Sie eine Adresse ein" required></gmpx-place-picker>
@@ -778,11 +715,11 @@ function solarkonfigurator_shortcode() {
           <label>Dachfläche (m²)*:</label><br>
           <input type="number" id="dachflaeche" name="dachflaeche" value="<?php echo esc_attr($dachflaeche); ?>" min="15" step="0.001" required>
           <br><br>
-          <!-- Dieses versteckte Inputfeld wird mit der im Place Picker ausgewählten Adresse befüllt -->
           <input type="hidden" name="adresse" value="<?php echo esc_attr($adresse); ?>">
           <input type="hidden" name="formularSeite" value="2">
           <div class="button-container">
-            <button type="submit" name="navigation" value="zurueck" class="btn btn-back">&larr; Zurück</button>
+            <!-- Back-Button mit formnovalidate -->
+            <button type="submit" name="navigation" value="zurueck" formnovalidate class="btn btn-back">&larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter &rarr;</button>
           </div>
           <input type="hidden" name="vornameNachname" value="<?php echo esc_attr($vornameNachname); ?>">
@@ -807,11 +744,37 @@ function solarkonfigurator_shortcode() {
           </select>
           <br><br>
           <label for="dachneigung">Dachneigung*: <span id="dachneigungValue"><?php echo intval($dachneigung); ?>°</span></label><br>
-          <input type="range" id="dachneigung" name="dachneigung" min="0" max="90" value="<?php echo intval($dachneigung); ?>" step="1" oninput="document.getElementById('dachneigungValue').innerText = this.value + '°'" required>
+          <input type="range" id="dachneigung" name="dachneigung" min="0" max="<?php echo ($dachtyp=='Flachdach' ? 15 : 90); ?>" value="<?php echo intval($dachneigung); ?>" step="1" oninput="document.getElementById('dachneigungValue').innerText = this.value + '°'" required>
           <br><br>
+          <!-- JavaScript zur Anpassung des Dachneigungs-Sliders je nach Dachtyp -->
+          <script>
+            function updateDachneigungLimits() {
+              const dachtypSelect = document.getElementById('dachtyp');
+              const slider = document.getElementById('dachneigung');
+              const sliderValue = document.getElementById('dachneigungValue');
+              let min = 0, max = 90, defaultVal = 45;
+              if(dachtypSelect.value === 'Flachdach') {
+                min = 0; max = 15; defaultVal = 5;
+              } else if(dachtypSelect.value === 'Satteldach') {
+                min = 15; max = 45; defaultVal = 30;
+              } else if(dachtypSelect.value === 'Pultdach') {
+                min = 5; max = 25; defaultVal = 10;
+              }
+              slider.min = min;
+              slider.max = max;
+              // Falls der bisherige Wert außerhalb des neuen Bereichs liegt, wird defaultVal gesetzt
+              if(parseInt(slider.value) < min || parseInt(slider.value) > max) {
+                slider.value = defaultVal;
+              }
+              sliderValue.innerText = slider.value + '°';
+            }
+            document.getElementById('dachtyp').addEventListener('change', updateDachneigungLimits);
+            // Beim Laden der Seite sofort Limits setzen
+            document.addEventListener('DOMContentLoaded', updateDachneigungLimits);
+          </script>
           <input type="hidden" name="formularSeite" value="3">
           <div class="button-container">
-            <button type="submit" name="navigation" value="zurueck" class="btn btn-back">&larr; Zurück</button>
+            <button type="submit" name="navigation" value="zurueck" formnovalidate class="btn btn-back">&larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter &rarr;</button>
           </div>
           <input type="hidden" name="adresse" value="<?php echo esc_attr($adresse); ?>">
@@ -842,7 +805,7 @@ function solarkonfigurator_shortcode() {
           </div>
           <input type="hidden" name="formularSeite" value="4">
           <div class="button-container">
-            <button type="submit" name="navigation" value="zurueck" class="btn btn-back">&larr; Zurück</button>
+            <button type="submit" name="navigation" value="zurueck" formnovalidate class="btn btn-back">&larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter &rarr;</button>
           </div>
           <input type="hidden" name="adresse" value="<?php echo esc_attr($adresse); ?>">
@@ -898,7 +861,7 @@ function solarkonfigurator_shortcode() {
           <br><br>
           <input type="hidden" name="formularSeite" value="5">
           <div class="button-container">
-            <button type="submit" name="navigation" value="zurueck" class="btn btn-back">&larr; Zurück</button>
+            <button type="submit" name="navigation" value="zurueck" formnovalidate class="btn btn-back">&larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter &rarr;</button>
           </div>
           <input type="hidden" name="adresse" value="<?php echo esc_attr($adresse); ?>">
@@ -958,7 +921,7 @@ function solarkonfigurator_shortcode() {
           </div>
           <input type="hidden" name="formularSeite" value="6">
           <div class="button-container">
-            <button type="submit" name="navigation" value="zurueck" class="btn btn-back">&larr; Zurück</button>
+            <button type="submit" name="navigation" value="zurueck" formnovalidate class="btn btn-back">&larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Weiter &rarr;</button>
           </div>
           <input type="hidden" name="adresse" value="<?php echo esc_attr($adresse); ?>">
@@ -1067,7 +1030,7 @@ function solarkonfigurator_shortcode() {
           <br>
           <input type="hidden" name="formularSeite" value="7">
           <div class="button-container">
-            <button type="submit" name="navigation" value="zurueck" class="btn btn-back">&larr; Zurück</button>
+            <button type="submit" name="navigation" value="zurueck" formnovalidate class="btn btn-back">&larr; Zurück</button>
             <button type="submit" name="navigation" value="weiter" class="btn btn-next">Abschließen und Bericht generieren</button>
           </div>
           <input type="hidden" name="adresse" value="<?php echo esc_attr($adresse); ?>">
@@ -1130,7 +1093,7 @@ function solarkonfigurator_shortcode() {
             <br><br>
             <input type="submit" name="sendEmail" value="An E-Mail senden" class="btn-small">
             <br><br>
-            <button type="submit" name="navigation" value="zurueck" class="btn btn-small">Zurück</button>
+            <button type="submit" name="navigation" value="zurueck" formnovalidate class="btn btn-small">Zurück</button>
           </div>
           <input type="hidden" name="formularSeite" value="8">
           <h2>Vielen Dank, dass Sie unseren Konfigurator genutzt haben! Unser Team wird sich bei Bedarf mit Ihnen in Verbindung setzen.</h2>
