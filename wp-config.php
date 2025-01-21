@@ -22,7 +22,7 @@
 /* MySQL-Einstellungen - Diese Zugangsdaten bekommst du von deinem Webhoster. */
 
 /* Der Name der Datenbank für WordPress */
-define( 'DB_NAME', 'wordpress_pv' );
+define( 'DB_NAME', 'dbs13649387' );
 
 /* MySQL-Benutzername */
 define( 'DB_USER', 'root' );
